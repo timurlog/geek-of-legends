@@ -37,6 +37,31 @@ export let warriorDamage = warriorDamagePointsInput.innerHTML
 export let mageDamage = mageDamagePointsInput.innerHTML
 export let archerDamage = archerDamagePointsInput.innerHTML
 
+// event listeners for the combat mode in the menu
+warriorAttackModeMenuBtn.addEventListener('click', () => {
+    warrior.combatMode = 'attack'
+})
+
+warriorDefenseModeMenuBtn.addEventListener('click', () => {
+    warrior.combatMode = 'defense'
+})
+
+mageAttackModeMenuBtn.addEventListener('click', () => {
+    mage.combatMode = 'attack'
+})
+
+mageDefenseModeMenuBtn.addEventListener('click', () => {
+    mage.combatMode = 'defense'
+})
+
+archerAttackModeMenuBtn.addEventListener('click', () => {
+    archer.combatMode = 'attack'
+})
+
+archerDefenseModeMenuBtn.addEventListener('click', () => {
+    archer.combatMode = 'defense'
+})
+
 // creating hero objects with Hero class
 export let warrior = new Hero();
 export let mage = new Hero();
