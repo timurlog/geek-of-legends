@@ -1,5 +1,5 @@
 // importing what needs to be imported
-import {Hero} from './class.js';
+import {Hero, Boss} from './class.js';
 
 // creating variables for all buttons
 
@@ -16,9 +16,12 @@ let heroNameInput = document.querySelector('#heroNameInput')
 let heroHealthPointsInput = document.querySelector('#heroHealthPointsBtn')
 let heroDamagePointsInput = document.querySelector('#heroDamagePointsInput')
 
-
-
 // creating hero objects with Hero class
 let warrior = new Hero();
 let mage = new Hero();
 let archer = new Hero();
+
+// creating boss objects with Boss class
+let lilith = new Boss('Lilith', 30, 900)
+let chronos = new Boss('Chronos', 30, 1000)
+let sauron = new Boss('Sauron', 25, 1150)

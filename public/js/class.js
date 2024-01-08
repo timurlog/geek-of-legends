@@ -32,3 +32,12 @@ export class Archer extends Hero {
         this.arrows = arrows
     }
 }
+
+// creating the boss class
+export class Boss {
+    constructor(name, damage, health){
+        this.name = name,
+        this.damage = damage,
+        this.health = health
+    }
+}
