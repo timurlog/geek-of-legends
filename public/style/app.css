@@ -1,7 +1,7 @@
 /* ########### FONTS ############ */
 @font-face {
-  font-family: "";
-  src: url("../assets/fonts/");
+  font-family: "coolvetica";
+  src: url("../assets/fonts/coolvetica.otf");
 }
 /* ############ BODY ############  */
 * {
@@ -44,6 +44,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+.main-menu .main-menu-content .main-menu-button button {
+  cursor: pointer;
+  height: 75px;
+  width: 200px;
+  background-color: #314250;
+  border: none;
+}
+
 /* ######### RESPONSIVE ######### */
 /* ### SMARTPHONE ### */
 /* ### TABLET ### */
