@@ -5,9 +5,16 @@ import {Hero} from './class.js';
 
 // menu buttons
 let startGameBtn = document.querySelector('#startGameBtn');
-let lilithChoice = document.querySelector('#lilithChoice');
-let sauronChoice = document.querySelector('#sauronChoice');
-let chronosChoice = document.querySelector('#chronosChoice');
+let replayGameBtn = document.querySelector('#replayGameBtn')
+let lilithBtn = document.querySelector('#lilithBtn');
+let sauronBtn = document.querySelector('#sauronBtn');
+let chronosBtn = document.querySelector('#chronosBtn');
+let confirmStatsBtn = document.querySelector('#confirmStatsBtn');
+
+// character maker inputs
+let heroNameInput = document.querySelector('#heroNameInput')
+let heroHealthPointsInput = document.querySelector('#heroHealthPointsBtn')
+let heroDamagePointsInput = document.querySelector('#heroDamagePointsInput')
 
 
 
