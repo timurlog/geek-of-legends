@@ -1,5 +1,5 @@
 // importing what needs to be imported
-import {Hero, Boss} from './class.js';
+import {Hero, Boss, Warrior, Mage, Archer} from './class.js';
 
 // menu buttons
 export let startGameBtn = document.querySelector('#startGameBtn');
@@ -62,10 +62,15 @@ archerDefenseModeMenuBtn.addEventListener('click', () => {
     archer.combatMode = 'defense'
 })
 
+// adding hero special stats
+export let rage = 0
+export let mana = 7
+export let arrows = 6
+
 // creating hero objects with Hero class
-export let warrior = new Hero();
-export let mage = new Hero();
-export let archer = new Hero();
+export let warrior = new Warrior(warriorName, warrior.combatMode, warriorDamage, warriorHealth, rage);
+export let mage = new Mage(mageName, mage.combatMode, mageDamage, mageHealth, mana);
+export let archer = new Archer(archerName, archer.combatMode, archerDamage, archerHealth, arrows);
 
 // creating boss objects with Boss class
 export let lilith = new Boss('Lilith', 30, 900)
