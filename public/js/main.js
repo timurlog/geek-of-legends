@@ -24,6 +24,13 @@ export let archerDamagePointsInput = document.querySelector('#archerDamagePoints
 export let warriorName = warriorNameInput.innerHTML
 export let mageName = mageNameInput.innerHTML
 export let archerName = archerNameInput.innerHTML
+export let warriorHealth = warriorHealthPointsInput.innerHTML
+export let mageHealth = mageHealthPointsInput.innerHTML
+export let archerHealth = archerHealthPointsInput.innerHTML
+export let warriorDamage = warriorDamagePointsInput.innerHTML
+export let mageDamage = mageDamagePointsInput.innerHTML
+export let archerDamage = archerDamagePointsInput.innerHTML
+
 
 
 // creating hero objects with Hero class
