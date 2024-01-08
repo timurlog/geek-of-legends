@@ -1,27 +1,37 @@
 // importing what needs to be imported
 import {Hero, Boss} from './class.js';
 
-// creating variables for all buttons
-
 // menu buttons
-let startGameBtn = document.querySelector('#startGameBtn');
-let replayGameBtn = document.querySelector('#replayGameBtn')
-let lilithBtn = document.querySelector('#lilithBtn');
-let sauronBtn = document.querySelector('#sauronBtn');
-let chronosBtn = document.querySelector('#chronosBtn');
-let confirmStatsBtn = document.querySelector('#confirmStatsBtn');
+export let startGameBtn = document.querySelector('#startGameBtn');
+export let replayGameBtn = document.querySelector('#replayGameBtn')
+export let lilithBtn = document.querySelector('#lilithBtn');
+export let sauronBtn = document.querySelector('#sauronBtn');
+export let chronosBtn = document.querySelector('#chronosBtn');
+export let confirmStatsBtn = document.querySelector('#confirmStatsBtn');
 
 // character maker inputs
-let heroNameInput = document.querySelector('#heroNameInput')
-let heroHealthPointsInput = document.querySelector('#heroHealthPointsBtn')
-let heroDamagePointsInput = document.querySelector('#heroDamagePointsInput')
+export let warriorNameInput = document.querySelector('#warriorNameInput')
+export let mageNameInput = document.querySelector('#mageNameInput')
+export let archerNameInput = document.querySelector('#archerNameInput')
+export let warriorHealthPointsInput = document.querySelector('#warriorHealthPointsBtn')
+export let mageHealthPointsInput = document.querySelector('#mageHealthPointsBtn')
+export let archerHealthPointsInput = document.querySelector('#archerHealthPointsBtn')
+export let warriorDamagePointsInput = document.querySelector('#warriorDamagePointsInput')
+export let mageDamagePointsInput = document.querySelector('#mageDamagePointsInput')
+export let archerDamagePointsInput = document.querySelector('#archerDamagePointsInput')
+
+// character maker variables
+export let warriorName = warriorNameInput.innerHTML
+export let mageName = mageNameInput.innerHTML
+export let archerName = archerNameInput.innerHTML
+
 
 // creating hero objects with Hero class
-let warrior = new Hero();
-let mage = new Hero();
-let archer = new Hero();
+export let warrior = new Hero();
+export let mage = new Hero();
+export let archer = new Hero();
 
 // creating boss objects with Boss class
-let lilith = new Boss('Lilith', 30, 900)
-let chronos = new Boss('Chronos', 30, 1000)
-let sauron = new Boss('Sauron', 25, 1150)
+export let lilith = new Boss('Lilith', 30, 900)
+export let chronos = new Boss('Chronos', 30, 1000)
+export let sauron = new Boss('Sauron', 25, 1150)
