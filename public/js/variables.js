@@ -31,6 +31,7 @@ export let mageHealthBar = document.querySelector('#mageHealthBar')
 export let archerHealthBar = document.querySelector('#archerHealthBar')
 export let nextBtn = document.querySelector('#nextBtn')
 export let yourTurnBtn = document.querySelector('#yourTurnBtn')
+export let gameplayBossName = document.querySelector('#gameplayBossName')
 
 
 // character maker inputs
