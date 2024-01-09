@@ -1,4 +1,4 @@
-import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDefenseModeBtn, archerHealth, archerName, arrows, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, gameplayGameOver, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDefenseModeBtn, mageHealth, mageName, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, mana, nextBtn, rage, restartGameBtn, restartMenu, riddleOne, riddleTwo, sauron, sauronBtn, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDefenseModeBtn, warriorHealth, warriorName, warriorSprite, yourTurnBtn } from "./variables.js";
+import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDefenseModeBtn, archerHealth, archerName, archerSprite, arrows, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, gameplayGameOver, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDefenseModeBtn, mageHealth, mageName, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, mana, nextBtn, rage, restartGameBtn, restartMenu, riddleOne, riddleTwo, sauron, sauronBtn, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDefenseModeBtn, warriorHealth, warriorName, warriorSprite, yourTurnBtn } from "./variables.js";
 
 // get random number (for damage)
 function getRandomInt(min, max) {
@@ -89,9 +89,20 @@ warriorAttackModeBtn.addEventListener('click', () => {
                     riddleThree.style.display = 'block'
             }
         } else {
-            mageCombatModeMenu.style.display = 'block'
-            textBoxGameplay.innerHTML = `The warrior dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
-            rage += 1
+            if (mageSprite.style.display = 'block'){
+                mageCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `The warrior dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
+                rage += 1
+            } else if (archerSprite.style.display = 'block') {
+                archerCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `The warrior dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
+                rage += 1
+            } else {
+                nextBtn.style.display = 'block'
+                textBoxGameplay.innerHTML = `The warrior dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
+                rage += 1
+            }
+            
         }
     } else if (rage == 4){
         bossOfTheGame[0].health -= ((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)
@@ -113,8 +124,19 @@ warriorAttackModeBtn.addEventListener('click', () => {
                     riddleThree.style.display = 'block'
             }
         } else {
-            mageCombatModeMenu.style.display = 'block'
-            textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
+            if (mageSprite.style.display = 'block'){
+                mageCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
+                rage = 0
+            } else if (archerSprite.style.display = 'block') {
+                archerCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
+                rage = 0
+            } else {
+                nextBtn.style.display = 'block'
+                textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
+                rage = 0
+            } 
         }
 }})
 
@@ -141,9 +163,19 @@ warriorDefenseModeBtn.addEventListener('click', () => {
                     riddleThree.style.display = 'block'
             }
         } else {
-            mageCombatModeMenu.style.display = 'block'
-            textBoxGameplay.innerHTML = `${warrior.name} dealt ${warriorDamage} damage!`
-            rage += 1
+            if (mageSprite.style.display = 'block'){
+                mageCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `The warrior dealt ${warriorDamage} damage!`
+                rage += 1
+            } else if (archerSprite.style.display = 'block') {
+                archerCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `The warrior dealt ${warriorDamage} damage!`
+                rage += 1
+            } else {
+                nextBtn.style.display = 'block'
+                textBoxGameplay.innerHTML = `The warrior dealt ${warriorDamage} damage!`
+                rage += 1
+            }
         }
     } else if (rage == 4){
         bossOfTheGame[0].health -= (warriorDamage + parseInt(warriorDamage/4))
@@ -165,8 +197,19 @@ warriorDefenseModeBtn.addEventListener('click', () => {
                     riddleThree.style.display = 'block'
             }
         } else {
-            mageCombatModeMenu.style.display = 'block'
-            textBoxGameplay.innerHTML = `${warrior.name} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!` 
+            if (mageSprite.style.display = 'block'){
+                mageCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `${warrior.name} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
+                rage = 0
+            } else if (archerSprite.style.display = 'block') {
+                archerCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `${warrior.name} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
+                rage = 0
+            } else {
+                nextBtn.style.display = 'block'
+                textBoxGameplay.innerHTML = `${warrior.name} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
+                rage = 0
+            } 
         }
 }})
 
@@ -193,14 +236,26 @@ mageAttackModeBtn.addEventListener('click', () => {
                     riddleThree.style.display = 'block'
             }
         } else {
-            archerCombatModeMenu.style.display = 'block'
-            textBoxGameplay.innerHTML = `${mage.name} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
-            mana -= 2
+            if (archerSprite.style.display = 'block'){
+                archerCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `${mage.name} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
+                mana -= 2
+            } else {
+                nextBtn.style.display = 'block'
+                textBoxGameplay.innerHTML = `${mage.name} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
+                mana -= 2
+            }
         }
     } else {
-        mana = 7
-        textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
-        archerCombatModeMenu.style.display = 'block'
+        if (archerSprite.style.display = 'block'){
+            archerCombatModeMenu.style.display = 'block'
+            mana = 7
+            textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+        } else {
+            nextBtn.style.display = 'block'
+            mana = 7
+            textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+        }
     }
 })
 
@@ -227,14 +282,26 @@ mageDefenseModeBtn.addEventListener('click', () => {
                     riddleThree.style.display = 'block'
             }
         } else {
-            archerCombatModeMenu.style.display = 'block'
-            textBoxGameplay.innerHTML = `${mage.name} dealt ${mageDamage} damage!`
-            mana -= 2
+            if (archerSprite.style.display = 'block'){
+                archerCombatModeMenu.style.display = 'block'
+                textBoxGameplay.innerHTML = `${mage.name} dealt ${mageDamage} damage!`
+                mana -= 2
+            } else {
+                nextBtn.style.display = 'block'
+                textBoxGameplay.innerHTML = `${mage.name} dealt ${mageDamage} damage!`
+                mana -= 2
+            }
         }
     } else {
-        mana = 7
-        textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
-        archerCombatModeMenu.style.display = 'block'
+        if (archerSprite.style.display = 'block'){
+            archerCombatModeMenu.style.display = 'block'
+            mana = 7
+            textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+        } else {
+            nextBtn.style.display = 'block'
+            mana = 7
+            textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+        }
     }
 })
 
