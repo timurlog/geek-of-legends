@@ -202,7 +202,7 @@ body {
 .main-menu-hero {
   height: 100vh;
   width: 100%;
-  display: block;
+  display: none;
 }
 .main-menu-hero .main-menu-hero-content {
   width: 100%;
@@ -322,6 +322,68 @@ body {
 /* ### DESKTOP ### */
 /* ### BIG DESKTOP ### */
 /* ### SECTION GAMEPLAY ### */
+.gameplay {
+  background-image: url("../assets/image/game-bg.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+.gameplay .gameplay-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.gameplay .gameplay-content .gameplay-left {
+  height: 100%;
+  width: 25%;
+}
+.gameplay .gameplay-content .gameplay-mid {
+  height: 100%;
+  width: 50%;
+}
+.gameplay .gameplay-content .gameplay-mid .gameplay-mid-top {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.gameplay .gameplay-content .gameplay-mid .gameplay-mid-top img {
+  height: 500px;
+  padding-top: 150px;
+}
+.gameplay .gameplay-content .gameplay-mid .gameplay-mid-top #sauronSprite {
+  display: block;
+}
+.gameplay .gameplay-content .gameplay-mid .gameplay-mid-top #lilithSprite {
+  display: none;
+}
+.gameplay .gameplay-content .gameplay-mid .gameplay-mid-top #chronosSprite {
+  display: none;
+}
+.gameplay .gameplay-content .gameplay-mid .gameplay-mid-bot {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.gameplay .gameplay-content .gameplay-mid .gameplay-mid-bot img {
+  height: 400px;
+  padding-bottom: 100px;
+}
+.gameplay .gameplay-content .gameplay-mid .gameplay-mid-bot .morepad {
+  height: 450px;
+  padding-bottom: 150px;
+}
+.gameplay .gameplay-content .gameplay-right {
+  height: 100%;
+  width: 25%;
+}
+
 /* ######### RESPONSIVE ######### */
 /* ### SMARTPHONE ### */
 /* ### TABLET ### */
