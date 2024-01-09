@@ -1,6 +1,3 @@
-// importing what need to be imported
-import 
-
 // creating hero class
 export class Hero {
     constructor(name, combatMode, damage, health){

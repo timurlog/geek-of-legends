@@ -1,6 +1,11 @@
 // importing what needs to be imported
 import {Boss, Warrior, Mage, Archer} from './class.js';
 
+// get random number (for damage)
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 // menu buttons
 let mainMenu = document.querySelector('#mainMenu')
 let mainMenuBoss = document.querySelector('#mainMenuBoss')
@@ -24,12 +29,12 @@ let archerHealthPointsInput = document.querySelector('#archerHealthPointsBtn')
 let warriorDamagePointsInput = document.querySelector('#warriorDamagePointsInput')
 let mageDamagePointsInput = document.querySelector('#mageDamagePointsInput')
 let archerDamagePointsInput = document.querySelector('#archerDamagePointsInput')
-let warriorAttackModeMenuBtn = document.querySelector('#warriorAttackModeMenuBtn')
-let mageAttackModeMenuBtn = document.querySelector('#mageAttackModeMenuBtn')
-let archerAttackModeMenuBtn = document.querySelector('#archerAttackModeMenuBtn')
-let warriorDefenseModeMenuBtn = document.querySelector('#warriorDefenseModeMenuBtn')
-let mageDefenseModeMenuBtn = document.querySelector('#mageDefenseModeMenuBtn')
-let archerDefenseModeMenuBtn = document.querySelector('#archerDefenseModeMenuBtn')
+// let warriorAttackModeMenuBtn = document.querySelector('#warriorAttackModeMenuBtn')
+// let mageAttackModeMenuBtn = document.querySelector('#mageAttackModeMenuBtn')
+// let archerAttackModeMenuBtn = document.querySelector('#archerAttackModeMenuBtn')
+// let warriorDefenseModeMenuBtn = document.querySelector('#warriorDefenseModeMenuBtn')
+// let mageDefenseModeMenuBtn = document.querySelector('#mageDefenseModeMenuBtn')
+// let archerDefenseModeMenuBtn = document.querySelector('#archerDefenseModeMenuBtn')
 
 // character maker variables
 let warriorName = warriorNameInput.innerHTML
@@ -43,29 +48,29 @@ let mageDamage = mageDamagePointsInput.innerHTML
 let archerDamage = archerDamagePointsInput.innerHTML
 
 // event listeners for the combat mode in the menu
-warriorAttackModeMenuBtn.addEventListener('click', () => {
-    warrior.combatMode = 'attack'
-})
+// warriorAttackModeMenuBtn.addEventListener('click', () => {
+//     warrior.combatMode = 'attack'
+// })
 
-warriorDefenseModeMenuBtn.addEventListener('click', () => {
-    warrior.combatMode = 'defense'
-})
+// warriorDefenseModeMenuBtn.addEventListener('click', () => {
+//     warrior.combatMode = 'defense'
+// })
 
-mageAttackModeMenuBtn.addEventListener('click', () => {
-    mage.combatMode = 'attack'
-})
+// mageAttackModeMenuBtn.addEventListener('click', () => {
+//     mage.combatMode = 'attack'
+// })
 
-mageDefenseModeMenuBtn.addEventListener('click', () => {
-    mage.combatMode = 'defense'
-})
+// mageDefenseModeMenuBtn.addEventListener('click', () => {
+//     mage.combatMode = 'defense'
+// })
 
-archerAttackModeMenuBtn.addEventListener('click', () => {
-    archer.combatMode = 'attack'
-})
+// archerAttackModeMenuBtn.addEventListener('click', () => {
+//     archer.combatMode = 'attack'
+// })
 
-archerDefenseModeMenuBtn.addEventListener('click', () => {
-    archer.combatMode = 'defense'
-})
+// archerDefenseModeMenuBtn.addEventListener('click', () => {
+//     archer.combatMode = 'defense'
+// })
 
 // adding hero special stats
 let rage = 0
@@ -78,9 +83,9 @@ let mage = new Mage(mageName, mage.combatMode, mageDamage, mageHealth, mana);
 let archer = new Archer(archerName, archer.combatMode, archerDamage, archerHealth, arrows);
 
 // creating boss objects with Boss class
-let lilith = new Boss('Lilith', 30, 900)
-let chronos = new Boss('Chronos', 30, 1000)
-let sauron = new Boss('Sauron', 25, 1150)
+let lilith = new Boss('Lilith', getRandomInt(40,47), 800)
+let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000)
+let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150)
 
 // handling menu through event listeners
 startGameBtn.addEventListener('click', () => {
@@ -130,3 +135,5 @@ restartGameBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
 })
+
+// gameplay loop
