@@ -32,6 +32,7 @@ export let archerHealthBar = document.querySelector('#archerHealthBar')
 export let nextBtn = document.querySelector('#nextBtn')
 export let yourTurnBtn = document.querySelector('#yourTurnBtn')
 export let gameplayBossName = document.querySelector('#gameplayBossName')
+export let gameplayGameOver = document.querySelector('#gameplayGameOver')
 
 
 // character maker inputs
