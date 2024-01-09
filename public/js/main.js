@@ -344,6 +344,8 @@ nextBtn.addEventListener('click', () => {
 })
 
 yourTurnBtn.addEventListener('click', () => {
-    
+    yourTurnBtn.style.display = 'none'
+    warriorCombatModeMenu.style.display = 'block'
+    textBoxGameplay.innerHTML = 'Your turn!'
 })
 
