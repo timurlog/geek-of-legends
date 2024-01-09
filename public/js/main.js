@@ -31,12 +31,12 @@ let archerHealthPointsInput = document.querySelector('#archerHealthPointsBtn')
 let warriorDamagePointsInput = document.querySelector('#warriorDamagePointsInput')
 let mageDamagePointsInput = document.querySelector('#mageDamagePointsInput')
 let archerDamagePointsInput = document.querySelector('#archerDamagePointsInput')
-// let warriorAttackModeMenuBtn = document.querySelector('#warriorAttackModeMenuBtn')
-// let mageAttackModeMenuBtn = document.querySelector('#mageAttackModeMenuBtn')
-// let archerAttackModeMenuBtn = document.querySelector('#archerAttackModeMenuBtn')
-// let warriorDefenseModeMenuBtn = document.querySelector('#warriorDefenseModeMenuBtn')
-// let mageDefenseModeMenuBtn = document.querySelector('#mageDefenseModeMenuBtn')
-// let archerDefenseModeMenuBtn = document.querySelector('#archerDefenseModeMenuBtn')
+let warriorAttackModeBtn = document.querySelector('#warriorAttackModeBtn')
+let mageAttackModeBtn = document.querySelector('#mageAttackModeBtn')
+let archerAttackModeBtn = document.querySelector('#archerAttackModeBtn')
+let warriorDefenseModeBtn = document.querySelector('#warriorDefenseModeBtn')
+let mageDefenseModeBtn = document.querySelector('#mageDefenseModeBtn')
+let archerDefenseModeBtn = document.querySelector('#archerDefenseModeBtn')
 
 // character maker variables
 let warriorName = warriorNameInput.innerHTML
@@ -48,31 +48,6 @@ let archerHealth = archerHealthPointsInput.innerHTML
 let warriorDamage = warriorDamagePointsInput.innerHTML
 let mageDamage = mageDamagePointsInput.innerHTML
 let archerDamage = archerDamagePointsInput.innerHTML
-
-// event listeners for the combat mode in the menu
-// warriorAttackModeMenuBtn.addEventListener('click', () => {
-//     warrior.combatMode = 'attack'
-// })
-
-// warriorDefenseModeMenuBtn.addEventListener('click', () => {
-//     warrior.combatMode = 'defense'
-// })
-
-// mageAttackModeMenuBtn.addEventListener('click', () => {
-//     mage.combatMode = 'attack'
-// })
-
-// mageDefenseModeMenuBtn.addEventListener('click', () => {
-//     mage.combatMode = 'defense'
-// })
-
-// archerAttackModeMenuBtn.addEventListener('click', () => {
-//     archer.combatMode = 'attack'
-// })
-
-// archerDefenseModeMenuBtn.addEventListener('click', () => {
-//     archer.combatMode = 'defense'
-// })
 
 // adding hero special stats
 let rage = 0
@@ -91,6 +66,9 @@ let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150)
 
 // array we need to start a new game
 let singleGame = []
+
+// game function
+
 
 // handling menu through event listeners
 startGameBtn.addEventListener('click', () => {
@@ -148,4 +126,29 @@ restartGameBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'none'
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
+})
+
+// combat mode buttons
+warriorAttackModeBtn.addEventListener('click', () => {
+    warrior.combatMode = 'attack'
+})
+
+warriorDefenseModeBtn.addEventListener('click', () => {
+    warrior.combatMode = 'defense'
+})
+
+mageAttackModeBtn.addEventListener('click', () => {
+    mage.combatMode = 'attack'
+})
+
+mageDefenseModeBtn.addEventListener('click', () => {
+    mage.combatMode = 'defense'
+})
+
+archerAttackModeBtn.addEventListener('click', () => {
+    archer.combatMode = 'attack'
+})
+
+archerDefenseModeBtn.addEventListener('click', () => {
+    archer.combatMode = 'defense'
 })
