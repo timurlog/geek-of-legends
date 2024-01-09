@@ -20,7 +20,7 @@ lilithBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
-    singleGame.push(lilith)
+    bossOfTheGame.push(lilith)
     textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
@@ -30,7 +30,7 @@ sauronBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
-    singleGame.push(sauron)
+    bossOfTheGame.push(sauron)
     textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
@@ -40,17 +40,18 @@ chronosBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
-    singleGame.push(chronos)
+    bossOfTheGame.push(chronos)
     textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 confirmStatsBtn.addEventListener('click', () => {
-    if (warriorName != "" && mageName != "" && archerName != "" && (warriorDamage + mageDamage + archerDamage) == 150 && (warriorHealth + mageHealth + archerHealth) == 300) {
+    if (warriorName != "" && mageName != "" && archerName != "" && (warriorDamage + mageDamage + archerDamage) == 150 && (warriorHealth + mageHealth + archerHealth) == 300 && warriorHealth > 0 && mageHealth > 0 && archerHealth > 0 && warriorDamage > 0 && mageDamage > 0 && archerDamage > 0) {
         mainMenu.style.display = 'none'
         mainMenuBoss.style.display = 'none'
         mainMenuHero.style.display = 'none'
         gameplay.style.display = 'block'
         restartMenu.style.display = 'none'
+        textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
     } else {
        textBoxMenuHero.innerHTML = "Every hero should have a name and they need to have 300 health points and 150 attack points all together "
     }
@@ -309,7 +310,9 @@ nextBtn.addEventListener('click', () => {
     let target = getRandomInt(1,3)
     switch (target){
         case 1:
-            warrior.health -= 
+            if (warrior.combatMode == 'attaque'){
+                warrior.health -= bossOfTheGame[0].damage
+            }
     }
 })
 
