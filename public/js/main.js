@@ -1,4 +1,4 @@
-import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDefenseModeBtn, archerHealth, archerName, arrows, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDefenseModeBtn, mageHealth, mageName, mainMenu, mainMenuBoss, mainMenuHero, mana, rage, restartGameBtn, restartMenu, riddleOne, riddleTwo, sauron, sauronBtn, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDefenseModeBtn, warriorHealth, warriorName } from "./variables.js";
+import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDefenseModeBtn, archerHealth, archerName, arrows, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDefenseModeBtn, mageHealth, mageName, mainMenu, mainMenuBoss, mainMenuHero, mana, nextBtn, rage, restartGameBtn, restartMenu, riddleOne, riddleTwo, sauron, sauronBtn, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDefenseModeBtn, warriorHealth, warriorName } from "./variables.js";
 
 // get random number (for damage)
 function getRandomInt(min, max) {
@@ -262,12 +262,12 @@ archerAttackModeBtn.addEventListener('click', () => {
         } else {
             nextBtn.style.display = 'block'
             textBoxGameplay.innerHTML = `${archer.name} dealt ${parseInt(archerDamage + (archerDamage / 4))} damage!`
-            mana -= 2
+            arrows -= 1
         }
     } else {
-        mana = 7
-        textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
-        archerCombatModeMenu.style.display = 'block'
+        arrows = 6
+        textBoxGameplay.innerHTML = `${archer.name} doesn't have enough arrows! He'll have to wait another round.`
+        nextBtn.style.display = 'block'
     }
 })
 
