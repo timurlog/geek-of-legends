@@ -29,6 +29,8 @@ export let bossHealthBar = document.querySelector('#bossHealthBar')
 export let warriorHealthBar = document.querySelector('#warriorHealthBar')
 export let mageHealthBar = document.querySelector('#mageHealthBar')
 export let archerHealthBar = document.querySelector('#archerHealthBar')
+export let nextBtn = document.querySelector('#nextBtn')
+export let yourTurnBtn = document.querySelector('#yourTurnBtn')
 
 
 // character maker inputs

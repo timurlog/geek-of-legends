@@ -240,8 +240,8 @@ mageDefenseModeBtn.addEventListener('click', () => {
 archerAttackModeBtn.addEventListener('click', () => {
     archer.combatMode = 'attack'
     archerCombatModeMenu.style.display = 'none'
-    if (mana > 1 && mana <= 7){
-        bossOfTheGame[0].health -= parseInt(mageDamage + (mageDamage / 4))
+    if (arrows > 0){
+        bossOfTheGame[0].health -= parseInt(archerDamage + (archerDamage / 4))
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].health / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             let riddle = getRandomInt(1,3)
