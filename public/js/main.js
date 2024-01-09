@@ -260,8 +260,8 @@ archerAttackModeBtn.addEventListener('click', () => {
                     riddleThree.style.display = 'block'
             }
         } else {
-            archerCombatModeMenu.style.display = 'block'
-            textBoxGameplay.innerHTML = `${mage.name} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
+            nextBtn.style.display = 'block'
+            textBoxGameplay.innerHTML = `${archer.name} dealt ${parseInt(archerDamage + (archerDamage / 4))} damage!`
             mana -= 2
         }
     } else {
