@@ -109,17 +109,28 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-.main-menu-boss .main-menu-boss-content .boss-card {
+.main-menu-boss .main-menu-boss-content div p {
+  font-family: "coolvetica";
+  font-size: 36px;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card {
   cursor: pointer;
   height: 500px;
   width: 375px;
   background-color: #c1d3c4;
   position: relative;
 }
-.main-menu-boss .main-menu-boss-content .boss-card .boss-card-top {
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-top {
   width: 100%;
   height: 65%;
   overflow: hidden;
@@ -128,10 +139,10 @@ body {
   align-items: center;
   background-color: #314250;
 }
-.main-menu-boss .main-menu-boss-content .boss-card .boss-card-top img {
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-top img {
   height: 135%;
 }
-.main-menu-boss .main-menu-boss-content .boss-card .boss-card-bot {
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-bot {
   width: 100%;
   height: 35%;
   padding: 15px;
@@ -139,16 +150,16 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
-.main-menu-boss .main-menu-boss-content .boss-card .boss-card-bot .boss-name {
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-bot .boss-name {
   font-family: sans-serif;
   font-weight: bolder;
   font-size: 28px;
 }
-.main-menu-boss .main-menu-boss-content .boss-card .boss-card-bot p {
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-bot p {
   font-family: sans-serif;
   font-size: 16px;
 }
-.main-menu-boss .main-menu-boss-content .boss-card::after {
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card::after {
   position: absolute;
   content: "";
   height: 520px;
@@ -158,13 +169,13 @@ body {
   border: 2px dotted #fff06a;
   transition: all 0.1s ease;
 }
-.main-menu-boss .main-menu-boss-content .boss-card:hover::after {
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card:hover::after {
   height: 530px;
   width: 405px;
   left: -17px;
   top: -17px;
 }
-.main-menu-boss .main-menu-boss-content .boss-card:active:after {
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card:active:after {
   height: 500px;
   width: 375px;
   left: -2px;
