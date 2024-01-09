@@ -120,13 +120,58 @@ warriorAttackModeBtn.addEventListener('click', () => {
 warriorDefenseModeBtn.addEventListener('click', () => {
     warrior.combatMode = 'defense'
     warriorCombatModeMenu.style.display = 'none'
-    rage += 1
-})
+    if (rage < 4) {
+        bossOfTheGame[0].health -= warriorDamage
+        if (bossOfTheGame[0].health <= (bossOfTheGame[0].health / 100 * 20)){
+            textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
+            let riddle = getRandomInt(1,3)
+            switch (riddle){
+                case 1:
+                    riddleOne.style.display = 'block'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'none'
+                case 2:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'block'
+                    riddleThree.style.display = 'none'
+                case 3:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'block'
+            }
+        } else {
+            mageCombatModeMenu.style.display = 'block'
+            textBoxGameplay.innerHTML = `The warrior dealt ${warriorDamage} damage!`
+            rage += 1
+        }
+    } else if (rage == 4){
+        bossOfTheGame[0].health -= (warriorDamage + (warriorDamage/4))
+        if (bossOfTheGame[0].health <= (bossOfTheGame[0].health / 100 * 20)){
+            textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
+            let riddle = getRandomInt(1,3)
+            switch (riddle){
+                case 1:
+                    riddleOne.style.display = 'block'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'none'
+                case 2:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'block'
+                    riddleThree.style.display = 'none'
+                case 3:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'block'
+            }
+        } else {
+            mageCombatModeMenu.style.display = 'block'
+            textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
+        }
+}})
 
 mageAttackModeBtn.addEventListener('click', () => {
     mage.combatMode = 'attack'
-    mageCombatModeMenu.style.display = 'none'
-    mana -= 2
+    
 })
 
 mageDefenseModeBtn.addEventListener('click', () => {
