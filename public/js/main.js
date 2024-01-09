@@ -86,9 +86,9 @@ let sauron = new Boss('Sauron', 25, 1150);
 startGameBtn.addEventListener('click', () => {
     mainMenu.style.display = 'none';
     mainMenuBoss.style.display = 'block';
-    // mainMenuHero.style.display = 'none';
-    // gameplay.style.display = 'none';
-    // restartMenu.style.display = 'none';
+    mainMenuHero.style.display = 'none';
+    gameplay.style.display = 'none';
+    restartMenu.style.display = 'none';
 });
 
 lilithBtn.addEventListener('click', () => {
