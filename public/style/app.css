@@ -1,46 +1,203 @@
 /* ########### FONTS ############ */
-
-
+@font-face {
+  font-family: "coolvetica";
+  src: url("../assets/fonts/coolveticaBlod.ttf");
+}
+@font-face {
+  font-family: "coolveticaRegu";
+  src: url("../assets/fonts/coolvetica.ttf");
+}
 /* ############ BODY ############  */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
-    background-color: #FFFFFF;
-    font-family: Arial, Helvetica, sans-serif;
+  background-image: url("../assets/image/game-bg-blur.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* ########### HEADER ########### */
-
-
+/* ######### RESPONSIVE ######### */
+/* ### SMARTPHONE ### */
+/* ### TABLET ### */
+/* ### DESKTOP ### */
+/* ### BIG DESKTOP ### */
 /* ############ MAIN ############ */
-
-
-/* ########### FOOTER ########### */
-
+/* ######### RESPONSIVE ######### */
+/* ### SMARTPHONE ### */
+/* ### TABLET ### */
+/* ### DESKTOP ### */
+/* ### BIG DESKTOP ### */
+/* ### SECTION MAIN MENU ### */
+.main-menu {
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+.main-menu .main-menu-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-menu .main-menu-content .main-menu-button button {
+  cursor: pointer;
+  height: 80px;
+  width: 300px;
+  background-color: #314250;
+  border: none;
+  font-family: "coolvetica";
+  font-size: 35px;
+  color: #fff06a;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.main-menu .main-menu-content .main-menu-button button::after {
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 200px;
+  border: 2px dotted;
+  top: -60px;
+  left: 50px;
+  transform: rotateZ(45deg);
+  transition: all 0.2s ease;
+}
+.main-menu .main-menu-content .main-menu-button button:hover::after {
+  transform: rotateZ(0deg);
+  width: 310px;
+  height: 90px;
+  top: -7px;
+  left: -7px;
+}
+.main-menu .main-menu-content .main-menu-button button:active::after {
+  width: 295px;
+  height: 75px;
+  top: -2px;
+  left: -2px;
+}
+.main-menu .main-menu-content .main-menu-button button:hover {
+  background-color: #405668;
+}
+.main-menu .main-menu-content .main-menu-button button:active {
+  height: 75px;
+  width: 295px;
+  background-color: #0f3b5f;
+}
 
 /* ######### RESPONSIVE ######### */
 /* ### SMARTPHONE ### */
-@media (max-width: 576px) {
-
-}
-
 /* ### TABLET ### */
-@media (min-width: 577px) and (max-width: 768px) {
-
-}
-
 /* ### DESKTOP ### */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-}
-
 /* ### BIG DESKTOP ### */
-@media (min-width: 1025px) {
-
+/* ### SECTION MAIN MENU BOSS ### */
+.main-menu-boss {
+  height: 100vh;
+  width: 100%;
+  display: block;
 }
+.main-menu-boss .main-menu-boss-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main-menu-boss .main-menu-boss-content div p {
+  font-family: "coolvetica";
+  font-size: 36px;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card {
+  cursor: pointer;
+  height: 500px;
+  width: 375px;
+  background-color: #c1d3c4;
+  position: relative;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-top {
+  width: 100%;
+  height: 65%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #314250;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-top img {
+  height: 135%;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-bot {
+  width: 100%;
+  height: 35%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-bot .boss-name {
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 28px;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card .boss-card-bot p {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card::after {
+  position: absolute;
+  content: "";
+  height: 520px;
+  width: 395px;
+  left: -12px;
+  top: -12px;
+  border: 2px dotted #fff06a;
+  transition: all 0.1s ease;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card:hover::after {
+  height: 530px;
+  width: 405px;
+  left: -17px;
+  top: -17px;
+}
+.main-menu-boss .main-menu-boss-content .boss-cards .boss-card:active:after {
+  height: 500px;
+  width: 375px;
+  left: -2px;
+  top: -2px;
+}
+
+/* ######### RESPONSIVE ######### */
+/* ### SMARTPHONE ### */
+/* ### TABLET ### */
+/* ### DESKTOP ### */
+/* ### BIG DESKTOP ### */
+/* ### SECTION 1 ### */
+/* ######### RESPONSIVE ######### */
+/* ### SMARTPHONE ### */
+/* ### TABLET ### */
+/* ### DESKTOP ### */
+/* ### BIG DESKTOP ### */
+/* ########### FOOTER ########### */
+/* ######### RESPONSIVE ######### */
+/* ### SMARTPHONE ### */
+/* ### TABLET ### */
+/* ### DESKTOP ### */
+/* ### BIG DESKTOP ### */
+
+/*# sourceMappingURL=app.css.map */

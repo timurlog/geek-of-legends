@@ -1,6 +1,54 @@
-/* ### SECTION 1 ### */
-
-
+/* ### SECTION MAIN MENU ### */
+.main-menu
+    width: 100%
+    height: 100vh
+    display: none
+    .main-menu-content
+        height: 100%
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        .main-menu-button
+            button
+                cursor: pointer
+                height: 80px
+                width: 300px
+                background-color: #314250
+                border: none
+                font-family: "coolvetica"
+                font-size: 35px
+                color: #fff06a
+                position: relative
+                transition: all 0.3s ease
+            button::after
+                position: absolute
+                content: ''
+                width: 200px
+                height: 200px
+                border: 2px dotted
+                top: -60px
+                left: 50px
+                transform: rotateZ(45deg)
+                transition: all 0.2s ease
+            button:hover::after
+                transform: rotateZ(0deg)
+                width: 310px
+                height: 90px
+                top: -7px
+                left: -7px
+            button:active::after
+                width: 295px
+                height: 75px
+                top: -2px
+                left: -2px
+            button:hover
+                background-color: #405668
+            button:active
+                height: 75px
+                width: 295px
+                background-color: #0f3b5f
+                
 /* ######### RESPONSIVE ######### */
 /* ### SMARTPHONE ### */
 @media (max-width: 576px)
