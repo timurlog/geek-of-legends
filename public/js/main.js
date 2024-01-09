@@ -274,6 +274,42 @@ archerAttackModeBtn.addEventListener('click', () => {
 archerDefenseModeBtn.addEventListener('click', () => {
     archer.combatMode = 'defense'
     archerCombatModeMenu.style.display = 'none'
-    arrows -= 1
+    if (arrows > 0){
+        bossOfTheGame[0].health -= archerDamage
+        if (bossOfTheGame[0].health <= (bossOfTheGame[0].health / 100 * 20)){
+            textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
+            let riddle = getRandomInt(1,3)
+            switch (riddle){
+                case 1:
+                    riddleOne.style.display = 'block'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'none'
+                case 2:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'block'
+                    riddleThree.style.display = 'none'
+                case 3:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'block'
+            }
+        } else {
+            nextBtn.style.display = 'block'
+            textBoxGameplay.innerHTML = `${archer.name} dealt ${archerDamage} damage!`
+            arrows -= 1
+        }
+    } else {
+        arrows = 6
+        textBoxGameplay.innerHTML = `${archer.name} doesn't have enough arrows! He'll have to wait another round.`
+        nextBtn.style.display = 'block'
+    }
+})
+
+nextBtn.addEventListener('click', () => {
+    let target = getRandomInt(1,3)
+    switch (target){
+        case 1:
+            warrior.health -= 
+    }
 })
 
