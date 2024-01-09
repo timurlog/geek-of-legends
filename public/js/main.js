@@ -6,7 +6,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// menu buttons
+// menu buttons and UI
 let mainMenu = document.querySelector('#mainMenu')
 let mainMenuBoss = document.querySelector('#mainMenuBoss')
 let mainMenuHero = document.querySelector('#mainMenuHero')
@@ -18,6 +18,8 @@ let lilithBtn = document.querySelector('#lilithBtn');
 let sauronBtn = document.querySelector('#sauronBtn');
 let chronosBtn = document.querySelector('#chronosBtn');
 let confirmStatsBtn = document.querySelector('#confirmStatsBtn');
+let textBoxMenuHero = document.querySelector('#textBoxMenuHero');
+let textBoxGameplay = document.querySelector('#textBoxGameplay')
 
 // character maker inputs
 let warriorNameInput = document.querySelector('#warriorNameInput')
@@ -87,6 +89,9 @@ let lilith = new Boss('Lilith', getRandomInt(40,47), 800)
 let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000)
 let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150)
 
+// array we need to start a new game
+let singleGame = []
+
 // handling menu through event listeners
 startGameBtn.addEventListener('click', () => {
     mainMenu.style.display = 'none'
@@ -102,6 +107,7 @@ lilithBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
+    singleGame.push(lilith)
 })
 
 sauronBtn.addEventListener('click', () => {
@@ -110,6 +116,7 @@ sauronBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
+    singleGame.push(sauron)
 })
 
 chronosBtn.addEventListener('click', () => {
@@ -118,14 +125,21 @@ chronosBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
+    singleGame.push(chronos)
 })
 
 confirmStatsBtn.addEventListener('click', () => {
-    mainMenu.style.display = 'none'
-    mainMenuBoss.style.display = 'none'
-    mainMenuHero.style.display = 'none'
-    gameplay.style.display = 'block'
-    restartMenu.style.display = 'none'
+    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
+    if (warriorName != "" && mageName != "" && archerName != "" && (warriorDamage + mageDamage + archerDamage) == 150 && (warriorHealth + mageHealth + archerHealth) == 300) {
+        singleGame.push(warrior, mage, archer)
+        mainMenu.style.display = 'none'
+        mainMenuBoss.style.display = 'none'
+        mainMenuHero.style.display = 'none'
+        gameplay.style.display = 'block'
+        restartMenu.style.display = 'none'
+    } else {
+       textBoxMenuHero.innerHTML = "Every hero should have a name and they need to have 300 health points and 150 attack points all together "
+    }
 })
 
 restartGameBtn.addEventListener('click', () => {
@@ -135,5 +149,3 @@ restartGameBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
 })
-
-// gameplay loop
