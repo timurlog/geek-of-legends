@@ -19,7 +19,10 @@ let sauronBtn = document.querySelector('#sauronBtn');
 let chronosBtn = document.querySelector('#chronosBtn');
 let confirmStatsBtn = document.querySelector('#confirmStatsBtn');
 let textBoxMenuHero = document.querySelector('#textBoxMenuHero');
-let textBoxGameplay = document.querySelector('#textBoxGameplay')
+let textBoxGameplay = document.querySelector('#textBoxGameplay');
+let warriorCombatModeMenu = document.querySelector('#warriorCombatModeMenu')
+let mageCombatModeMenu = document.querySelector('#mageCombatModeMenu')
+let archerCombatModeMenu = document.querySelector('#archerCombatModeMenu')
 
 // character maker inputs
 let warriorNameInput = document.querySelector('#warriorNameInput')
@@ -65,10 +68,7 @@ let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000)
 let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150)
 
 // array we need to start a new game
-let singleGame = []
-
-// game function
-
+let bossOfTheGame = []
 
 // handling menu through event listeners
 startGameBtn.addEventListener('click', () => {
@@ -86,6 +86,7 @@ lilithBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
     singleGame.push(lilith)
+    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 sauronBtn.addEventListener('click', () => {
@@ -95,6 +96,7 @@ sauronBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
     singleGame.push(sauron)
+    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 chronosBtn.addEventListener('click', () => {
@@ -104,12 +106,11 @@ chronosBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
     restartMenu.style.display = 'none'
     singleGame.push(chronos)
+    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 confirmStatsBtn.addEventListener('click', () => {
-    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
     if (warriorName != "" && mageName != "" && archerName != "" && (warriorDamage + mageDamage + archerDamage) == 150 && (warriorHealth + mageHealth + archerHealth) == 300) {
-        singleGame.push(warrior, mage, archer)
         mainMenu.style.display = 'none'
         mainMenuBoss.style.display = 'none'
         mainMenuHero.style.display = 'none'
@@ -131,24 +132,41 @@ restartGameBtn.addEventListener('click', () => {
 // combat mode buttons
 warriorAttackModeBtn.addEventListener('click', () => {
     warrior.combatMode = 'attack'
+    warriorCombatModeMenu.style.display = 'none'
+    if (rage < 4) {
+        bossOfTheGame[0].health -= warriorDamage
+        rage += 1
+    } else if (rage == 4){
+        bossOfTheGame[0].health -= (warriorDamage + (warriorDamage / 100 * 20))
+    }
 })
 
 warriorDefenseModeBtn.addEventListener('click', () => {
     warrior.combatMode = 'defense'
+    warriorCombatModeMenu.style.display = 'none'
+    rage += 1
 })
 
 mageAttackModeBtn.addEventListener('click', () => {
     mage.combatMode = 'attack'
+    mageCombatModeMenu.style.display = 'none'
+    mana -= 2
 })
 
 mageDefenseModeBtn.addEventListener('click', () => {
     mage.combatMode = 'defense'
+    mageCombatModeMenu.style.display = 'none'
+    mana -= 2
 })
 
 archerAttackModeBtn.addEventListener('click', () => {
     archer.combatMode = 'attack'
+    archerCombatModeMenu.style.display = 'none'
+    arrows -= 1
 })
 
 archerDefenseModeBtn.addEventListener('click', () => {
     archer.combatMode = 'defense'
+    archerCombatModeMenu.style.display = 'none'
+    arrows -= 1
 })
