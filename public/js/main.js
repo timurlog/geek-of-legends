@@ -1,74 +1,9 @@
-// importing what needs to be imported
-import {Boss, Warrior, Mage, Archer} from './class.js';
+import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDefenseModeBtn, archerHealth, archerName, arrows, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDefenseModeBtn, mageHealth, mageName, mainMenu, mainMenuBoss, mainMenuHero, mana, rage, restartGameBtn, restartMenu, sauron, sauronBtn, startGameBtn, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDefenseModeBtn, warriorHealth, warriorName } from "./variables.js";
 
 // get random number (for damage)
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-// menu buttons and UI
-let mainMenu = document.querySelector('#mainMenu')
-let mainMenuBoss = document.querySelector('#mainMenuBoss')
-let mainMenuHero = document.querySelector('#mainMenuHero')
-let gameplay = document.querySelector('#gameplay')
-let restartMenu = document.querySelector('#restartMenu')
-let startGameBtn = document.querySelector('#startGameBtn');
-let restartGameBtn = document.querySelector('#replayGameBtn')
-let lilithBtn = document.querySelector('#lilithBtn');
-let sauronBtn = document.querySelector('#sauronBtn');
-let chronosBtn = document.querySelector('#chronosBtn');
-let confirmStatsBtn = document.querySelector('#confirmStatsBtn');
-let textBoxMenuHero = document.querySelector('#textBoxMenuHero');
-let textBoxGameplay = document.querySelector('#textBoxGameplay');
-let warriorCombatModeMenu = document.querySelector('#warriorCombatModeMenu')
-let mageCombatModeMenu = document.querySelector('#mageCombatModeMenu')
-let archerCombatModeMenu = document.querySelector('#archerCombatModeMenu')
-
-// character maker inputs
-let warriorNameInput = document.querySelector('#warriorNameInput')
-let mageNameInput = document.querySelector('#mageNameInput')
-let archerNameInput = document.querySelector('#archerNameInput')
-let warriorHealthPointsInput = document.querySelector('#warriorHealthPointsBtn')
-let mageHealthPointsInput = document.querySelector('#mageHealthPointsBtn')
-let archerHealthPointsInput = document.querySelector('#archerHealthPointsBtn')
-let warriorDamagePointsInput = document.querySelector('#warriorDamagePointsInput')
-let mageDamagePointsInput = document.querySelector('#mageDamagePointsInput')
-let archerDamagePointsInput = document.querySelector('#archerDamagePointsInput')
-let warriorAttackModeBtn = document.querySelector('#warriorAttackModeBtn')
-let mageAttackModeBtn = document.querySelector('#mageAttackModeBtn')
-let archerAttackModeBtn = document.querySelector('#archerAttackModeBtn')
-let warriorDefenseModeBtn = document.querySelector('#warriorDefenseModeBtn')
-let mageDefenseModeBtn = document.querySelector('#mageDefenseModeBtn')
-let archerDefenseModeBtn = document.querySelector('#archerDefenseModeBtn')
-
-// character maker variables
-let warriorName = warriorNameInput.innerHTML
-let mageName = mageNameInput.innerHTML
-let archerName = archerNameInput.innerHTML
-let warriorHealth = warriorHealthPointsInput.innerHTML
-let mageHealth = mageHealthPointsInput.innerHTML
-let archerHealth = archerHealthPointsInput.innerHTML
-let warriorDamage = warriorDamagePointsInput.innerHTML
-let mageDamage = mageDamagePointsInput.innerHTML
-let archerDamage = archerDamagePointsInput.innerHTML
-
-// adding hero special stats
-let rage = 0
-let mana = 7
-let arrows = 6
-
-// creating hero objects with Hero class
-let warrior = new Warrior(warriorName, warrior.combatMode, warriorDamage, warriorHealth, rage);
-let mage = new Mage(mageName, mage.combatMode, mageDamage, mageHealth, mana);
-let archer = new Archer(archerName, archer.combatMode, archerDamage, archerHealth, arrows);
-
-// creating boss objects with Boss class
-let lilith = new Boss('Lilith', getRandomInt(40,47), 800)
-let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000)
-let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150)
-
-// array we need to start a new game
-let bossOfTheGame = []
 
 // handling menu through event listeners
 startGameBtn.addEventListener('click', () => {
@@ -133,11 +68,14 @@ restartGameBtn.addEventListener('click', () => {
 warriorAttackModeBtn.addEventListener('click', () => {
     warrior.combatMode = 'attack'
     warriorCombatModeMenu.style.display = 'none'
+    mageCombatModeMenu.style.display = 'block'
     if (rage < 4) {
-        bossOfTheGame[0].health -= warriorDamage
+        bossOfTheGame[0].health -= (warriorDamage + (warriorDamage / 100 * 20))
+        
         rage += 1
     } else if (rage == 4){
-        bossOfTheGame[0].health -= (warriorDamage + (warriorDamage / 100 * 20))
+        bossOfTheGame[0].health -= ((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)
+        rage = 0
     }
 })
 
@@ -170,3 +108,4 @@ archerDefenseModeBtn.addEventListener('click', () => {
     archerCombatModeMenu.style.display = 'none'
     arrows -= 1
 })
+
