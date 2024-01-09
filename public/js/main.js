@@ -141,11 +141,11 @@ warriorDefenseModeBtn.addEventListener('click', () => {
             }
         } else {
             mageCombatModeMenu.style.display = 'block'
-            textBoxGameplay.innerHTML = `The warrior dealt ${warriorDamage} damage!`
+            textBoxGameplay.innerHTML = `${warrior.name} dealt ${warriorDamage} damage!`
             rage += 1
         }
     } else if (rage == 4){
-        bossOfTheGame[0].health -= (warriorDamage + (warriorDamage/4))
+        bossOfTheGame[0].health -= (warriorDamage + parseInt(warriorDamage/4))
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].health / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             let riddle = getRandomInt(1,3)
@@ -165,25 +165,110 @@ warriorDefenseModeBtn.addEventListener('click', () => {
             }
         } else {
             mageCombatModeMenu.style.display = 'block'
-            textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
+            textBoxGameplay.innerHTML = `${warrior.name} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!` 
         }
 }})
 
 mageAttackModeBtn.addEventListener('click', () => {
     mage.combatMode = 'attack'
-    
+    mageCombatModeMenu.style.display = 'none'
+    if (mana > 1 && mana <= 7){
+        bossOfTheGame[0].health -= parseInt(mageDamage + (mageDamage / 4))
+        if (bossOfTheGame[0].health <= (bossOfTheGame[0].health / 100 * 20)){
+            textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
+            let riddle = getRandomInt(1,3)
+            switch (riddle){
+                case 1:
+                    riddleOne.style.display = 'block'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'none'
+                case 2:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'block'
+                    riddleThree.style.display = 'none'
+                case 3:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'block'
+            }
+        } else {
+            archerCombatModeMenu.style.display = 'block'
+            textBoxGameplay.innerHTML = `${mage.name} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
+            mana -= 2
+        }
+    } else {
+        mana = 7
+        textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+        archerCombatModeMenu.style.display = 'block'
+    }
 })
 
 mageDefenseModeBtn.addEventListener('click', () => {
     mage.combatMode = 'defense'
     mageCombatModeMenu.style.display = 'none'
-    mana -= 2
+    if (mana > 1 && mana <= 7){
+        bossOfTheGame[0].health -= mageDamage
+        if (bossOfTheGame[0].health <= (bossOfTheGame[0].health / 100 * 20)){
+            textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
+            let riddle = getRandomInt(1,3)
+            switch (riddle){
+                case 1:
+                    riddleOne.style.display = 'block'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'none'
+                case 2:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'block'
+                    riddleThree.style.display = 'none'
+                case 3:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'block'
+            }
+        } else {
+            archerCombatModeMenu.style.display = 'block'
+            textBoxGameplay.innerHTML = `${mage.name} dealt ${mageDamage} damage!`
+            mana -= 2
+        }
+    } else {
+        mana = 7
+        textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+        archerCombatModeMenu.style.display = 'block'
+    }
 })
 
 archerAttackModeBtn.addEventListener('click', () => {
     archer.combatMode = 'attack'
     archerCombatModeMenu.style.display = 'none'
-    arrows -= 1
+    if (mana > 1 && mana <= 7){
+        bossOfTheGame[0].health -= parseInt(mageDamage + (mageDamage / 4))
+        if (bossOfTheGame[0].health <= (bossOfTheGame[0].health / 100 * 20)){
+            textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
+            let riddle = getRandomInt(1,3)
+            switch (riddle){
+                case 1:
+                    riddleOne.style.display = 'block'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'none'
+                case 2:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'block'
+                    riddleThree.style.display = 'none'
+                case 3:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'block'
+            }
+        } else {
+            archerCombatModeMenu.style.display = 'block'
+            textBoxGameplay.innerHTML = `${mage.name} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
+            mana -= 2
+        }
+    } else {
+        mana = 7
+        textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+        archerCombatModeMenu.style.display = 'block'
+    }
 })
 
 archerDefenseModeBtn.addEventListener('click', () => {
