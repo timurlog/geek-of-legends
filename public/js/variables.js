@@ -1,6 +1,6 @@
 import { Archer, Boss, Mage, Warrior } from "./class.js"
 
-// menu buttons and UI
+// menu buttons and menu UI
 export let mainMenu = document.querySelector('#mainMenu')
 export let mainMenuBoss = document.querySelector('#mainMenuBoss')
 export let mainMenuHero = document.querySelector('#mainMenuHero')
@@ -17,6 +17,19 @@ export let textBoxGameplay = document.querySelector('#textBoxGameplay');
 export let warriorCombatModeMenu = document.querySelector('#warriorCombatModeMenu')
 export let mageCombatModeMenu = document.querySelector('#mageCombatModeMenu')
 export let archerCombatModeMenu = document.querySelector('#archerCombatModeMenu')
+
+// gameplay UI
+export let sauronSprite = document.querySelector('#sauronSprite')
+export let lilithSprite = document.querySelector('#lilithSprite')
+export let chronosSprite = document.querySelector('#chronosSprite')
+export let warriorSprite = document.querySelector('#warriorSprite')
+export let mageSprite = document.querySelector('#mageSprite')
+export let archerSprite = document.querySelector('#archerSprite')
+export let bossHealthBar = document.querySelector('#bossHealthBar')
+export let warriorHealthBar = document.querySelector('#warriorHealthBar')
+export let mageHealthBar = document.querySelector('#mageHealthBar')
+export let archerHealthBar = document.querySelector('#archerHealthBar')
+
 
 // character maker inputs
 export let warriorNameInput = document.querySelector('#warriorNameInput')
@@ -45,6 +58,12 @@ export let archerHealth = archerHealthPointsInput.innerHTML
 export let warriorDamage = warriorDamagePointsInput.innerHTML
 export let mageDamage = mageDamagePointsInput.innerHTML
 export let archerDamage = archerDamagePointsInput.innerHTML
+
+// riddles
+export let riddleOne = document.querySelector('#riddleOne')
+export let riddleTwo = document.querySelector('#riddleTwo')
+export let riddleThree = document.querySelector('#riddleThree')
+
 
 // adding hero special stats
 export let rage = 0
