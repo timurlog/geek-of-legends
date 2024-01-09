@@ -216,11 +216,9 @@ body {
   align-items: center;
 }
 .main-menu-hero .main-menu-hero-content .hero-cards .hero-card {
-  cursor: pointer;
   height: 500px;
   width: 375px;
   background-color: #c1d3c4;
-  position: relative;
 }
 .main-menu-hero .main-menu-hero-content .hero-cards .hero-card .hero-card-top {
   width: 100%;
