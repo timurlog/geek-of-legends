@@ -352,8 +352,8 @@ body {
   align-items: flex-start;
 }
 .gameplay .gameplay-content .gameplay-mid .gameplay-mid-top img {
-  height: 500px;
-  padding-top: 150px;
+  height: 400px;
+  margin-top: 150px;
 }
 .gameplay .gameplay-content .gameplay-mid .gameplay-mid-top #sauronSprite {
   display: block;
@@ -372,12 +372,11 @@ body {
   align-items: flex-end;
 }
 .gameplay .gameplay-content .gameplay-mid .gameplay-mid-bot img {
-  height: 400px;
-  padding-bottom: 100px;
+  height: 320px;
+  margin-bottom: 100px;
 }
 .gameplay .gameplay-content .gameplay-mid .gameplay-mid-bot .morepad {
-  height: 450px;
-  padding-bottom: 150px;
+  margin-bottom: 150px;
 }
 .gameplay .gameplay-content .gameplay-right {
   height: 100%;
