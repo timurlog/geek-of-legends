@@ -84,9 +84,9 @@ export let mage = new Mage(mageName, mageCombatMode, mageDamage, mageHealth, man
 export let archer = new Archer(archerName, archerCombatMode, archerDamage, archerHealth, arrows);
 
 // creating boss objects with Boss class
-export let lilith = new Boss('Lilith', getRandomInt(40,47), 800)
-export let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000)
-export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150)
+export let lilith = new Boss('Lilith', getRandomInt(40,47), 800, 800)
+export let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000, 1000)
+export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150, 1150)
 
 // array we need to start a new game
 export let bossOfTheGame = []
