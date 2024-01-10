@@ -58,15 +58,15 @@ export let mageDefenseModeBtn = document.querySelector('#mageDefenseModeBtn')
 export let archerDefenseModeBtn = document.querySelector('#archerDefenseModeBtn')
 
 // character maker variables
-export let warriorName = warriorNameInput.innerHTML
-export let mageName = mageNameInput.innerHTML
-export let archerName = archerNameInput.innerHTML
-export let warriorHealth = warriorHealthPointsInput.innerHTML
-export let mageHealth = mageHealthPointsInput.innerHTML
-export let archerHealth = archerHealthPointsInput.innerHTML
-export let warriorDamage = warriorDamagePointsInput.innerHTML
-export let mageDamage = mageDamagePointsInput.innerHTML
-export let archerDamage = archerDamagePointsInput.innerHTML
+export let mageName
+export let archerName
+export let warriorName
+export let warriorDamage
+export let mageDamage
+export let archerDamage
+export let warriorHealth
+export let mageHealth
+export let archerHealth
 
 // riddles
 export let riddleOne = document.querySelector('#riddleOne')
@@ -80,9 +80,9 @@ export let mana = 7
 export let arrows = 6
 
 // creating hero objects with Hero class
-export let warrior = new Warrior('bob', 'neutral', 50, 100, 0);
-export let mage = new Mage('lili', 'neutral', 50, 100, 7);
-export let archer = new Archer('kevin', 'neutral', 50, 100, 6);
+export let warrior = new Warrior(warriorName, 'neutral', warriorDamage, warriorHealth, rage);
+export let mage = new Mage(mageName, 'neutral', mageDamage, mageHealth, mana);
+export let archer = new Archer(archerName, 'neutral', archerDamage, archerHealth, arrows);
 
 // creating boss objects with Boss class
 export let lilith = new Boss('Lilith', getRandomInt(40,47), 800, 800)
