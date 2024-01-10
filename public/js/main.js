@@ -9,6 +9,11 @@ export function getRandomInt(min, max) {
 
 var mainMenuAudio = new Audio('./public/assets/music/main-menu-sound.mp3');
 var gameplayAudio = new Audio('./public/assets/music/gameplay-sound.mp3');
+var archerAttackAudio = new Audio('./public/assets/music/archer-attack-sound.mp3');
+var mageAttackAudio = new Audio('./public/assets/music/mage-attack-sound.mp3');
+var warriorAttackAudio = new Audio('./public/assets/music/warrior-attack-sound.mp3');
+var warriorBigAttackAudio = new Audio('./public/assets/music/warrior-big-attack-sound.mp3');
+var bossAttackAudio = new Audio('./public/assets/music/boss-attack-sound.mp3');
 
 function playMainMenuMusic() {
     mainMenuAudio.loop = true;
@@ -29,6 +34,28 @@ function stopGameplayMusic() {
     gameplayAudio.pause();
     gameplayAudio.currentTime = 0;
 }
+
+function playArcherAttackEffect() {
+    archerAttackAudio.loop = false;
+    archerAttackAudio.play();
+}
+function playMageAttackEffect() {
+    mageAttackAudio.loop = false;
+    mageAttackAudio.play();
+}
+function playWarriorAttackEffect() {
+    warriorAttackAudio.loop = false;
+    warriorAttackAudio.play();
+}
+function playWarriorBigAttackEffect() {
+    warriorBigAttackAudio.loop = false;
+    warriorBigAttackAudio.play();
+}
+function playBossAttackEffect() {
+    bossAttackAudio.loop = false;
+    bossAttackAudio.play();
+}
+
 // character maker variables
 export let mageName
 export let archerName
@@ -276,6 +303,7 @@ warriorAttackModeBtn.addEventListener('click', () => {
     warrior.combatMode = 'attack'
     warriorCombatModeMenu.style.display = 'none'
     if (rage < 4) {
+        playWarriorAttackEffect();
         bossOfTheGame[0].health -= (warriorDamage + (warriorDamage / 100 * 20))
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
@@ -317,6 +345,7 @@ warriorAttackModeBtn.addEventListener('click', () => {
             
         }
     } else if (rage == 4){
+        playWarriorBigAttackEffect();
         bossOfTheGame[0].health -= ((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
@@ -361,6 +390,7 @@ warriorDefenseModeBtn.addEventListener('click', () => {
     warrior.combatMode = 'defense'
     warriorCombatModeMenu.style.display = 'none'
     if (rage < 4) {
+        playWarriorAttackEffect();
         bossOfTheGame[0].health -= warriorDamage
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%` 
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
@@ -400,6 +430,7 @@ warriorDefenseModeBtn.addEventListener('click', () => {
             }
         }
     } else if (rage == 4){
+        playWarriorBigAttackEffect();
         bossOfTheGame[0].health -= (warriorDamage + parseInt(warriorDamage/4))
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
@@ -445,6 +476,7 @@ mageAttackModeBtn.addEventListener('click', () => {
     mage.combatMode = 'attack'
     mageCombatModeMenu.style.display = 'none'
     if (mana > 1 && mana <= 7){
+        playMageAttackEffect();
         bossOfTheGame[0].health -= parseInt(mageDamage + (mageDamage / 4))
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
@@ -496,6 +528,7 @@ mageDefenseModeBtn.addEventListener('click', () => {
     mage.combatMode = 'defense'
     mageCombatModeMenu.style.display = 'none'
     if (mana > 1 && mana <= 7){
+        playMageAttackEffect();
         bossOfTheGame[0].health -= mageDamage
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
@@ -547,6 +580,7 @@ archerAttackModeBtn.addEventListener('click', () => {
     archer.combatMode = 'attack'
     archerCombatModeMenu.style.display = 'none'
     if (arrows > 0){
+        playArcherAttackEffect();
         bossOfTheGame[0].health -= parseInt(archerDamage + (archerDamage / 4))
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
@@ -586,6 +620,7 @@ archerDefenseModeBtn.addEventListener('click', () => {
     archer.combatMode = 'defense'
     archerCombatModeMenu.style.display = 'none'
     if (arrows > 0){
+        playArcherAttackEffect();
         bossOfTheGame[0].health -= archerDamage
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
@@ -622,6 +657,7 @@ archerDefenseModeBtn.addEventListener('click', () => {
 })
 
 nextBtn.addEventListener('click', () => {
+    playBossAttackEffect();
     nextBtn.style.display = 'none'
     let target = getRandomInt(1,3)
     switch (target){
