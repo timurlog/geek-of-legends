@@ -576,7 +576,7 @@ body {
 .riddle {
   height: 100vh;
   width: 100%;
-  display: block;
+  display: none;
 }
 .riddle .riddle-content {
   width: 100%;
@@ -655,7 +655,45 @@ body {
 /* ### TABLET ### */
 /* ### DESKTOP ### */
 /* ### BIG DESKTOP ### */
-/* ### SECTION 1 ### */
+/* ### SECTION GAMEOVER ### */
+.gameover-menu {
+  height: 100vh;
+  width: 100%;
+  display: block;
+}
+.gameover-menu .gameover-menu-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  align-items: center;
+  flex-direction: column;
+}
+.gameover-menu .gameover-menu-content p {
+  font-family: "coolvetica";
+  font-size: 98px;
+  color: #d94163;
+}
+.gameover-menu .gameover-menu-content button {
+  cursor: pointer;
+  height: 80px;
+  width: 300px;
+  background-color: #314250;
+  border: none;
+  font-family: "coolvetica";
+  font-size: 35px;
+  color: #fff06a;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.gameover-menu .gameover-menu-content button:hover {
+  background-color: #405668;
+}
+.gameover-menu .gameover-menu-content button:active {
+  background-color: #0f3b5f;
+}
+
 /* ######### RESPONSIVE ######### */
 /* ### SMARTPHONE ### */
 /* ### TABLET ### */

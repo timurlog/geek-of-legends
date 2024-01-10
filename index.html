@@ -267,10 +267,10 @@
                                 <p>COMBAT POSITION SELECTOR</p>
                             </div>
                             <div class="select-button-div">
-                                <button id="warriorAttackModeBtn">ATTACK</button>
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="warriorAttackModeBtn">ATTACK</button>
                             </div>
                             <div class="select-button-div">
-                                <button id="warriorDefenseModeBtn">DEFENCE</button>
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="warriorDefenseModeBtn">DEFENCE</button>
                             </div>
                         </div>
                         <div id="mageCombatModeMenu" class="gameplay-option">
@@ -281,10 +281,10 @@
                                 <p>COMBAT POSITION SELECTOR</p>
                             </div>
                             <div class="select-button-div">
-                                <button id="mageAttackModeBtn">ATTACK</button>
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="mageAttackModeBtn">ATTACK</button>
                             </div>
                             <div class="select-button-div">
-                                <button id="mageDefenseModeBtn">DEFENCE</button>
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="mageDefenseModeBtn">DEFENCE</button>
                             </div>
                         </div>
                         <div id="archerCombatModeMenu" class="gameplay-option">
@@ -295,20 +295,20 @@
                                 <p>COMBAT POSITION SELECTOR</p>
                             </div>
                             <div class="select-button-div">
-                                <button id="archerAttackModeBtn">ATTACK</button>
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="archerAttackModeBtn">ATTACK</button>
                             </div>
                             <div class="select-button-div">
-                                <button id="archerDefenseModeBtn">DEFENCE</button>
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="archerDefenseModeBtn">DEFENCE</button>
                             </div>
                         </div>
                         <div id="nextDiv" class="gameplay-option">
                             <div class="select-button-div">
-                                <button id="nextBtn">NEXT</button>
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="nextBtn">NEXT</button>
                             </div>
                         </div>
                         <div id="yourTurnDiv" class="gameplay-option">
                             <div class="select-button-div">
-                                <button id="yourTurnBtn">NEXT</button>
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="yourTurnBtn">NEXT</button>
                             </div>
                         </div>
                     </div>
@@ -328,16 +328,16 @@
                     </div>
                     <div class="riddle-button">
                         <div>
-                            <button id="riddleOneFalse1">1</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleOneFalse1">1</button>
                         </div>
                         <div>
-                            <button id="riddleOneTrue">2</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleOneTrue">2</button>
                         </div>
                         <div>
-                            <button id="riddleOneFalse2">3</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleOneFalse2">3</button>
                         </div>
                         <div>
-                            <button id="riddleOneFalse3">4</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleOneFalse3">4</button>
                         </div>
                     </div>
                 </div>
@@ -350,16 +350,16 @@
                     </div>
                     <div class="riddle-button">
                         <div>
-                            <button id="riddleTwoFalse1">1</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleTwoFalse1">1</button>
                         </div>
                         <div>
-                            <button id="riddleTwoFalse2">2</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleTwoFalse2">2</button>
                         </div>
                         <div>
-                            <button id="riddleTwoTrue">3</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleTwoTrue">3</button>
                         </div>
                         <div>
-                            <button id="riddleTwoFalse3">4</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleTwoFalse3">4</button>
                         </div>
                     </div>
                 </div>
@@ -372,18 +372,30 @@
                     </div>
                     <div class="riddle-button">
                         <div>
-                            <button id="riddleThreeFalse1">1</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleThreeFalse1">1</button>
                         </div>
                         <div>
-                            <button id="riddleThreeFalse2">2</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleThreeFalse2">2</button>
                         </div>
                         <div>
-                            <button id="riddleThreeFalse3">3</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleThreeFalse3">3</button>
                         </div>
                         <div>
-                            <button id="riddleThreeTrue">4</button>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleThreeTrue">4</button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ### GAMEOVER ### -->
+        <section id="gameoverMenu" class="gameover-menu">
+            <div class="gameover-menu-content">
+                <div>
+                    <p>GAME OVER</p>
+                </div>
+                <div>
+                    <button onclick="sound('./public/assets/music/button-sound.mp3')" id="goToMainMenu">MAIN MENU</button>
                 </div>
             </div>
         </section>
