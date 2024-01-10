@@ -440,9 +440,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: space-between;
 }
 .gameplay .gameplay-content .gameplay-right .gameplay-right-top {
   width: 75%;
+  height: fit-content;
 }
 .gameplay .gameplay-content .gameplay-right .gameplay-right-top .gameplay-hero-info {
   height: 150px;
@@ -503,6 +505,66 @@ body {
   height: 100%;
   width: 100%;
   background: #86a820;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot {
+  width: 75%;
+  height: 20%;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot .gameplay-option {
+  background: #c1d3c4;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot .gameplay-option .hero-name-title {
+  font-family: "coolvetica";
+  font-size: 36px;
+  color: #d94163;
+  text-align: center;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot .gameplay-option p {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #314250;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot .gameplay-option .select-button-div {
+  width: 50%;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot .gameplay-option .select-button-div button {
+  width: 100%;
+  height: 35px;
+  cursor: pointer;
+  background-color: #314250;
+  border: none;
+  font-family: "coolvetica";
+  font-size: 22px;
+  color: #fff06a;
+  transition: all 0.3s ease;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot .gameplay-option .select-button-div button:hover {
+  background-color: #405668;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot .gameplay-option .select-button-div button:active {
+  background-color: #0f3b5f;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot #warriorCombatModeMenu {
+  display: flex;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot #mageCombatModeMenu {
+  display: none;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot #archerCombatModeMenu {
+  display: none;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot #nextDiv {
+  display: none;
+}
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot #yourTurnDiv {
+  display: none;
 }
 
 /* ######### RESPONSIVE ######### */

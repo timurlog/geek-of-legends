@@ -95,8 +95,10 @@
             display: flex
             flex-direction: column
             align-items: flex-end
+            justify-content: space-between
             .gameplay-right-top
                 width: 75%
+                height: fit-content
                 .gameplay-hero-info
                     height: 150px
                     width: 100%
@@ -146,6 +148,53 @@
                                 height: 100%
                                 width: 100%
                                 background: #86a820
+            .gameplay-right-bot
+                width: 75%
+                height: 20%
+                .gameplay-option
+                    background: #c1d3c4
+                    width: 100%
+                    height: 100%
+                    flex-direction: column
+                    justify-content: space-around
+                    align-items: center
+                    padding: 20px
+                    .hero-name-title
+                        font-family: "coolvetica"
+                        font-size: 36px
+                        color: #d94163
+                        text-align: center
+                    p
+                        font-family: sans-serif
+                        font-weight: 700
+                        font-size: 18px
+                        color: #314250
+                    .select-button-div
+                        width: 50%
+                        button
+                            width: 100%
+                            height: 35px
+                            cursor: pointer
+                            background-color: #314250
+                            border: none
+                            font-family: "coolvetica"
+                            font-size: 22px
+                            color: #fff06a
+                            transition: all 0.3s ease
+                        button:hover
+                            background-color: #405668
+                        button:active
+                            background-color: #0f3b5f
+                #warriorCombatModeMenu
+                    display: flex
+                #mageCombatModeMenu
+                    display: none
+                #archerCombatModeMenu
+                    display: none
+                #nextDiv
+                    display: none
+                #yourTurnDiv
+                    display: none
 
 /* ######### RESPONSIVE ######### */
 /* ### SMARTPHONE ### */
