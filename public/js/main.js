@@ -21,7 +21,7 @@ lilithBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
     // restartMenu.style.display = 'none'
     bossOfTheGame.push(lilith)
-    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
+    textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 sauronBtn.addEventListener('click', () => {
@@ -31,7 +31,7 @@ sauronBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
     // restartMenu.style.display = 'none'
     bossOfTheGame.push(sauron)
-    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
+    textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 chronosBtn.addEventListener('click', () => {
@@ -41,35 +41,29 @@ chronosBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
     // restartMenu.style.display = 'none'
     bossOfTheGame.push(chronos)
-    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
+    textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 confirmStatsBtn.addEventListener('click', () => {
-    var mageName = mageNameInput.value
-    var archerName = archerNameInput.value
-    var warriorName = warriorNameInput.value
-    var warriorDamage = warriorDamagePointsInput.value
-    var mageDamage = mageDamagePointsInput.value
-    var archerDamage = archerDamagePointsInput.value
-    var warriorHealth = warriorHealthPointsInput.value
-    var mageHealth = mageHealthPointsInput.value
-    var archerHealth = archerHealthPointsInput
-    let i = true
+    var mageName = mageNameInput.value;
+    var archerName = archerNameInput.value;
+    var warriorName = warriorNameInput.value;
+    var warriorDamage = parseInt(warriorDamagePointsInput.value);
+    var mageDamage = parseInt(mageDamagePointsInput.value);
+    var archerDamage = parseInt(archerDamagePointsInput.value);
+    var warriorHealth = parseInt(warriorHealthPointsInput.value);
+    var mageHealth = parseInt(mageHealthPointsInput.value);
+    var archerHealth = parseInt(archerHealthPointsInput.value);
+
+    let i = true;
+    let allDamage = mageDamage + warriorDamage + archerDamage;
+    let allHealth = mageHealth + warriorHealth + archerHealth;
+    let j = 150;
+    let k = 300;
+    let l = 0;
+
     while (i == true){
-        if (warriorName != "" && mageName != "" && archerName != "" && (warriorDamage + mageDamage + archerDamage) == 150 && (warriorHealth + mageHealth + archerHealth) == 300 && warriorHealth > 0 && mageHealth > 0 && archerHealth > 0 && warriorDamage > 0 && mageDamage > 0 && archerDamage > 0) {
-            // mainMenu.style.display = 'none'
-            // mainMenuBoss.style.display = 'none'
-            // mainMenuHero.style.display = 'none'
-            // gameplay.style.display = 'block'
-            // // restartMenu.style.display = 'none'
-            // textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
-            // gameplayBossName.innerHTML = bossOfTheGame[0].name
-            // gameplayWarriorName.innerHTML = warriorName
-            // gameplayMageName.innerHTML = mageName
-            // gameplayArcherName.innerHTML = archerName
-            // rage = 0
-            // mana = 7
-            // arrows = 6
+        if (mageName != "" && warriorName != "" && archerName != "" && allDamage == j && allHealth == k && warriorHealth > l && mageHealth > l && archerHealth > l && warriorDamage > l && mageDamage > l && archerDamage > l) {
             switch (bossOfTheGame[0]){
                 case lilith:
                     lilithSprite.style.display = 'block'
@@ -89,6 +83,7 @@ confirmStatsBtn.addEventListener('click', () => {
                     mana = 7
                     arrows = 6
                     i = false
+                    console.log("4");
                     break
                 case sauron:
                     lilithSprite.style.display = 'none'
@@ -107,6 +102,7 @@ confirmStatsBtn.addEventListener('click', () => {
                     rage = 0
                     mana = 7
                     arrows = 6
+                    console.log("3");
                     i = false
                     break
                 case chronos:
@@ -126,11 +122,16 @@ confirmStatsBtn.addEventListener('click', () => {
                     rage = 0
                     mana = 7
                     arrows = 6
+                    console.log("2");
                     i = false
+                    break
             }
             
         } else {
            textBoxMenuHero.innerHTML = "Every hero should have a name and they need to have 300 health points and 150 attack points all together "
+           console.log("1");
+           i = true
+           break
         }
     }
 })
