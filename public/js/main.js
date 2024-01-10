@@ -79,14 +79,17 @@ warriorAttackModeBtn.addEventListener('click', () => {
                     riddleOne.style.display = 'block'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
+                    break
                 case 2:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'block'
                     riddleThree.style.display = 'none'
+                    break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'block'
+                    break
             }
         } else {
             if (mageSprite.style.display = 'block'){
@@ -114,14 +117,17 @@ warriorAttackModeBtn.addEventListener('click', () => {
                     riddleOne.style.display = 'block'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
+                    break
                 case 2:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'block'
                     riddleThree.style.display = 'none'
+                    break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'block'
+                    break
             }
         } else {
             if (mageSprite.style.display = 'block'){
@@ -154,14 +160,17 @@ warriorDefenseModeBtn.addEventListener('click', () => {
                     riddleOne.style.display = 'block'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
+                    break
                 case 2:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'block'
                     riddleThree.style.display = 'none'
+                    break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'block'
+                    break
             }
         } else {
             if (mageSprite.style.display = 'block'){
@@ -188,14 +197,17 @@ warriorDefenseModeBtn.addEventListener('click', () => {
                     riddleOne.style.display = 'block'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
+                    break
                 case 2:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'block'
                     riddleThree.style.display = 'none'
+                    break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'block'
+                    break
             }
         } else {
             if (mageSprite.style.display = 'block'){
@@ -227,14 +239,17 @@ mageAttackModeBtn.addEventListener('click', () => {
                     riddleOne.style.display = 'block'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
+                    break
                 case 2:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'block'
                     riddleThree.style.display = 'none'
+                    break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'block'
+                    break
             }
         } else {
             if (archerSprite.style.display = 'block'){
@@ -273,14 +288,17 @@ mageDefenseModeBtn.addEventListener('click', () => {
                     riddleOne.style.display = 'block'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
+                    break
                 case 2:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'block'
                     riddleThree.style.display = 'none'
+                    break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'block'
+                    break
             }
         } else {
             if (archerSprite.style.display = 'block'){
@@ -319,14 +337,17 @@ archerAttackModeBtn.addEventListener('click', () => {
                     riddleOne.style.display = 'block'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
+                    break
                 case 2:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'block'
                     riddleThree.style.display = 'none'
+                    break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'block'
+                    break
             }
         } else {
             nextBtn.style.display = 'flex'
@@ -353,14 +374,17 @@ archerDefenseModeBtn.addEventListener('click', () => {
                     riddleOne.style.display = 'block'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
+                    break
                 case 2:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'block'
                     riddleThree.style.display = 'none'
+                    break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'block'
+                    break
             }
         } else {
             nextBtn.style.display = 'flex'
@@ -408,6 +432,7 @@ nextBtn.addEventListener('click', () => {
                     }
                 }
             }
+            break
         case 2:
             if (mage.combatMode == 'attack'){
                 mage.health -= bossOfTheGame[0].damage
@@ -438,6 +463,7 @@ nextBtn.addEventListener('click', () => {
                     }
                 }
             }
+            break
         case 3:
             if (archer.combatMode == 'attack'){
                 archer.health -= bossOfTheGame[0].damage
@@ -468,6 +494,7 @@ nextBtn.addEventListener('click', () => {
                     }
                 }
             }
+            break
     }
 })
 
