@@ -548,6 +548,9 @@ body {
 .gameplay .gameplay-content .gameplay-right .gameplay-right-bot #yourTurnDiv {
   display: none;
 }
+.gameplay .gameplay-content .gameplay-right .gameplay-right-bot #goToRiddleDiv {
+  display: none;
+}
 
 /* ### SECTION RIDDLE ### */
 .riddle {
