@@ -1,4 +1,4 @@
-import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDefenseModeBtn, archerHealth, archerName, archerSprite, arrows, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, gameplayGameOver, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDefenseModeBtn, mageHealth, mageName, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, mana, nextBtn, rage, restartGameBtn, restartMenu, riddleOne, riddleTwo, sauron, sauronBtn, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDefenseModeBtn, warriorHealth, warriorName, warriorSprite, yourTurnBtn } from "./variables.js";
+import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDefenseModeBtn, archerHealth, archerName, archerSprite, arrows, bossHealthBar, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, gameplayArcherName, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDefenseModeBtn, mageHealth, mageName, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, mana, nextBtn, rage, restartGameBtn, restartMenu, riddleOne, riddleTwo, sauron, sauronBtn, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDefenseModeBtn, warriorHealth, warriorName, warriorSprite, yourTurnBtn } from "./variables.js";
 
 // get random number (for damage)
 function getRandomInt(min, max) {
@@ -52,6 +52,10 @@ confirmStatsBtn.addEventListener('click', () => {
         gameplay.style.display = 'block'
         restartMenu.style.display = 'none'
         textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
+        gameplayWarriorName.innerHTML = warriorName
+        gameplayMageName.innerHTML = mageName
+        gameplayArcherName.innerHTML = archerName
+        gameplayBossName.innerHTML = bossOfTheGame[0].name
     } else {
        textBoxMenuHero.innerHTML = "Every hero should have a name and they need to have 300 health points and 150 attack points all together "
     }
@@ -67,10 +71,11 @@ restartGameBtn.addEventListener('click', () => {
 
 // combat mode buttons
 warriorAttackModeBtn.addEventListener('click', () => {
-    warrior.combatMode = 'attack'
+    warriorCombatMode = 'attack'
     warriorCombatModeMenu.style.display = 'none'
     if (rage < 4) {
         bossOfTheGame[0].health -= (warriorDamage + (warriorDamage / 100 * 20))
+        bossHealthBar.style.display = `${parseInt(bossOfTheGame[0].health / 100)}`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].health / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             let riddle = getRandomInt(1,3)
@@ -147,7 +152,7 @@ warriorAttackModeBtn.addEventListener('click', () => {
 }})
 
 warriorDefenseModeBtn.addEventListener('click', () => {
-    warrior.combatMode = 'defense'
+    warriorCombatMode = 'defense'
     warriorCombatModeMenu.style.display = 'none'
     if (rage < 4) {
         bossOfTheGame[0].health -= warriorDamage
@@ -227,7 +232,7 @@ warriorDefenseModeBtn.addEventListener('click', () => {
 }})
 
 mageAttackModeBtn.addEventListener('click', () => {
-    mage.combatMode = 'attack'
+    mageCombatMode = 'attack'
     mageCombatModeMenu.style.display = 'none'
     if (mana > 1 && mana <= 7){
         bossOfTheGame[0].health -= parseInt(mageDamage + (mageDamage / 4))
@@ -276,7 +281,7 @@ mageAttackModeBtn.addEventListener('click', () => {
 })
 
 mageDefenseModeBtn.addEventListener('click', () => {
-    mage.combatMode = 'defense'
+    mageCombatMode = 'defense'
     mageCombatModeMenu.style.display = 'none'
     if (mana > 1 && mana <= 7){
         bossOfTheGame[0].health -= mageDamage
@@ -325,7 +330,7 @@ mageDefenseModeBtn.addEventListener('click', () => {
 })
 
 archerAttackModeBtn.addEventListener('click', () => {
-    archer.combatMode = 'attack'
+    archerCombatMode = 'attack'
     archerCombatModeMenu.style.display = 'none'
     if (arrows > 0){
         bossOfTheGame[0].health -= parseInt(archerDamage + (archerDamage / 4))
@@ -362,7 +367,7 @@ archerAttackModeBtn.addEventListener('click', () => {
 })
 
 archerDefenseModeBtn.addEventListener('click', () => {
-    archer.combatMode = 'defense'
+    archerCombatMode = 'defense'
     archerCombatModeMenu.style.display = 'none'
     if (arrows > 0){
         bossOfTheGame[0].health -= archerDamage
@@ -403,7 +408,7 @@ nextBtn.addEventListener('click', () => {
     let target = getRandomInt(1,3)
     switch (target){
         case 1:
-            if (warrior.combatMode == 'attack'){
+            if (warriorCombatMode == 'attack'){
                 warrior.health -= bossOfTheGame[0].damage
                 if (warrior.health > 0){
                     textBoxGameplay.innerHTML = `${warrior.name} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage} health points`
@@ -434,7 +439,7 @@ nextBtn.addEventListener('click', () => {
             }
             break
         case 2:
-            if (mage.combatMode == 'attack'){
+            if (mageCombatMode == 'attack'){
                 mage.health -= bossOfTheGame[0].damage
                 if (mage.health > 0){
                     textBoxGameplay.innerHTML = `${mage.name} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage} health points`
@@ -465,7 +470,7 @@ nextBtn.addEventListener('click', () => {
             }
             break
         case 3:
-            if (archer.combatMode == 'attack'){
+            if (archerCombatMode == 'attack'){
                 archer.health -= bossOfTheGame[0].damage
                 if (archer.health > 0){
                     textBoxGameplay.innerHTML = `${archer.name} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage} health points`

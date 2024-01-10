@@ -32,9 +32,10 @@ export class Archer extends Hero {
 
 // creating the boss class
 export class Boss {
-    constructor(name, damage, health){
+    constructor(name, damage, health, maxHealth){
         this.name = name,
         this.damage = damage,
-        this.health = health
+        this.health = health,
+        this.maxHealth = maxHealth
     }
 }

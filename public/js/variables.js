@@ -34,6 +34,9 @@ export let nextBtn = document.querySelector('#nextBtn')
 export let yourTurnBtn = document.querySelector('#yourTurnBtn')
 export let gameplayBossName = document.querySelector('#gameplayBossName')
 export let gameplayGameOver = document.querySelector('#gameplayGameOver')
+export let gameplayWarriorName = document.querySelector('#gameplayWarriorName')
+export let gameplayMageName = document.querySelector('#gameplayMageName')
+export let gameplayArcherName = document.querySelector('#gameplayArcherName')
 
 
 // character maker inputs
@@ -76,9 +79,9 @@ export let mana = 7
 export let arrows = 6
 
 // creating hero objects with Hero class
-export let warrior = new Warrior(warriorName, warrior.combatMode, warriorDamage, warriorHealth, rage);
-export let mage = new Mage(mageName, mage.combatMode, mageDamage, mageHealth, mana);
-export let archer = new Archer(archerName, archer.combatMode, archerDamage, archerHealth, arrows);
+export let warrior = new Warrior(warriorName, warriorCombatMode, warriorDamage, warriorHealth, rage);
+export let mage = new Mage(mageName, mageCombatMode, mageDamage, mageHealth, mana);
+export let archer = new Archer(archerName, archerCombatMode, archerDamage, archerHealth, arrows);
 
 // creating boss objects with Boss class
 export let lilith = new Boss('Lilith', getRandomInt(40,47), 800)
