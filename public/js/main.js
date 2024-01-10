@@ -154,9 +154,6 @@ confirmStatsBtn.addEventListener('click', () => {
                     gameplayWarriorName.innerHTML = warriorName
                     gameplayMageName.innerHTML = mageName
                     gameplayArcherName.innerHTML = archerName
-                    rage = 0
-                    mana = 7
-                    arrows = 6
                     console.log("4");
                     i = false
                     break
@@ -191,9 +188,6 @@ confirmStatsBtn.addEventListener('click', () => {
                     gameplayWarriorName.innerHTML = warriorName
                     gameplayMageName.innerHTML = mageName
                     gameplayArcherName.innerHTML = archerName
-                    rage = 0
-                    mana = 7
-                    arrows = 6
                     console.log("2");
                     i = false
                     break
@@ -225,7 +219,7 @@ warriorAttackModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             gameplay.style.display = 'none'
-            riddles.style.display = 'flex'
+            riddles.style.display = 'block'
             let riddle = getRandomInt(1,3)
             switch (riddle){
                 case 1:
@@ -267,7 +261,7 @@ warriorAttackModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             gameplay.style.display = 'none'
-            riddles.style.display = 'flex'
+            riddles.style.display = 'block'
             let riddle = getRandomInt(1,3)
             switch (riddle){
                 case 1:
@@ -312,7 +306,7 @@ warriorDefenseModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             gameplay.style.display = 'none'
-            riddles.style.display = 'flex'
+            riddles.style.display = 'block'
             let riddle = getRandomInt(1,3)
             switch (riddle){
                 case 1:
@@ -352,7 +346,7 @@ warriorDefenseModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             gameplay.style.display = 'none'
-            riddles.style.display = 'flex'
+            riddles.style.display = 'block'
             let riddle = getRandomInt(1,3)
             switch (riddle){
                 case 1:
@@ -398,7 +392,7 @@ mageAttackModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             gameplay.style.display = 'none'
-            riddles.style.display = 'flex'
+            riddles.style.display = 'block'
             let riddle = getRandomInt(1,3)
             switch (riddle){
                 case 1:
@@ -450,7 +444,7 @@ mageDefenseModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             gameplay.style.display = 'none'
-            riddles.style.display = 'flex'
+            riddles.style.display = 'block'
             let riddle = getRandomInt(1,3)
             switch (riddle){
                 case 1:
@@ -502,7 +496,7 @@ archerAttackModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             gameplay.style.display = 'none'
-            riddles.style.display = 'flex'
+            riddles.style.display = 'block'
             let riddle = getRandomInt(1,3)
             switch (riddle){
                 case 1:
@@ -542,7 +536,7 @@ archerDefenseModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             gameplay.style.display = 'none'
-            riddles.style.display = 'flex'
+            riddles.style.display = 'block'
             let riddle = getRandomInt(1,3)
             switch (riddle){
                 case 1:
@@ -610,6 +604,8 @@ nextBtn.addEventListener('click', () => {
                         yourTurnBtn.style.display = 'flex'
                     }
                 }
+            } else {
+                yourTurnBtn.style.display = 'flex'
             }
             break
         case 2:
@@ -645,6 +641,8 @@ nextBtn.addEventListener('click', () => {
                         yourTurnBtn.style.display = 'flex'
                     }
                 }
+            } else {
+                yourTurnBtn.style.display = 'flex'
             }
             break
         case 3:
@@ -668,7 +666,7 @@ nextBtn.addEventListener('click', () => {
                 archerHealth -= parseInt(bossOfTheGame[0].damage / 2)
                 archerHealthBar.style.width = `${parseInt(archerHealth / archerMaxHealth * 100)}%`
                 if (archerHealth > 0){
-                    textBoxGameplay.innerHTML = `${archerName} just took a hit from ${bossOfTheGame[0].name / 2}! he lost ${parseInt(bossOfTheGame[0].damage / 2)} health points`
+                    textBoxGameplay.innerHTML = `${archerName} just took a hit from ${bossOfTheGame[0].name}! he lost ${parseInt(bossOfTheGame[0].damage / 2)} health points`
                     yourTurnBtn.style.display = 'flex'
                 } else {
                     textBoxGameplay.innerHTML = `Oh no, ${archerName} lost all his health points! We just lost a precious archer!`
@@ -680,6 +678,8 @@ nextBtn.addEventListener('click', () => {
                         yourTurnBtn.style.display = 'flex'
                     }
                 }
+            } else {
+                yourTurnBtn.style.display = 'flex'
             }
             break
     }
