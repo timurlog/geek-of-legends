@@ -24,18 +24,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ########### HEADER ########### */
-/* ######### RESPONSIVE ######### */
-/* ### SMARTPHONE ### */
-/* ### TABLET ### */
-/* ### DESKTOP ### */
-/* ### BIG DESKTOP ### */
-/* ############ MAIN ############ */
-/* ######### RESPONSIVE ######### */
-/* ### SMARTPHONE ### */
-/* ### TABLET ### */
-/* ### DESKTOP ### */
-/* ### BIG DESKTOP ### */
 /* ### SECTION MAIN MENU ### */
 .main-menu {
   width: 100%;
@@ -94,11 +82,6 @@ body {
   background-color: #0f3b5f;
 }
 
-/* ######### RESPONSIVE ######### */
-/* ### SMARTPHONE ### */
-/* ### TABLET ### */
-/* ### DESKTOP ### */
-/* ### BIG DESKTOP ### */
 /* ### SECTION MAIN MENU BOSS ### */
 .main-menu-boss {
   height: 100vh;
@@ -193,11 +176,6 @@ body {
   top: -2px;
 }
 
-/* ######### RESPONSIVE ######### */
-/* ### SMARTPHONE ### */
-/* ### TABLET ### */
-/* ### DESKTOP ### */
-/* ### BIG DESKTOP ### */
 /* ### SECTION MAIN MENU HERO ### */
 .main-menu-hero {
   height: 100vh;
@@ -316,11 +294,6 @@ body {
   background-color: #0f3b5f;
 }
 
-/* ######### RESPONSIVE ######### */
-/* ### SMARTPHONE ### */
-/* ### TABLET ### */
-/* ### DESKTOP ### */
-/* ### BIG DESKTOP ### */
 /* ### SECTION GAMEPLAY ### */
 .gameplay {
   background-image: url("../assets/image/game-bg.png");
@@ -567,11 +540,6 @@ body {
   display: none;
 }
 
-/* ######### RESPONSIVE ######### */
-/* ### SMARTPHONE ### */
-/* ### TABLET ### */
-/* ### DESKTOP ### */
-/* ### BIG DESKTOP ### */
 /* ### SECTION RIDDLE ### */
 .riddle {
   height: 100vh;
@@ -650,11 +618,6 @@ body {
   display: none;
 }
 
-/* ######### RESPONSIVE ######### */
-/* ### SMARTPHONE ### */
-/* ### TABLET ### */
-/* ### DESKTOP ### */
-/* ### BIG DESKTOP ### */
 /* ### SECTION GAMEOVER ### */
 .gameover-menu {
   height: 100vh;
@@ -693,17 +656,5 @@ body {
 .gameover-menu .gameover-menu-content button:active {
   background-color: #0f3b5f;
 }
-
-/* ######### RESPONSIVE ######### */
-/* ### SMARTPHONE ### */
-/* ### TABLET ### */
-/* ### DESKTOP ### */
-/* ### BIG DESKTOP ### */
-/* ########### FOOTER ########### */
-/* ######### RESPONSIVE ######### */
-/* ### SMARTPHONE ### */
-/* ### TABLET ### */
-/* ### DESKTOP ### */
-/* ### BIG DESKTOP ### */
 
 /*# sourceMappingURL=app.css.map */
