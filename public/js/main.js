@@ -44,7 +44,7 @@ export let mageMaxHealth
 export let archerMaxHealth
 
 // riddles
-let riddles = document.querySelector('#riddle')
+let riddle = document.querySelector('#riddle')
 let riddleOne = document.querySelector('#riddleOne')
 let riddleTwo = document.querySelector('#riddleTwo')
 let riddleThree = document.querySelector('#riddleThree')
@@ -218,24 +218,23 @@ warriorAttackModeBtn.addEventListener('click', () => {
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
-            gameplay.style.display = 'none'
-            riddles.style.display = 'block'
+            goToRiddleMenu.style.display = 'flex'
             let riddle = getRandomInt(1,3)
             switch (riddle){
                 case 1:
-                    riddleOne.style.display = 'block'
+                    riddleOne.style.display = 'flex'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
                     break
                 case 2:
                     riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'block'
+                    riddleTwo.style.display = 'flex'
                     riddleThree.style.display = 'none'
                     break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'block'
+                    riddleThree.style.display = 'flex'
                     break
             }
         } else {
@@ -260,24 +259,23 @@ warriorAttackModeBtn.addEventListener('click', () => {
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
-            gameplay.style.display = 'none'
-            riddles.style.display = 'block'
+            goToRiddleMenu.style.display = 'flex'
             let riddle = getRandomInt(1,3)
             switch (riddle){
-                case 1:
-                    riddleOne.style.display = 'block'
+                 case 1:
+                    riddleOne.style.display = 'flex'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
                     break
                 case 2:
                     riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'block'
+                    riddleTwo.style.display = 'flex'
                     riddleThree.style.display = 'none'
                     break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'block'
+                    riddleThree.style.display = 'flex'
                     break
             }
         } else {
@@ -305,24 +303,23 @@ warriorDefenseModeBtn.addEventListener('click', () => {
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%` 
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
-            gameplay.style.display = 'none'
-            riddles.style.display = 'block'
+            goToRiddleMenu.style.display = 'flex'
             let riddle = getRandomInt(1,3)
             switch (riddle){
-                case 1:
-                    riddleOne.style.display = 'block'
+                 case 1:
+                    riddleOne.style.display = 'flex'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
                     break
                 case 2:
                     riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'block'
+                    riddleTwo.style.display = 'flex'
                     riddleThree.style.display = 'none'
                     break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'block'
+                    riddleThree.style.display = 'flex'
                     break
             }
         } else {
@@ -345,24 +342,23 @@ warriorDefenseModeBtn.addEventListener('click', () => {
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
-            gameplay.style.display = 'none'
-            riddles.style.display = 'block'
+            goToRiddleMenu.style.display = 'flex'
             let riddle = getRandomInt(1,3)
             switch (riddle){
-                case 1:
-                    riddleOne.style.display = 'block'
+                 case 1:
+                    riddleOne.style.display = 'flex'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
                     break
                 case 2:
                     riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'block'
+                    riddleTwo.style.display = 'flex'
                     riddleThree.style.display = 'none'
                     break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'block'
+                    riddleThree.style.display = 'flex'
                     break
             }
         } else {
@@ -391,24 +387,23 @@ mageAttackModeBtn.addEventListener('click', () => {
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
-            gameplay.style.display = 'none'
-            riddles.style.display = 'block'
+            goToRiddleMenu.style.display = 'flex'
             let riddle = getRandomInt(1,3)
             switch (riddle){
-                case 1:
-                    riddleOne.style.display = 'block'
+                 case 1:
+                    riddleOne.style.display = 'flex'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
                     break
                 case 2:
                     riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'block'
+                    riddleTwo.style.display = 'flex'
                     riddleThree.style.display = 'none'
                     break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'block'
+                    riddleThree.style.display = 'flex'
                     break
             }
         } else {
@@ -443,24 +438,23 @@ mageDefenseModeBtn.addEventListener('click', () => {
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
-            gameplay.style.display = 'none'
-            riddles.style.display = 'block'
+            goToRiddleMenu.style.display = 'flex'
             let riddle = getRandomInt(1,3)
             switch (riddle){
-                case 1:
-                    riddleOne.style.display = 'block'
+                 case 1:
+                    riddleOne.style.display = 'flex'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
                     break
                 case 2:
                     riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'block'
+                    riddleTwo.style.display = 'flex'
                     riddleThree.style.display = 'none'
                     break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'block'
+                    riddleThree.style.display = 'flex'
                     break
             }
         } else {
@@ -495,24 +489,23 @@ archerAttackModeBtn.addEventListener('click', () => {
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
-            gameplay.style.display = 'none'
-            riddles.style.display = 'block'
+            goToRiddleMenu.style.display = 'flex'
             let riddle = getRandomInt(1,3)
             switch (riddle){
-                case 1:
-                    riddleOne.style.display = 'block'
+                 case 1:
+                    riddleOne.style.display = 'flex'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
                     break
                 case 2:
                     riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'block'
+                    riddleTwo.style.display = 'flex'
                     riddleThree.style.display = 'none'
                     break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'block'
+                    riddleThree.style.display = 'flex'
                     break
             }
         } else {
@@ -535,24 +528,23 @@ archerDefenseModeBtn.addEventListener('click', () => {
         bossHealthBar.style.width = `${parseInt(bossOfTheGame[0].health / bossOfTheGame[0].maxHealth * 100)}%`
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
-            gameplay.style.display = 'none'
-            riddles.style.display = 'block'
+            goToRiddleMenu.style.display = 'flex'
             let riddle = getRandomInt(1,3)
             switch (riddle){
-                case 1:
-                    riddleOne.style.display = 'block'
+                 case 1:
+                    riddleOne.style.display = 'flex'
                     riddleTwo.style.display = 'none'
                     riddleThree.style.display = 'none'
                     break
                 case 2:
                     riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'block'
+                    riddleTwo.style.display = 'flex'
                     riddleThree.style.display = 'none'
                     break
                 case 3:
                     riddleOne.style.display = 'none'
                     riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'block'
+                    riddleThree.style.display = 'flex'
                     break
             }
         } else {
@@ -697,3 +689,7 @@ yourTurnBtn.addEventListener('click', () => {
     }
 })
 
+goToRiddleBtn.addEventListener('click', () => {
+    gameplay.style.display = 'none'
+    riddle.style.display = 'block'
+})

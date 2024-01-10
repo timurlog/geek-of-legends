@@ -630,7 +630,46 @@ body {
   display: none;
 }
 
-/* ### SECTION GAMEOVER ### */
+/* ### SECTION YOU WIN ### */
+.you-win-menu {
+  height: 100vh;
+  width: 100%;
+  display: none;
+}
+.you-win-menu .you-win-menu-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  align-items: center;
+  flex-direction: column;
+}
+.you-win-menu .you-win-menu-content p {
+  font-family: "coolvetica";
+  font-size: 98px;
+  color: #d94163;
+}
+.you-win-menu .you-win-menu-content button {
+  cursor: pointer;
+  height: 80px;
+  width: 300px;
+  background-color: #314250;
+  border: none;
+  font-family: "coolvetica";
+  font-size: 35px;
+  color: #fff06a;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.you-win-menu .you-win-menu-content button:hover {
+  background-color: #405668;
+}
+.you-win-menu .you-win-menu-content button:active {
+  background-color: #0f3b5f;
+}
+
+/* ### SECTION YOU WIN ### */
 .gameover-menu {
   height: 100vh;
   width: 100%;
