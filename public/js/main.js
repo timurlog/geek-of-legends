@@ -14,6 +14,8 @@ var mageAttackAudio = new Audio('./public/assets/music/mage-attack-sound.mp3');
 var warriorAttackAudio = new Audio('./public/assets/music/warrior-attack-sound.mp3');
 var warriorBigAttackAudio = new Audio('./public/assets/music/warrior-big-attack-sound.mp3');
 var bossAttackAudio = new Audio('./public/assets/music/boss-attack-sound.mp3');
+var archerReloadAudio = new Audio('./public/assets/music/archer-reload-sound.mp3');
+var mageReloadAudio = new Audio('./public/assets/music/mage-reload-sound.mp3');
 
 function bossDamageVFX(className, addDelay, removeDelay) {
     let images = document.querySelectorAll('.bossSprite');
@@ -106,18 +108,32 @@ function playArcherAttackEffect() {
     archerAttackAudio.loop = false;
     archerAttackAudio.play();
 }
+
+function playArcherReloadEffect() {
+    archerReloadAudio.loop = false;
+    archerReloadAudio.play();
+}
+
 function playMageAttackEffect() {
     mageAttackAudio.loop = false;
     mageAttackAudio.play();
 }
+
+function playMageReloadEffect() {
+    mageReloadAudio.loop = false;
+    mageReloadAudio.play();
+}
+
 function playWarriorAttackEffect() {
     warriorAttackAudio.loop = false;
     warriorAttackAudio.play();
 }
+
 function playWarriorBigAttackEffect() {
     warriorBigAttackAudio.loop = false;
     warriorBigAttackAudio.play();
 }
+
 function playBossAttackEffect() {
     bossAttackAudio.loop = false;
     bossAttackAudio.play();
@@ -588,10 +604,12 @@ mageAttackModeBtn.addEventListener('click', () => {
             archerCombatModeMenu.style.display = 'flex'
             mana = 7
             textBoxGameplay.innerHTML = `${mageName} doesn't have enough mana! He'll have to wait another round.`
+            playMageReloadEffect()
         } else {
             nextMenu.style.display = 'flex'
             mana = 7
             textBoxGameplay.innerHTML = `${mageName} doesn't have enough mana! He'll have to wait another round.`
+            playMageReloadEffect()
         }
     }
 })
@@ -641,10 +659,12 @@ mageDefenseModeBtn.addEventListener('click', () => {
             archerCombatModeMenu.style.display = 'flex'
             mana = 7
             textBoxGameplay.innerHTML = `${mageName} doesn't have enough mana! He'll have to wait another round.`
+            playMageReloadEffect()
         } else {
             nextMenu.style.display = 'flex'
             mana = 7
             textBoxGameplay.innerHTML = `${mageName} doesn't have enough mana! He'll have to wait another round.`
+            playMageReloadEffect()
         }
     }
 })
@@ -684,6 +704,7 @@ archerAttackModeBtn.addEventListener('click', () => {
             arrows -= 1
         }
     } else {
+        playArcherReloadEffect()
         arrows = 6
         textBoxGameplay.innerHTML = `${archerName} doesn't have enough arrows! He'll have to wait another round.`
         nextMenu.style.display = 'flex'
@@ -725,6 +746,7 @@ archerDefenseModeBtn.addEventListener('click', () => {
             arrows -= 1
         }
     } else {
+        playArcherReloadEffect()
         arrows = 6
         textBoxGameplay.innerHTML = `${archerName} doesn't have enough arrows! He'll have to wait another round.`
         nextMenu.style.display = 'flex'
