@@ -88,6 +88,8 @@ startGameBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'none';
     gameplay.style.display = 'none';
     riddle.style.display = 'none'
+    gameOverMenu.style.display = 'none'
+    youWinMenu.style.display = 'none'
     // restartMenu.style.display = 'none';
     playMainMenuMusic();
 });
@@ -98,6 +100,8 @@ goToMainMenuBtn1.addEventListener('click', () => {
     mainMenuHero.style.display = 'none';
     gameplay.style.display = 'none';
     riddle.style.display = 'none'
+    gameOverMenu.style.display = 'none'
+    youWinMenu.style.display = 'none'
     bossOfTheGame = []
     stopGameplayMusic();
     playMainMenuMusic();
@@ -109,6 +113,8 @@ goToMainMenuBtn2.addEventListener('click', () => {
     mainMenuHero.style.display = 'none';
     gameplay.style.display = 'none';
     riddle.style.display = 'none'
+    gameOverMenu.style.display = 'none'
+    youWinMenu.style.display = 'none'
     bossOfTheGame = []
     stopGameplayMusic();
     playMainMenuMusic();
