@@ -5,6 +5,29 @@ export function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+var mainMenuAudio = new Audio('./public/assets/music/main-menu-sound.mp3');
+var gameplayAudio = new Audio('./public/assets/music/gameplay-sound.mp3');
+
+function playMainMenuMusic() {
+    mainMenuAudio.loop = true;
+    mainMenuAudio.play();
+}
+
+function stopMainMenuMusic() {
+    mainMenuAudio.pause();
+    mainMenuAudio.currentTime = 0;
+}
+
+function playGameplayMusic() {
+    gameplayAudio.loop = true;
+    gameplayAudio.play();
+}
+
+function stopGameplayMusic() {
+    gameplayAudio.pause();
+    gameplayAudio.currentTime = 0;
+}
+
 // handling menu through event listeners
 startGameBtn.addEventListener('click', () => {
     mainMenu.style.display = 'none';
@@ -12,6 +35,7 @@ startGameBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'none';
     gameplay.style.display = 'none';
     // restartMenu.style.display = 'none';
+    playMainMenuMusic();
 });
 
 lilithBtn.addEventListener('click', () => {
@@ -64,6 +88,8 @@ confirmStatsBtn.addEventListener('click', () => {
 
     while (i == true){
         if (mageName != "" && warriorName != "" && archerName != "" && allDamage == j && allHealth == k && warriorHealth > l && mageHealth > l && archerHealth > l && warriorDamage > l && mageDamage > l && archerDamage > l) {
+            stopMainMenuMusic();
+            playGameplayMusic();
             switch (bossOfTheGame[0]){
                 case lilith:
                     lilithSprite.style.display = 'block'
@@ -82,8 +108,8 @@ confirmStatsBtn.addEventListener('click', () => {
                     rage = 0
                     mana = 7
                     arrows = 6
-                    i = false
                     console.log("4");
+                    i = false
                     break
                 case sauron:
                     lilithSprite.style.display = 'none'
