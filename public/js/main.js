@@ -1,27 +1,67 @@
-import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDamagePointsInput, archerDefenseModeBtn, archerHealth, archerName, archerSprite, arrows, bossHealthBar, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, gameplayArcherName, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDamagePointsInput, mageDefenseModeBtn, mageHealth, mageName, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, mana, nextBtn, rage, restartGameBtn, restartMenu, riddleOne, riddleTwo, sauron, sauronBtn, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealth, warriorName, warriorSprite, yourTurnBtn } from "./variables.js";
+import { archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerSprite,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameplay, gameplayArcherName, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, lilithBtn, lilithSprite,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, nextBtn, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, yourTurnBtn } from "./variables.js";
+
+import { Archer, Boss, Mage, Warrior } from './class.js'
 
 // get random number (for damage)
 export function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+// character maker variables
+export let mageName
+export let archerName
+export let warriorName
+export let warriorDamage
+export let mageDamage
+export let archerDamage
+export let warriorHealth
+export let mageHealth
+export let archerHealth
+export let warriorMaxHealth
+export let mageMaxHealth
+export let archerMaxHealth
+
+// riddles
+let riddleOne = document.querySelector('#riddleOne')
+let riddleTwo = document.querySelector('#riddleTwo')
+let riddleThree = document.querySelector('#riddleThree')
+
+
+// adding hero special stats
+let rage = 0
+let mana = 7
+let arrows = 6
+
+// creating hero objects with Hero class
+export let warrior = new Warrior(warriorName, 'neutral', warriorDamage, warriorHealth, warriorMaxHealth, rage);
+export let mage = new Mage(mageName, 'neutral', mageDamage, mageHealth, mageMaxHealth, mana);
+export let archer = new Archer(archerName, 'neutral', archerDamage, archerHealth, archerMaxHealth, arrows);
+
+// creating boss objects with Boss class
+export let lilith = new Boss('Lilith', getRandomInt(40,47), 800, 800)
+export let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000, 1000)
+export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150, 1150)
+
+// array we need to start a new game
+export let bossOfTheGame = []
+
 // handling menu through event listeners
 startGameBtn.addEventListener('click', () => {
-    mainMenu.style.display = 'none'
-    mainMenuBoss.style.display = 'block'
-    mainMenuHero.style.display = 'none'
-    gameplay.style.display = 'none'
-    restartMenu.style.display = 'none'
-})
+    mainMenu.style.display = 'none';
+    mainMenuBoss.style.display = 'block';
+    mainMenuHero.style.display = 'none';
+    gameplay.style.display = 'none';
+    // restartMenu.style.display = 'none';
+});
 
 lilithBtn.addEventListener('click', () => {
     mainMenu.style.display = 'none'
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
-    restartMenu.style.display = 'none'
+    // restartMenu.style.display = 'none'
     bossOfTheGame.push(lilith)
-    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
+    textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 sauronBtn.addEventListener('click', () => {
@@ -29,9 +69,9 @@ sauronBtn.addEventListener('click', () => {
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
-    restartMenu.style.display = 'none'
+    // restartMenu.style.display = 'none'
     bossOfTheGame.push(sauron)
-    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
+    textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 chronosBtn.addEventListener('click', () => {
@@ -39,44 +79,110 @@ chronosBtn.addEventListener('click', () => {
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
-    restartMenu.style.display = 'none'
+    // restartMenu.style.display = 'none'
     bossOfTheGame.push(chronos)
-    textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
+    textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 confirmStatsBtn.addEventListener('click', () => {
-    if (warriorName != "" && mageName != "" && archerName != "" && (warriorDamage + mageDamage + archerDamage) == 150 && (warriorHealth + mageHealth + archerHealth) == 300 && warriorHealth > 0 && mageHealth > 0 && archerHealth > 0 && warriorDamage > 0 && mageDamage > 0 && archerDamage > 0) {
-        mainMenu.style.display = 'none'
-        mainMenuBoss.style.display = 'none'
-        mainMenuHero.style.display = 'none'
-        gameplay.style.display = 'block'
-        restartMenu.style.display = 'none'
-        textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
-        gameplayWarriorName.innerHTML = warriorName
-        gameplayMageName.innerHTML = mageName
-        gameplayArcherName.innerHTML = archerName
-        mageName = mageNameInput.innerHTML
-        archerName = archerNameInput.innerHTML
-        warriorName = warriorNameInput.innerHTML
-        warriorDamage = warriorDamagePointsInput.innerHTML
-        mageDamage = mageDamagePointsInput.innerHTML
-        archerDamage = archerDamagePointsInput.innerHTML
-        gameplayBossName.innerHTML = bossOfTheGame[0].name
-        rage = 0
-        mana = 7
-        arrows = 6
-    } else {
-       textBoxMenuHero.innerHTML = "Every hero should have a name and they need to have 300 health points and 150 attack points all together "
+    mageName = mageNameInput.value;
+    archerName = archerNameInput.value;
+    warriorName = warriorNameInput.value;
+    warriorDamage = parseInt(warriorDamagePointsInput.value);
+    mageDamage = parseInt(mageDamagePointsInput.value);
+    archerDamage = parseInt(archerDamagePointsInput.value);
+    warriorHealth = parseInt(warriorHealthPointsInput.value);
+    warriorMaxHealth = parseInt(warriorHealthPointsInput.value);
+    mageHealth = parseInt(mageHealthPointsInput.value);
+    mageMaxHealth = parseInt(mageHealthPointsInput.value);
+    archerHealth = parseInt(archerHealthPointsInput.value);
+    archerMaxHealth = parseInt(archerHealthPointsInput.value);
+
+    let i = true;
+    let allDamage = mageDamage + warriorDamage + archerDamage;
+    let allHealth = mageHealth + warriorHealth + archerHealth;
+    let j = 150;
+    let k = 300;
+    let l = 0;
+
+    rage = 0
+    mana = 7
+    arrows = 6
+
+    while (i == true){
+        if (mageName != "" && warriorName != "" && archerName != "" && allDamage == j && allHealth == k && warriorHealth > l && mageHealth > l && archerHealth > l && warriorDamage > l && mageDamage > l && archerDamage > l) {
+            switch (bossOfTheGame[0]){
+                case lilith:
+                    lilithSprite.style.display = 'block'
+                    sauronSprite.style.display = 'none'
+                    chronosSprite.style.display = 'none'
+                    mainMenu.style.display = 'none'
+                    mainMenuBoss.style.display = 'none'
+                    mainMenuHero.style.display = 'none'
+                    gameplay.style.display = 'block'
+                    // restartMenu.style.display = 'none'
+                    textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
+                    gameplayBossName.innerHTML = bossOfTheGame[0].name
+                    gameplayWarriorName.innerHTML = warriorName
+                    gameplayMageName.innerHTML = mageName
+                    gameplayArcherName.innerHTML = archerName
+                    i = false
+                    console.log("4");
+                    break
+                case sauron:
+                    lilithSprite.style.display = 'none'
+                    sauronSprite.style.display = 'block'
+                    chronosSprite.style.display = 'none'
+                    mainMenu.style.display = 'none'
+                    mainMenuBoss.style.display = 'none'
+                    mainMenuHero.style.display = 'none'
+                    gameplay.style.display = 'block'
+                    // restartMenu.style.display = 'none'
+                    textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
+                    gameplayBossName.innerHTML = bossOfTheGame[0].name
+                    gameplayWarriorName.innerHTML = warriorName
+                    gameplayMageName.innerHTML = mageName
+                    gameplayArcherName.innerHTML = archerName
+                    console.log("3");
+                    i = false
+                    break
+                case chronos:
+                    lilithSprite.style.display = 'none'
+                    sauronSprite.style.display = 'none'
+                    chronosSprite.style.display = 'block'
+                    mainMenu.style.display = 'none'
+                    mainMenuBoss.style.display = 'none'
+                    mainMenuHero.style.display = 'none'
+                    gameplay.style.display = 'block'
+                    // restartMenu.style.display = 'none'
+                    textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
+                    gameplayBossName.innerHTML = bossOfTheGame[0].name
+                    gameplayWarriorName.innerHTML = warriorName
+                    gameplayMageName.innerHTML = mageName
+                    gameplayArcherName.innerHTML = archerName
+                    rage = 0
+                    mana = 7
+                    arrows = 6
+                    console.log("2");
+                    i = false
+                    break
+            }
+        } else {
+           textBoxMenuHero.innerHTML = "Every hero should have a name and they need to have 300 health points and 150 attack points all together "
+           console.log("1");
+           i = true
+           break
+        }
     }
 })
 
-restartGameBtn.addEventListener('click', () => {
-    mainMenu.style.display = 'none'
-    mainMenuBoss.style.display = 'block'
-    mainMenuHero.style.display = 'none'
-    gameplay.style.display = 'none'
-    restartMenu.style.display = 'none'
-})
+// restartGameBtn.addEventListener('click', () => {
+//     mainMenu.style.display = 'none'
+//     mainMenuBoss.style.display = 'block'
+//     mainMenuHero.style.display = 'none'
+//     gameplay.style.display = 'none'
+//     restartMenu.style.display = 'none'
+// })
 
 // combat mode buttons
 warriorAttackModeBtn.addEventListener('click', () => {
@@ -106,17 +212,18 @@ warriorAttackModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (mageSprite.style.display == 'block'){
+            if (mageSprite.style.display != 'none'){
                 mageCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `The warrior dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
+                textBoxGameplay.innerHTML = `${warriorName} dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
                 rage += 1
-            } else if (archerSprite.style.display = 'block') {
+            } else if (archerSprite.style.display != 'none' && mageSprite.style.display == 'none') {
                 archerCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `The warrior dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
+                textBoxGameplay.innerHTML = `${warriorName} dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
                 rage += 1
             } else {
                 nextBtn.style.display = 'flex'
-                textBoxGameplay.innerHTML = `The warrior dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
+                console.log('yes');
+                textBoxGameplay.innerHTML = `${warriorName} dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
                 rage += 1
             }
             
@@ -145,19 +252,19 @@ warriorAttackModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (mageSprite.style.display == 'block'){
+            if (mageSprite.style.display != 'none'){
                 mageCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
+                textBoxGameplay.innerHTML = `${warriorName} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
                 rage = 0
-            } else if (archerSprite.style.display = 'block') {
+            } else if (archerSprite.style.display != 'none' && mageSprite.style.display == 'none') {
                 archerCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
+                textBoxGameplay.innerHTML = `${warriorName} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
                 rage = 0
             } else {
                 nextBtn.style.display = 'flex'
-                textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
+                textBoxGameplay.innerHTML = `${warriorName} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
                 rage = 0
-            } 
+            }
         }
 }})
 
@@ -188,17 +295,17 @@ warriorDefenseModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (mageSprite.style.display == 'block'){
+            if (mageSprite.style.display != 'none'){
                 mageCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `The warrior dealt ${warriorDamage} damage!`
+                textBoxGameplay.innerHTML = `${warriorName} dealt ${warriorDamage} damage!`
                 rage += 1
-            } else if (archerSprite.style.display = 'block') {
+            } else if (archerSprite.style.display != 'none' && mageSprite.style.display == 'none') {
                 archerCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `The warrior dealt ${warriorDamage} damage!`
+                textBoxGameplay.innerHTML = `${warriorName} dealt ${warriorDamage} damage!`
                 rage += 1
             } else {
                 nextBtn.style.display = 'flex'
-                textBoxGameplay.innerHTML = `The warrior dealt ${warriorDamage} damage!`
+                textBoxGameplay.innerHTML = `${warriorName} dealt ${warriorDamage} damage!`
                 rage += 1
             }
         }
@@ -226,17 +333,18 @@ warriorDefenseModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (mageSprite.style.display == 'block'){
+            if (mageSprite.style.display != 'none'){
                 mageCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `${warrior.name} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
+                archerCombatModeMenu.style.display = 'none'
+                textBoxGameplay.innerHTML = `${warriorName} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
                 rage = 0
-            } else if (archerSprite.style.display = 'block') {
+            } else if (archerSprite.style.display != 'none' && mageSprite.style.display == 'none') {
                 archerCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `${warrior.name} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
+                textBoxGameplay.innerHTML = `${warriorName} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
                 rage = 0
             } else {
                 nextBtn.style.display = 'flex'
-                textBoxGameplay.innerHTML = `${warrior.name} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
+                textBoxGameplay.innerHTML = `${warriorName} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
                 rage = 0
             } 
         }
@@ -269,25 +377,25 @@ mageAttackModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (archerSprite.style.display = 'block'){
+            if (archerSprite.style.display != 'none'){
                 archerCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `${mage.name} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
+                textBoxGameplay.innerHTML = `${mageName} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
                 mana -= 2
             } else {
                 nextBtn.style.display = 'flex'
-                textBoxGameplay.innerHTML = `${mage.name} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
+                textBoxGameplay.innerHTML = `${mageName} dealt ${parseInt(mageDamage + (mageDamage / 4))} damage!`
                 mana -= 2
             }
         }
     } else {
-        if (archerSprite.style.display = 'block'){
+        if (archerSprite.style.display != 'none'){
             archerCombatModeMenu.style.display = 'flex'
             mana = 7
-            textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+            textBoxGameplay.innerHTML = `${mageName} doesn't have enough mana! He'll have to wait another round.`
         } else {
             nextBtn.style.display = 'flex'
             mana = 7
-            textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+            textBoxGameplay.innerHTML = `${mageName} doesn't have enough mana! He'll have to wait another round.`
         }
     }
 })
@@ -319,25 +427,25 @@ mageDefenseModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (archerSprite.style.display = 'block'){
+            if (archerSprite.style.display != 'none'){
                 archerCombatModeMenu.style.display = 'flex'
-                textBoxGameplay.innerHTML = `${mage.name} dealt ${mageDamage} damage!`
+                textBoxGameplay.innerHTML = `${mageName} dealt ${mageDamage} damage!`
                 mana -= 2
             } else {
                 nextBtn.style.display = 'flex'
-                textBoxGameplay.innerHTML = `${mage.name} dealt ${mageDamage} damage!`
+                textBoxGameplay.innerHTML = `${mageName} dealt ${mageDamage} damage!`
                 mana -= 2
             }
         }
     } else {
-        if (archerSprite.style.display = 'block'){
+        if (archerSprite.style.display != 'none'){
             archerCombatModeMenu.style.display = 'flex'
             mana = 7
-            textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+            textBoxGameplay.innerHTML = `${mageName} doesn't have enough mana! He'll have to wait another round.`
         } else {
             nextBtn.style.display = 'flex'
             mana = 7
-            textBoxGameplay.innerHTML = `${mage.name} doesn't have enough mana! He'll have to wait another round.`
+            textBoxGameplay.innerHTML = `${mageName} doesn't have enough mana! He'll have to wait another round.`
         }
     }
 })
@@ -370,12 +478,12 @@ archerAttackModeBtn.addEventListener('click', () => {
             }
         } else {
             nextBtn.style.display = 'flex'
-            textBoxGameplay.innerHTML = `${archer.name} dealt ${parseInt(archerDamage + (archerDamage / 4))} damage!`
+            textBoxGameplay.innerHTML = `${archerName} dealt ${parseInt(archerDamage + (archerDamage / 4))} damage!`
             arrows -= 1
         }
     } else {
         arrows = 6
-        textBoxGameplay.innerHTML = `${archer.name} doesn't have enough arrows! He'll have to wait another round.`
+        textBoxGameplay.innerHTML = `${archerName} doesn't have enough arrows! He'll have to wait another round.`
         nextBtn.style.display = 'flex'
     }
 })
@@ -408,12 +516,12 @@ archerDefenseModeBtn.addEventListener('click', () => {
             }
         } else {
             nextBtn.style.display = 'flex'
-            textBoxGameplay.innerHTML = `${archer.name} dealt ${archerDamage} damage!`
+            textBoxGameplay.innerHTML = `${archerName} dealt ${archerDamage} damage!`
             arrows -= 1
         }
     } else {
         arrows = 6
-        textBoxGameplay.innerHTML = `${archer.name} doesn't have enough arrows! He'll have to wait another round.`
+        textBoxGameplay.innerHTML = `${archerName} doesn't have enough arrows! He'll have to wait another round.`
         nextBtn.style.display = 'flex'
     }
 })
@@ -424,12 +532,13 @@ nextBtn.addEventListener('click', () => {
     switch (target){
         case 1:
             if (warrior.combatMode == 'attack'){
-                warrior.health -= bossOfTheGame[0].damage
-                if (warrior.health > 0){
-                    textBoxGameplay.innerHTML = `${warrior.name} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage} health points`
+                warriorHealth -= bossOfTheGame[0].damage
+                warriorHealthBar.style.width = `${parseInt(warriorHealth / warriorMaxHealth * 100)}%`
+                if (warriorHealth > 0){
+                    textBoxGameplay.innerHTML = `${warriorName} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage} health points`
                     yourTurnBtn.style.display = 'flex'
                 } else {
-                    textBoxGameplay.innerHTML = `Oh no, ${warrior.name} lost all his health points! We just lost a precious warrior!`
+                    textBoxGameplay.innerHTML = `Oh no, ${warriorName} lost all his health points! We just lost a precious warrior!`
                     warriorSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -438,12 +547,13 @@ nextBtn.addEventListener('click', () => {
                     }
                 }
             } else {
-                warrior.health -= parseInt(bossOfTheGame[0].damage / 2)
-                if (warrior.health > 0){
-                    textBoxGameplay.innerHTML = `${warrior.name} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage / 2} health points`
+                warriorHealth -= parseInt(bossOfTheGame[0].damage / 2)
+                warriorHealthBar.style.width = `${parseInt(warriorHealth / warriorMaxHealth * 100)}%`
+                if (warriorHealth > 0){
+                    textBoxGameplay.innerHTML = `${warriorName} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage / 2} health points`
                     yourTurnBtn.style.display = 'flex'
                 } else {
-                    textBoxGameplay.innerHTML = `Oh no, ${warrior.name} lost all his health points! We just lost a precious warrior!`
+                    textBoxGameplay.innerHTML = `Oh no, ${warriorName} lost all his health points! We just lost a precious warrior!`
                     warriorSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -455,12 +565,13 @@ nextBtn.addEventListener('click', () => {
             break
         case 2:
             if (mage.combatMode == 'attack'){
-                mage.health -= bossOfTheGame[0].damage
-                if (mage.health > 0){
-                    textBoxGameplay.innerHTML = `${mage.name} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage} health points`
+                mageHealth -= bossOfTheGame[0].damage
+                mageHealthBar.style.width = `${parseInt(mageHealth / mageMaxHealth * 100)}%`
+                if (mageHealth > 0){
+                    textBoxGameplay.innerHTML = `${mageName} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage} health points`
                     yourTurnBtn.style.display = 'flex'
                 } else {
-                    textBoxGameplay.innerHTML = `Oh no, ${mage.name} lost all his health points! We just lost a precious mage!`
+                    textBoxGameplay.innerHTML = `Oh no, ${mageName} lost all his health points! We just lost a precious mage!`
                     mageSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -469,12 +580,13 @@ nextBtn.addEventListener('click', () => {
                     }
                 }
             } else {
-                mage.health -= parseInt(bossOfTheGame[0].damage / 2)
-                if (mage.health > 0){
-                    textBoxGameplay.innerHTML = `${mage.name} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage / 2} health points`
+                mageHealth -= parseInt(bossOfTheGame[0].damage / 2)
+                mageHealthBar.style.width = `${parseInt(mageHealth / mageMaxHealth * 100)}%`
+                if (mageHealth > 0){
+                    textBoxGameplay.innerHTML = `${mageName} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage / 2} health points`
                     yourTurnBtn.style.display = 'flex'
                 } else {
-                    textBoxGameplay.innerHTML = `Oh no, ${mage.name} lost all his health points! We just lost a precious mage!`
+                    textBoxGameplay.innerHTML = `Oh no, ${mageName} lost all his health points! We just lost a precious mage!`
                     mageSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -486,12 +598,13 @@ nextBtn.addEventListener('click', () => {
             break
         case 3:
             if (archer.combatMode == 'attack'){
-                archer.health -= bossOfTheGame[0].damage
-                if (archer.health > 0){
-                    textBoxGameplay.innerHTML = `${archer.name} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage} health points`
+                archerHealth -= bossOfTheGame[0].damage
+                archerHealthBar.style.width = `${parseInt(archerHealth / archerMaxHealth * 100)}%`
+                if (archerHealth > 0){
+                    textBoxGameplay.innerHTML = `${archerName} just took a hit from ${bossOfTheGame[0].name}! he lost ${bossOfTheGame[0].damage} health points`
                     yourTurnBtn.style.display = 'flex'
                 } else {
-                    textBoxGameplay.innerHTML = `Oh no, ${archer.name} lost all his health points! We just lost a precious archer!`
+                    textBoxGameplay.innerHTML = `Oh no, ${archerName} lost all his health points! We just lost a precious archer!`
                     archerSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -500,12 +613,13 @@ nextBtn.addEventListener('click', () => {
                     }
                 }
             } else {
-                archer.health -= parseInt(bossOfTheGame[0].damage / 2)
-                if (archer.health > 0){
-                    textBoxGameplay.innerHTML = `${archer.name} just took a hit from ${bossOfTheGame[0].name / 2}! he lost ${bossOfTheGame[0].damage} health points`
+                archerHealth -= parseInt(bossOfTheGame[0].damage / 2)
+                archerHealthBar.style.width = `${parseInt(archerHealth / archerMaxHealth * 100)}%`
+                if (archerHealth > 0){
+                    textBoxGameplay.innerHTML = `${archerName} just took a hit from ${bossOfTheGame[0].name / 2}! he lost ${bossOfTheGame[0].damage} health points`
                     yourTurnBtn.style.display = 'flex'
                 } else {
-                    textBoxGameplay.innerHTML = `Oh no, ${archer.name} lost all his health points! We just lost a precious archer!`
+                    textBoxGameplay.innerHTML = `Oh no, ${archerName} lost all his health points! We just lost a precious archer!`
                     warriorSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -521,11 +635,11 @@ nextBtn.addEventListener('click', () => {
 yourTurnBtn.addEventListener('click', () => {
     yourTurnBtn.style.display = 'none'
     textBoxGameplay.innerHTML = 'Your turn!'
-    if (warriorSprite.style.display == 'block') {
+    if (warriorSprite.style.display != 'none') {
         warriorCombatModeMenu.style.display = 'flex'
-    } else if (mageSprite.style.display == 'block') {
+    } else if (mageSprite.style.display != 'none') {
         mageCombatModeMenu.style.display = 'flex'
-    } else if (archerSprite.style.display == 'block') {
+    } else if (archerSprite.style.display != 'none') {
         archerCombatModeMenu.style.display = 'flex'
     }
 })
