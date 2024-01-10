@@ -92,7 +92,7 @@ warriorAttackModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (mageSprite.style.display = 'block'){
+            if (mageSprite.style.display == 'block'){
                 mageCombatModeMenu.style.display = 'flex'
                 textBoxGameplay.innerHTML = `The warrior dealt ${(warriorDamage + (warriorDamage / 100 * 20))} damage!`
                 rage += 1
@@ -130,7 +130,7 @@ warriorAttackModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (mageSprite.style.display = 'block'){
+            if (mageSprite.style.display == 'block'){
                 mageCombatModeMenu.style.display = 'flex'
                 textBoxGameplay.innerHTML = `The warrior dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${((warriorDamage + (warriorDamage / 100 * 20)) + (warriorDamage + (warriorDamage / 100 * 20))/4)} healt points!` 
                 rage = 0
@@ -173,7 +173,7 @@ warriorDefenseModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (mageSprite.style.display = 'block'){
+            if (mageSprite.style.display == 'block'){
                 mageCombatModeMenu.style.display = 'flex'
                 textBoxGameplay.innerHTML = `The warrior dealt ${warriorDamage} damage!`
                 rage += 1
@@ -210,7 +210,7 @@ warriorDefenseModeBtn.addEventListener('click', () => {
                     break
             }
         } else {
-            if (mageSprite.style.display = 'block'){
+            if (mageSprite.style.display == 'block'){
                 mageCombatModeMenu.style.display = 'flex'
                 textBoxGameplay.innerHTML = `${warrior.name} dealt a critical hit which brings ${bossOfTheGame[0].name} down by ${(warriorDamage + parseInt(warriorDamage + parseInt(warriorDamage / 100 * 20))/4)} healt points!`
                 rage = 0
