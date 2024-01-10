@@ -670,8 +670,9 @@ body {
   align-items: center;
 }
 .riddle .riddle-content .riddle-all .riddle-button button {
-  width: 140px;
-  height: 50px;
+  min-width: 140px;
+  min-height: 50px;
+  padding: 10px 25px;
   cursor: pointer;
   background-color: #314250;
   border: none;
