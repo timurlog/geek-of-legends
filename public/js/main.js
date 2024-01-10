@@ -60,9 +60,9 @@ export let mage = new Mage(mageName, 'neutral', mageDamage, mageHealth, mageMaxH
 export let archer = new Archer(archerName, 'neutral', archerDamage, archerHealth, archerMaxHealth, arrows);
 
 // creating boss objects with Boss class
-export let lilith = new Boss('Lilith', getRandomInt(40,47), 800, 800)
-export let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000, 1000)
-export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150, 1150)
+export let lilith = new Boss('Lilith', getRandomInt(40,47), 1100, 1100)
+export let chronos = new Boss('Chronos', getRandomInt(35, 40), 1300, 1300)
+export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1550, 1550)
 
 // array we need to start a new game
 export let bossOfTheGame = []
@@ -568,6 +568,7 @@ nextBtn.addEventListener('click', () => {
                 } else {
                     textBoxGameplay.innerHTML = `Oh no, ${warriorName} lost all his health points! We just lost a precious warrior!`
                     warriorSprite.style.display = 'none'
+                    warriorHealthBar.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
                     } else {
@@ -582,6 +583,7 @@ nextBtn.addEventListener('click', () => {
                     yourTurnBtn.style.display = 'flex'
                 } else {
                     textBoxGameplay.innerHTML = `Oh no, ${warriorName} lost all his health points! We just lost a precious warrior!`
+                    warriorHealthBar.style.display = 'none'
                     warriorSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -600,6 +602,7 @@ nextBtn.addEventListener('click', () => {
                     yourTurnBtn.style.display = 'flex'
                 } else {
                     textBoxGameplay.innerHTML = `Oh no, ${mageName} lost all his health points! We just lost a precious mage!`
+                    mageHealthBar.style.display = 'none'
                     mageSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -615,6 +618,7 @@ nextBtn.addEventListener('click', () => {
                     yourTurnBtn.style.display = 'flex'
                 } else {
                     textBoxGameplay.innerHTML = `Oh no, ${mageName} lost all his health points! We just lost a precious mage!`
+                    mageHealthBar.style.display = 'none'
                     mageSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -633,6 +637,7 @@ nextBtn.addEventListener('click', () => {
                     yourTurnBtn.style.display = 'flex'
                 } else {
                     textBoxGameplay.innerHTML = `Oh no, ${archerName} lost all his health points! We just lost a precious archer!`
+                    archerHealthBar.style.display = 'none'
                     archerSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
@@ -648,6 +653,7 @@ nextBtn.addEventListener('click', () => {
                     yourTurnBtn.style.display = 'flex'
                 } else {
                     textBoxGameplay.innerHTML = `Oh no, ${archerName} lost all his health points! We just lost a precious archer!`
+                    archerHealthBar.style.display = 'none'
                     warriorSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
                         gameplayGameOver.style.display = 'block'
