@@ -79,9 +79,9 @@ export let mana = 7
 export let arrows = 6
 
 // creating hero objects with Hero class
-export let warrior = new Warrior(warriorName, warriorCombatMode, warriorDamage, warriorHealth, rage);
-export let mage = new Mage(mageName, mageCombatMode, mageDamage, mageHealth, mana);
-export let archer = new Archer(archerName, archerCombatMode, archerDamage, archerHealth, arrows);
+export let warrior = new Warrior(warriorName, 'neutral', warriorDamage, warriorHealth, rage);
+export let mage = new Mage(mageName, 'neutral', mageDamage, mageHealth, mana);
+export let archer = new Archer(archerName, 'neutral', archerDamage, archerHealth, arrows);
 
 // creating boss objects with Boss class
 export let lilith = new Boss('Lilith', getRandomInt(40,47), 800, 800)
