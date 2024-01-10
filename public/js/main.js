@@ -1,4 +1,3 @@
-import { arrow } from "@popperjs/core/index.js";
 import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDamagePointsInput, archerDefenseModeBtn, archerHealth, archerName, archerSprite, arrows, bossHealthBar, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, gameplayArcherName, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDamagePointsInput, mageDefenseModeBtn, mageHealth, mageName, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, mana, nextBtn, rage, restartGameBtn, restartMenu, riddleOne, riddleTwo, sauron, sauronBtn, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealth, warriorName, warriorSprite, yourTurnBtn } from "./variables.js";
 
 // get random number (for damage)
