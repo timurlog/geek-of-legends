@@ -203,3 +203,53 @@
                     display: none
                 #goToRiddleDiv
                     display: none
+
+.damageAnim
+    animation: damageVFX 0.3s normal forwards
+@keyframes damageVFX
+    0%
+        filter: brightness(1.5)
+        padding-left: 0px
+        padding-right: 10px
+    20%
+        filter: brightness(2)
+        padding-left: 10px
+        padding-right: 0px
+    40%
+        filter: brightness(1.5)
+        padding-left: 0px
+        padding-right: 10px
+    60%
+        filter: brightness(2)
+        padding-left: 10px
+        padding-right: 0px
+    80%
+        filter: brightness(1.5)
+        padding-left: 0px
+        padding-right: 10px
+    100%
+        filter: brightness(1)
+        padding-left: 0px
+        padding-right: 0px
+
+.damageAnimHero
+    animation: damageHeroVFX 0.3s normal forwards
+@keyframes damageHeroVFX
+    0%
+        filter: brightness(1.5)
+        transform: rotateZ(2deg)
+    20%
+        filter: brightness(2)
+        transform: rotateZ(-2deg)
+    40%
+        filter: brightness(1.5)
+        transform: rotateZ(2deg)
+    60%
+        filter: brightness(2)
+        transform: rotateZ(-2deg)
+    80%
+        filter: brightness(1.5)
+        transform: rotateZ(2deg)
+    100%
+        filter: brightness(1)
+        transform: rotateZ(0deg)
