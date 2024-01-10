@@ -5,9 +5,10 @@ export let mainMenu = document.querySelector('#mainMenu')
 export let mainMenuBoss = document.querySelector('#mainMenuBoss')
 export let mainMenuHero = document.querySelector('#mainMenuHero')
 export let gameplay = document.querySelector('#gameplay')
-export let restartMenu = document.querySelector('#restartMenu')
+export let gameOverMenu = document.querySelector('#gameoverMenu')
 export let startGameBtn = document.querySelector('#startGameBtn');
 export let restartGameBtn = document.querySelector('#replayGameBtn')
+export let goToMainMenuBtn = document.querySelector('#goToMainMenuBtn')
 export let lilithBtn = document.querySelector('#lilithBtn');
 export let sauronBtn = document.querySelector('#sauronBtn');
 export let chronosBtn = document.querySelector('#chronosBtn');
@@ -33,6 +34,9 @@ export let nextBtn = document.querySelector('#nextBtn')
 export let yourTurnBtn = document.querySelector('#yourTurnBtn')
 export let gameplayBossName = document.querySelector('#gameplayBossName')
 export let gameplayGameOver = document.querySelector('#gameplayGameOver')
+export let gameplayWarriorName = document.querySelector('#gameplayWarriorName')
+export let gameplayMageName = document.querySelector('#gameplayMageName')
+export let gameplayArcherName = document.querySelector('#gameplayArcherName')
 
 
 // character maker inputs
@@ -75,14 +79,14 @@ export let mana = 7
 export let arrows = 6
 
 // creating hero objects with Hero class
-export let warrior = new Warrior(warriorName, warrior.combatMode, warriorDamage, warriorHealth, rage);
-export let mage = new Mage(mageName, mage.combatMode, mageDamage, mageHealth, mana);
-export let archer = new Archer(archerName, archer.combatMode, archerDamage, archerHealth, arrows);
+export let warrior = new Warrior(warriorName, warriorCombatMode, warriorDamage, warriorHealth, rage);
+export let mage = new Mage(mageName, mageCombatMode, mageDamage, mageHealth, mana);
+export let archer = new Archer(archerName, archerCombatMode, archerDamage, archerHealth, arrows);
 
 // creating boss objects with Boss class
-export let lilith = new Boss('Lilith', getRandomInt(40,47), 800)
-export let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000)
-export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150)
+export let lilith = new Boss('Lilith', getRandomInt(40,47), 800, 800)
+export let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000, 1000)
+export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150, 1150)
 
 // array we need to start a new game
 export let bossOfTheGame = []
