@@ -56,7 +56,7 @@ confirmStatsBtn.addEventListener('click', () => {
     var archerHealth = archerHealthPointsInput
     let i = true
     while (i == true){
-        if (warriorName != "" || mageName != "" || archerName != "" || (warriorDamage + mageDamage + archerDamage) == 150 || (warriorHealth + mageHealth + archerHealth) == 300 || warriorHealth > 0 || mageHealth > 0 || archerHealth > 0 || warriorDamage > 0 || mageDamage > 0 || archerDamage > 0) {
+        if (warriorName != "" && mageName != "" && archerName != "" && (warriorDamage + mageDamage + archerDamage) == 150 && (warriorHealth + mageHealth + archerHealth) == 300 && warriorHealth > 0 && mageHealth > 0 && archerHealth > 0 && warriorDamage > 0 && mageDamage > 0 && archerDamage > 0) {
             // mainMenu.style.display = 'none'
             // mainMenuBoss.style.display = 'none'
             // mainMenuHero.style.display = 'none'
