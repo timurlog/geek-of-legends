@@ -27,7 +27,7 @@
         <!-- ### MAIN MENU BOSS ### -->
         <section id="mainMenuBoss" class="main-menu-boss">
             <div class="main-menu-boss-content">
-                <div>
+                <div class="main-menu-boss-title">
                     <p>CHOOSE WHO YOU WILL BEAT</p>
                 </div>
                 <div class="boss-cards">
@@ -43,7 +43,7 @@
                                 <p>Sauron, the implacable shadow, seeks to dominate Middle-earth with his One Ring.</p>
                             </div>
                             <div>
-                                <p>HP : 1150<br>Damage per attack : 25</p>
+                                <p>HP : 1150<br>Damage per attack : 30 -> 35</p>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                                 <p>Chronos, the god of time, reigns eternally over the inexorable flow of moments.</p>
                             </div>
                             <div>
-                                <p>HP : 1000<br>Damage per attack : 30</p>
+                                <p>HP : 1000<br>Damage per attack : 35 -> 40</p>
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                                 <p>Lilith, the emblematic demon of Diablo 4, embodies chaos and evil seduction.</p>
                             </div>
                             <div>
-                                <p>HP : 900<br>Damage per attack : 30</p>
+                                <p>HP : 800<br>Damage per attack : 40 -> 47</p>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,319 @@
 
         <!-- ### MAIN MENU HERO ### -->
         <section id="mainMenuHero" class="main-menu-hero">
-            
+            <div class="main-menu-hero-content">
+                <div class="main-menu-hero-title">
+                    <p>CHOOSE THE STATS OF YOUR HEROES</p>
+                </div>
+                <div id="textBoxMenuHero" class="text-box-menu-hero">
+                    
+                </div>
+                <div class="hero-cards">
+                    <div class="hero-card">
+                        <div class="hero-card-top">
+                            <img src="./public/assets/image/warrior-icon.png" alt="warrior-icon">
+                        </div>
+                        <div class="hero-card-bot">
+                            <div>
+                                <p class="hero-name">WARRIOR</p>
+                            </div>
+                            <div>
+                                <input type="text" name="warrior-name" id="warriorName" placeholder="Choose his name">
+                            </div>
+                            <div>
+                                <input type="number" name="warrior-health" id="warriorHealth" placeholder="Choose his HP">
+                            </div>
+                            <div>
+                                <input type="number" name="warrior-damage" id="warriorDamage" placeholder="Choose his damage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-top">
+                            <img src="./public/assets/image/mage-icon.png" alt="mage-icon">
+                        </div>
+                        <div class="hero-card-bot">
+                            <div>
+                                <p class="hero-name">MAGE</p>
+                            </div>
+                            <div>
+                                <input type="text" name="mage-name" id="mageName" placeholder="Choose his name">
+                            </div>
+                            <div>
+                                <input type="number" name="mage-health" id="mageHealth" placeholder="Choose his HP">
+                            </div>
+                            <div>
+                                <input type="number" name="mage-damage" id="mageDamage" placeholder="Choose his damage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-top">
+                            <img src="./public/assets/image/bow-icon.png" alt="bow-icon">
+                        </div>
+                        <div class="hero-card-bot">
+                            <div>
+                                <p class="hero-name">ARCHER</p>
+                            </div>
+                            <div>
+                                <input type="text" name="archer-name" id="archerName" placeholder="Choose his name">
+                            </div>
+                            <div>
+                                <input type="number" name="archer-health" id="archerHealth" placeholder="Choose his HP">
+                            </div>
+                            <div>
+                                <input type="number" name="archer-damage" id="archerDamage" placeholder="Choose his damage">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-card-confirm">
+                    <div>
+                        <button onclick="sound('./public/assets/music/button-sound.mp3')">CONFIRM</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ### GAMEPLAY ### -->
+        <section id="gameplay" class="gameplay">
+            <div class="gameplay-content">
+                <div class="gameplay-left">
+                    <div class="gameplay-left-top">
+                        <div class="gameplay-boss-info">
+                            <div class="gameplay-boss-info-top">
+                                <div>
+                                    <img src="./public/assets/image/boss-icon.png" alt="boss-icon">
+                                </div>
+                                <div id="gameplayBossName">
+                                    bossname
+                                </div>
+                            </div>
+                            <div  class="gameplay-boss-info-bot">
+                                <div class="gameplay-healthbar">
+                                    <div id="bossHealthBar">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gameplay-left-bot">
+                        <div id="textBoxGameplay"></div>
+                    </div>
+                </div>
+                <div class="gameplay-mid">
+                    <div class="gameplay-mid-top">
+                        <img id="sauronSprite" src="./public/assets/image/sauron-normalv2.png" alt="sauron-normal">
+                        <img id="lilithSprite" src="./public/assets/image/lilith-normalv2.png" alt="lilith-normal">
+                        <img id="chronosSprite" src="./public/assets/image/chronos-normalv2.png" alt="chronos-normal">
+                    </div>
+                    <div class="gameplay-mid-bot">
+                        <div>
+                            <img id="warriorSprite" class="morepad" src="./public/assets/image/warriorv2.png" alt="warrior">
+                        </div>
+                        <div>
+                            <img id="mageSprite" src="./public/assets/image/magev2.png" alt="mage">
+                        </div>
+                        <div>
+                            <img id="archerSprite" class="morepad" src="./public/assets/image/archerv2.png" alt="archer">
+                        </div>
+                    </div>
+                </div>
+                <div class="gameplay-right">
+                    <div class="gameplay-right-top">
+                        <div class="gameplay-hero-info">
+                            <div class="gameplay-hero-info-top">
+                                <div>
+                                    <img src="./public/assets/image/warrior-icon.png" alt="warrior-icon">
+                                </div>
+                                <div id="gameplayWarriorName">
+                                    WARRIOR
+                                </div>
+                            </div>
+                            <div  class="gameplay-hero-info-bot">
+                                <div class="gameplay-healthbar">
+                                    <div id="warriorHealthBar">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gameplay-hero-info">
+                            <div class="gameplay-hero-info-top">
+                                <div>
+                                    <img src="./public/assets/image/mage-icon.png" alt="mage-icon">
+                                </div>
+                                <div id="gameplayMageName">
+                                    MAGE
+                                </div>
+                            </div>
+                            <div  class="gameplay-hero-info-bot">
+                                <div class="gameplay-healthbar">
+                                    <div id="mageHealthBar">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gameplay-hero-info">
+                            <div class="gameplay-hero-info-top">
+                                <div>
+                                    <img src="./public/assets/image/bow-icon.png" alt="bow-icon">
+                                </div>
+                                <div id="gameplayArcherName">
+                                    ARCHER
+                                </div>
+                            </div>
+                            <div  class="gameplay-hero-info-bot">
+                                <div class="gameplay-healthbar">
+                                    <div id="archerHealthBar">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gameplay-right-bot">
+                        <div id="warriorCombatModeMenu" class="gameplay-option">
+                            <div>
+                                <p class="hero-name-title">WARRIOR</p>
+                            </div>
+                            <div>
+                                <p>COMBAT POSITION SELECTOR</p>
+                            </div>
+                            <div class="select-button-div">
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="warriorAttackModeBtn">ATTACK</button>
+                            </div>
+                            <div class="select-button-div">
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="warriorDefenseModeBtn">DEFENCE</button>
+                            </div>
+                        </div>
+                        <div id="mageCombatModeMenu" class="gameplay-option">
+                            <div>
+                                <p class="hero-name-title">MAGE</p>
+                            </div>
+                            <div>
+                                <p>COMBAT POSITION SELECTOR</p>
+                            </div>
+                            <div class="select-button-div">
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="mageAttackModeBtn">ATTACK</button>
+                            </div>
+                            <div class="select-button-div">
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="mageDefenseModeBtn">DEFENCE</button>
+                            </div>
+                        </div>
+                        <div id="archerCombatModeMenu" class="gameplay-option">
+                            <div>
+                                <p class="hero-name-title">ARCHER</p>
+                            </div>
+                            <div>
+                                <p>COMBAT POSITION SELECTOR</p>
+                            </div>
+                            <div class="select-button-div">
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="archerAttackModeBtn">ATTACK</button>
+                            </div>
+                            <div class="select-button-div">
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="archerDefenseModeBtn">DEFENCE</button>
+                            </div>
+                        </div>
+                        <div id="nextDiv" class="gameplay-option">
+                            <div class="select-button-div">
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="nextBtn">NEXT</button>
+                            </div>
+                        </div>
+                        <div id="yourTurnDiv" class="gameplay-option">
+                            <div class="select-button-div">
+                                <button onclick="sound('./public/assets/music/button-sound.mp3')" id="yourTurnBtn">NEXT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ### RIDDLE ### -->
+        <section id="riddle" class="riddle">
+            <div class="riddle-content">
+                <div id="riddleOne" class="riddle-all">
+                    <div class="riddle-title">
+                        <p>RIDDLE GAME</p>
+                    </div>
+                    <div class="riddle-ask">
+                        <p>1+1</p>
+                    </div>
+                    <div class="riddle-button">
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleOneFalse1">1</button>
+                        </div>
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleOneTrue">2</button>
+                        </div>
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleOneFalse2">3</button>
+                        </div>
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleOneFalse3">4</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="riddleTwo" class="riddle-all">
+                    <div class="riddle-title">
+                        <p>RIDDLE GAME</p>
+                    </div>
+                    <div class="riddle-ask">
+                        <p>1+2</p>
+                    </div>
+                    <div class="riddle-button">
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleTwoFalse1">1</button>
+                        </div>
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleTwoFalse2">2</button>
+                        </div>
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleTwoTrue">3</button>
+                        </div>
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleTwoFalse3">4</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="riddleThree" class="riddle-all">
+                    <div class="riddle-title">
+                        <p>RIDDLE GAME</p>
+                    </div>
+                    <div class="riddle-ask">
+                        <p>2+2</p>
+                    </div>
+                    <div class="riddle-button">
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleThreeFalse1">1</button>
+                        </div>
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleThreeFalse2">2</button>
+                        </div>
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleThreeFalse3">3</button>
+                        </div>
+                        <div>
+                            <button onclick="sound('./public/assets/music/button-sound.mp3')" id="riddleThreeTrue">4</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ### GAMEOVER ### -->
+        <section id="gameoverMenu" class="gameover-menu">
+            <div class="gameover-menu-content">
+                <div>
+                    <p>GAME OVER</p>
+                </div>
+                <div>
+                    <button onclick="sound('./public/assets/music/button-sound.mp3')" id="goToMainMenuBtn">MAIN MENU</button>
+                </div>
+            </div>
         </section>
     </main>
 
