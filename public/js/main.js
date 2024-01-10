@@ -756,7 +756,29 @@ archerDefenseModeBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
     playBossAttackEffect();
     nextMenu.style.display = 'none'
-    let target = getRandomInt(1,3)
+    let target
+    let targetTarget
+    if (warriorHealth > 0 && mageHealth > 0 && archerHealth > 0) {
+        target = getRandomInt(1,3)
+    } else if (warriorHealth <= 0 && mageHealth > 0 && archerHealth > 0 ) {
+        target = getRandomInt(2,3)
+    } else if (warriorHealth > 0 && mageHealth <= 0 && archerHealth > 0) {
+        targetTarget =  getRandomInt(1,2)
+        if (targetTarget == 1) {
+            target = 1
+        } else {
+            target = 3
+        }
+    } else if(warriorHealth > 0 && mageHealth > 0 && archerHealth <= 0) {
+        target = getRandomInt(1,2)
+    } else if (warriorHealth > 0 && mageHealth <= 0 && archerHealth <= 0) {
+        target = 1
+    } else if (warriorHealth <= 0 && mageHealth > 0 && archerHealth <= 0) {
+        target = 2
+    } else if(warriorHealth <= 0 && mageHealth <= 0 && archerHealth > 0 ) {
+        target = 3
+    }
+    
     switch (target){
         case 1:
             if (warrior.combatMode == 'attack' && warriorHealth > 0){
@@ -771,7 +793,8 @@ nextBtn.addEventListener('click', () => {
                     warriorSprite.style.display = 'none'
                     warriorHealthBar.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
-                        gameplayGameOver.style.display = 'block'
+                        gameOverMenu.style.display = 'block'
+                        gameplay.style.display = 'none'
                     } else {
                         yourTurnMenu.style.display = 'flex'
                     }
@@ -788,7 +811,8 @@ nextBtn.addEventListener('click', () => {
                     warriorHealthBar.style.display = 'none'
                     warriorSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
-                        gameplayGameOver.style.display = 'block'
+                        gameOverMenu.style.display = 'block'
+                        gameplay.style.display = 'none'
                     } else {
                         yourTurnMenu.style.display = 'flex'
                     }
@@ -810,7 +834,8 @@ nextBtn.addEventListener('click', () => {
                     mageHealthBar.style.display = 'none'
                     mageSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
-                        gameplayGameOver.style.display = 'block'
+                        gameOverMenu.style.display = 'block'
+                        gameplay.style.display = 'none'
                     } else {
                         yourTurnMenu.style.display = 'flex'
                     }
@@ -827,7 +852,8 @@ nextBtn.addEventListener('click', () => {
                     mageHealthBar.style.display = 'none'
                     mageSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
-                        gameplayGameOver.style.display = 'block'
+                        gameOverMenu.style.display = 'block'
+                        gameplay.style.display = 'none'
                     } else {
                         yourTurnMenu.style.display = 'flex'
                     }
@@ -849,7 +875,8 @@ nextBtn.addEventListener('click', () => {
                     archerHealthBar.style.display = 'none'
                     archerSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
-                        gameplayGameOver.style.display = 'block'
+                        gameOverMenu.style.display = 'block'
+                        gameplay.style.display = 'none'
                     } else {
                         yourTurnMenu.style.display = 'flex'
                     }
@@ -866,7 +893,8 @@ nextBtn.addEventListener('click', () => {
                     archerHealthBar.style.display = 'none'
                     warriorSprite.style.display = 'none'
                     if ((warriorSprite.style.display == 'none') && (mageSprite.style.display == 'none') && (archerSprite.style.display == 'none')) {
-                        gameplayGameOver.style.display = 'block'
+                        gameOverMenu.style.display = 'block'
+                        gameplay.style.display = 'none'
                     } else {
                         yourTurnMenu.style.display = 'flex'
                     }
@@ -877,10 +905,10 @@ nextBtn.addEventListener('click', () => {
             break
     }
     // end of game statement (loosing by hp)
-    if (warriorSprite.style.display == 'none' && mageSprite.style.display == 'none' && archerSprite.style.display == 'none') {
-    gameOverMenu.style.display = 'block'
-    gameplay.style.display = 'none'
-}
+//     if (warriorSprite.style.display == 'none' && mageSprite.style.display == 'none' && archerSprite.style.display == 'none') {
+//     gameOverMenu.style.display = 'block'
+//     gameplay.style.display = 'none'
+// }
 })
 
 yourTurnBtn.addEventListener('click', () => {
