@@ -102,13 +102,13 @@
                                 <p class="hero-name">WARRIOR</p>
                             </div>
                             <div>
-                                <input type="text" name="warrior-name" id="warriorName" placeholder="Choose his name">
+                                <input type="text" name="warrior-name" id="warriorNameInput" placeholder="Choose his name" value="bob">
                             </div>
                             <div>
-                                <input type="number" name="warrior-health" id="warriorHealth" placeholder="Choose his HP">
+                                <input type="number" name="warrior-health" id="warriorHealthPointsInput" placeholder="Choose his HP" value="100">
                             </div>
                             <div>
-                                <input type="number" name="warrior-damage" id="warriorDamage" placeholder="Choose his damage">
+                                <input type="number" name="warrior-damage" id="warriorDamagePointsInput" placeholder="Choose his damage" value="50">
                             </div>
                         </div>
                     </div>
@@ -121,13 +121,13 @@
                                 <p class="hero-name">MAGE</p>
                             </div>
                             <div>
-                                <input type="text" name="mage-name" id="mageName" placeholder="Choose his name">
+                                <input type="text" name="mage-name" id="mageNameInput" placeholder="Choose his name" value="bob">
                             </div>
                             <div>
-                                <input type="number" name="mage-health" id="mageHealth" placeholder="Choose his HP">
+                                <input type="number" name="mage-health" id="mageHealthPointsInput" placeholder="Choose his HP" value="100">
                             </div>
                             <div>
-                                <input type="number" name="mage-damage" id="mageDamage" placeholder="Choose his damage">
+                                <input type="number" name="mage-damage" id="mageDamagePointsInput" placeholder="Choose his damage" value="50">
                             </div>
                         </div>
                     </div>
@@ -140,20 +140,20 @@
                                 <p class="hero-name">ARCHER</p>
                             </div>
                             <div>
-                                <input type="text" name="archer-name" id="archerName" placeholder="Choose his name">
+                                <input type="text" name="archer-name" id="archerNameInput" placeholder="Choose his name" value="bob">
                             </div>
                             <div>
-                                <input type="number" name="archer-health" id="archerHealth" placeholder="Choose his HP">
+                                <input type="number" name="archer-health" id="archerHealthPointsInput" placeholder="Choose his HP" value="100">
                             </div>
                             <div>
-                                <input type="number" name="archer-damage" id="archerDamage" placeholder="Choose his damage">
+                                <input type="number" name="archer-damage" id="archerDamagePointsInput" placeholder="Choose his damage" value="50">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="hero-card-confirm">
                     <div>
-                        <button onclick="sound('./public/assets/music/button-sound.mp3')">CONFIRM</button>
+                        <button id="confirmStatsBtn" onclick="sound('./public/assets/music/button-sound.mp3')">CONFIRM</button>
                     </div>
                 </div>
             </div>

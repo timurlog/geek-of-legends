@@ -1,4 +1,4 @@
-import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamage, archerDamagePointsInput, archerDefenseModeBtn, archerHealth, archerHealthPointsInput, archerName, archerNameInput, archerSprite, arrows, bossHealthBar, bossOfTheGame, chronos, chronosBtn, confirmStatsBtn, gameplay, gameplayArcherName, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, lilith, lilithBtn, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamage, mageDamagePointsInput, mageDefenseModeBtn, mageHealth, mageHealthPointsInput, mageName, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, mana, nextBtn, rage, restartGameBtn, restartMenu, riddleOne, riddleTwo, sauron, sauronBtn, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamage, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealth, warriorHealthPointsInput, warriorName, warriorNameInput, warriorSprite, yourTurnBtn } from "./variables.js";
+import { archer, archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthPointsInput,  archerNameInput, archerSprite, arrows, bossHealthBar, bossOfTheGame, chronos, chronosBtn, chronosSprite, confirmStatsBtn, gameplay, gameplayArcherName, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, lilith, lilithBtn, lilithSprite, mage, mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthPointsInput, mageNameInput, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, mana, nextBtn, rage, riddleOne, riddleTwo, sauron, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warrior, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthPointsInput, warriorNameInput, warriorSprite, yourTurnBtn } from "./variables.js";
 
 // get random number (for damage)
 export function getRandomInt(min, max) {
@@ -11,7 +11,7 @@ startGameBtn.addEventListener('click', () => {
     mainMenuBoss.style.display = 'block';
     mainMenuHero.style.display = 'none';
     gameplay.style.display = 'none';
-    restartMenu.style.display = 'none';
+    // restartMenu.style.display = 'none';
 });
 
 lilithBtn.addEventListener('click', () => {
@@ -19,7 +19,7 @@ lilithBtn.addEventListener('click', () => {
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
-    restartMenu.style.display = 'none'
+    // restartMenu.style.display = 'none'
     bossOfTheGame.push(lilith)
     textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
@@ -29,7 +29,7 @@ sauronBtn.addEventListener('click', () => {
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
-    restartMenu.style.display = 'none'
+    // restartMenu.style.display = 'none'
     bossOfTheGame.push(sauron)
     textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
@@ -39,47 +39,109 @@ chronosBtn.addEventListener('click', () => {
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
-    restartMenu.style.display = 'none'
+    // restartMenu.style.display = 'none'
     bossOfTheGame.push(chronos)
     textBoxMenuHero.innerHTML = "give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
 confirmStatsBtn.addEventListener('click', () => {
-    mageName = mageNameInput.value
-    archerName = archerNameInput.value
-    warriorName = warriorNameInput.value
-    warriorDamage = warriorDamagePointsInput.value
-    mageDamage = mageDamagePointsInput.value
-    archerDamage = archerDamagePointsInput.value
-    warriorHealth = warriorHealthPointsInput.value
-    mageHealth = mageHealthPointsInput.value
-    archerHealth = archerHealthPointsInput
-    if (warriorName != "" && mageName != "" && archerName != "" && (warriorDamage + mageDamage + archerDamage) == 150 && (warriorHealth + mageHealth + archerHealth) == 300 && warriorHealth > 0 && mageHealth > 0 && archerHealth > 0 && warriorDamage > 0 && mageDamage > 0 && archerDamage > 0) {
-        mainMenu.style.display = 'none'
-        mainMenuBoss.style.display = 'none'
-        mainMenuHero.style.display = 'none'
-        gameplay.style.display = 'block'
-        restartMenu.style.display = 'none'
-        textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
-        gameplayBossName.innerHTML = bossOfTheGame[0].name
-        gameplayWarriorName.innerHTML = warriorName
-        gameplayMageName.innerHTML = mageName
-        gameplayArcherName.innerHTML = archerName
-        rage = 0
-        mana = 7
-        arrows = 6
-    } else {
-       textBoxMenuHero.innerHTML = "Every hero should have a name and they need to have 300 health points and 150 attack points all together "
+    var mageName = mageNameInput.value
+    var archerName = archerNameInput.value
+    var warriorName = warriorNameInput.value
+    var warriorDamage = warriorDamagePointsInput.value
+    var mageDamage = mageDamagePointsInput.value
+    var archerDamage = archerDamagePointsInput.value
+    var warriorHealth = warriorHealthPointsInput.value
+    var mageHealth = mageHealthPointsInput.value
+    var archerHealth = archerHealthPointsInput
+    let i = true
+    while (i == true){
+        if (warriorName != "" || mageName != "" || archerName != "" || (warriorDamage + mageDamage + archerDamage) == 150 || (warriorHealth + mageHealth + archerHealth) == 300 || warriorHealth > 0 || mageHealth > 0 || archerHealth > 0 || warriorDamage > 0 || mageDamage > 0 || archerDamage > 0) {
+            // mainMenu.style.display = 'none'
+            // mainMenuBoss.style.display = 'none'
+            // mainMenuHero.style.display = 'none'
+            // gameplay.style.display = 'block'
+            // // restartMenu.style.display = 'none'
+            // textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
+            // gameplayBossName.innerHTML = bossOfTheGame[0].name
+            // gameplayWarriorName.innerHTML = warriorName
+            // gameplayMageName.innerHTML = mageName
+            // gameplayArcherName.innerHTML = archerName
+            // rage = 0
+            // mana = 7
+            // arrows = 6
+            switch (bossOfTheGame[0]){
+                case lilith:
+                    lilithSprite.style.display = 'block'
+                    sauronSprite.style.display = 'none'
+                    chronosSprite.style.display = 'none'
+                    mainMenu.style.display = 'none'
+                    mainMenuBoss.style.display = 'none'
+                    mainMenuHero.style.display = 'none'
+                    gameplay.style.display = 'block'
+                    // restartMenu.style.display = 'none'
+                    textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
+                    gameplayBossName.innerHTML = bossOfTheGame[0].name
+                    gameplayWarriorName.innerHTML = warriorName
+                    gameplayMageName.innerHTML = mageName
+                    gameplayArcherName.innerHTML = archerName
+                    rage = 0
+                    mana = 7
+                    arrows = 6
+                    i = false
+                    break
+                case sauron:
+                    lilithSprite.style.display = 'none'
+                    sauronSprite.style.display = 'block'
+                    chronosSprite.style.display = 'none'
+                    mainMenu.style.display = 'none'
+                    mainMenuBoss.style.display = 'none'
+                    mainMenuHero.style.display = 'none'
+                    gameplay.style.display = 'block'
+                    // restartMenu.style.display = 'none'
+                    textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
+                    gameplayBossName.innerHTML = bossOfTheGame[0].name
+                    gameplayWarriorName.innerHTML = warriorName
+                    gameplayMageName.innerHTML = mageName
+                    gameplayArcherName.innerHTML = archerName
+                    rage = 0
+                    mana = 7
+                    arrows = 6
+                    i = false
+                    break
+                case chronos:
+                    lilithSprite.style.display = 'none'
+                    sauronSprite.style.display = 'none'
+                    chronosSprite.style.display = 'block'
+                    mainMenu.style.display = 'none'
+                    mainMenuBoss.style.display = 'none'
+                    mainMenuHero.style.display = 'none'
+                    gameplay.style.display = 'block'
+                    // restartMenu.style.display = 'none'
+                    textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
+                    gameplayBossName.innerHTML = bossOfTheGame[0].name
+                    gameplayWarriorName.innerHTML = warriorName
+                    gameplayMageName.innerHTML = mageName
+                    gameplayArcherName.innerHTML = archerName
+                    rage = 0
+                    mana = 7
+                    arrows = 6
+                    i = false
+            }
+            
+        } else {
+           textBoxMenuHero.innerHTML = "Every hero should have a name and they need to have 300 health points and 150 attack points all together "
+        }
     }
 })
 
-restartGameBtn.addEventListener('click', () => {
-    mainMenu.style.display = 'none'
-    mainMenuBoss.style.display = 'block'
-    mainMenuHero.style.display = 'none'
-    gameplay.style.display = 'none'
-    restartMenu.style.display = 'none'
-})
+// restartGameBtn.addEventListener('click', () => {
+//     mainMenu.style.display = 'none'
+//     mainMenuBoss.style.display = 'block'
+//     mainMenuHero.style.display = 'none'
+//     gameplay.style.display = 'none'
+//     restartMenu.style.display = 'none'
+// })
 
 // combat mode buttons
 warriorAttackModeBtn.addEventListener('click', () => {
