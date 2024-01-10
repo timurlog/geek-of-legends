@@ -1,4 +1,4 @@
-import { archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerSprite,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameplay, gameplayArcherName, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, lilithBtn, lilithSprite,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, nextBtn, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, yourTurnBtn } from "./variables.js";
+import { archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerSprite,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameOverMenu, gameplay, gameplayArcherName, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, goToMainMenuBtn1, goToMainMenuBtn2, lilithBtn, lilithSprite,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, nextBtn, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, youWinMenu, yourTurnBtn } from "./variables.js";
 
 import { Archer, Boss, Mage, Warrior } from './class.js'
 
@@ -50,7 +50,18 @@ let riddleTwo = document.querySelector('#riddleTwo')
 let riddleThree = document.querySelector('#riddleThree')
 let goToRiddleMenu = document.querySelector('#goToRiddleDiv')
 let goToRiddleBtn = document.querySelector('#goToRiddleBtn')
-
+let riddleOneTrueBtn = document.querySelector('#riddleOneTrue')
+let riddleOneFalse1Btn = document.querySelector('#riddleOneFalse1')
+let riddleOneFalse2Btn = document.querySelector('#riddleOneFalse2')
+let riddleOneFalse3Btn = document.querySelector('#riddleOneFalse3')
+let riddleTwoTrueBtn = document.querySelector('#riddleTwoTrue')
+let riddleTwoFalse1Btn = document.querySelector('#riddleTwoFalse1')
+let riddleTwoFalse2Btn = document.querySelector('#riddleTwoFalse2')
+let riddleTwoFalse3Btn = document.querySelector('#riddleTwoFalse3')
+let riddleThreeTrueBtn = document.querySelector('#riddleThreeTrue')
+let riddleThreeFalse1Btn = document.querySelector('#riddleThreeFalse1')
+let riddleThreeFalse2Btn = document.querySelector('#riddleThreeFalse2')
+let riddleThreeFalse3Btn = document.querySelector('#riddleThreeFalse3')
 
 // adding hero special stats
 let rage = 0
@@ -76,15 +87,40 @@ startGameBtn.addEventListener('click', () => {
     mainMenuBoss.style.display = 'block';
     mainMenuHero.style.display = 'none';
     gameplay.style.display = 'none';
+    riddle.style.display = 'none'
     // restartMenu.style.display = 'none';
     playMainMenuMusic();
 });
+
+goToMainMenuBtn1.addEventListener('click', () => {
+    mainMenu.style.display = 'block';
+    mainMenuBoss.style.display = 'none';
+    mainMenuHero.style.display = 'none';
+    gameplay.style.display = 'none';
+    riddle.style.display = 'none'
+    bossOfTheGame = []
+    stopGameplayMusic();
+    playMainMenuMusic();
+})
+
+goToMainMenuBtn2.addEventListener('click', () => {
+    mainMenu.style.display = 'block';
+    mainMenuBoss.style.display = 'none';
+    mainMenuHero.style.display = 'none';
+    gameplay.style.display = 'none';
+    riddle.style.display = 'none'
+    bossOfTheGame = []
+    stopGameplayMusic();
+    playMainMenuMusic();
+
+})
 
 lilithBtn.addEventListener('click', () => {
     mainMenu.style.display = 'none'
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
+    riddle.style.display = 'none'
     // restartMenu.style.display = 'none'
     bossOfTheGame.push(lilith)
     textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
@@ -95,6 +131,7 @@ sauronBtn.addEventListener('click', () => {
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
+    riddle.style.display = 'none'
     // restartMenu.style.display = 'none'
     bossOfTheGame.push(sauron)
     textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
@@ -105,6 +142,7 @@ chronosBtn.addEventListener('click', () => {
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
+    riddle.style.display = 'none'
     // restartMenu.style.display = 'none'
     bossOfTheGame.push(chronos)
     textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
@@ -134,6 +172,24 @@ confirmStatsBtn.addEventListener('click', () => {
     rage = 0
     mana = 7
     arrows = 6
+    
+    bossOfTheGame[0].health = bossOfTheGame[0].maxHealth
+
+    warriorSprite.style.display = 'block'
+    mageSprite.style.display = 'block'
+    archerSprite.style.display = 'block'
+
+    bossHealthBar.style.width = '100%'
+    warriorHealthBar.style.width = '100%'
+    mageHealthBar.style.width = '100%'
+    archerHealthBar.style.width = '100%'
+
+    bossHealthBar.style.display = 'block'
+    warriorHealthBar.style.display = 'block'
+    mageHealthBar.style.display = 'block'
+    archerHealthBar.style.display = 'block'
+
+    warriorCombatModeMenu.style.display = 'flex'
 
     while (i == true){
         if (mageName != "" && warriorName != "" && archerName != "" && allDamage == j && allHealth == k && warriorHealth > l && mageHealth > l && archerHealth > l && warriorDamage > l && mageDamage > l && archerDamage > l) {
@@ -675,6 +731,11 @@ nextBtn.addEventListener('click', () => {
             }
             break
     }
+    // end of game statement (loosing by hp)
+    if (warriorSprite.style.display == 'none' && mageSprite.style.display == 'none' && archerSprite.style.display == 'none') {
+    gameOverMenu.style.display = 'block'
+    gameplay.style.display = 'none'
+}
 })
 
 yourTurnBtn.addEventListener('click', () => {
@@ -691,5 +752,66 @@ yourTurnBtn.addEventListener('click', () => {
 
 goToRiddleBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
+    goToRiddleMenu.style.display = 'none'
     riddle.style.display = 'block'
+})
+
+riddleOneTrueBtn.addEventListener('click', () => {
+    youWinMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleOneFalse1Btn.addEventListener('click', () => {
+    gameOverMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleOneFalse2Btn.addEventListener('click', () => {
+    gameOverMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleOneFalse3Btn.addEventListener('click', () => {
+    gameOverMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleTwoTrueBtn.addEventListener('click', () => {
+    youWinMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleTwoFalse1Btn.addEventListener('click', () => {
+    gameOverMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleTwoFalse2Btn.addEventListener('click', () => {
+    gameOverMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleTwoFalse3Btn.addEventListener('click', () => {
+    gameOverMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleThreeTrueBtn.addEventListener('click', () => {
+    youWinMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleThreeFalse1Btn.addEventListener('click', () => {
+    gameOverMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleThreeFalse2Btn.addEventListener('click', () => {
+    gameOverMenu.style.display = 'block'
+    riddle.style.display = 'none'
+})
+
+riddleThreeFalse3Btn.addEventListener('click', () => {
+    gameOverMenu.style.display = 'block'
+    riddle.style.display = 'none'
 })
