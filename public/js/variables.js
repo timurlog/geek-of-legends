@@ -1,4 +1,5 @@
 import { Archer, Boss, Mage, Warrior } from "./class.js"
+import { getRandomInt } from "./main.js"
 
 // menu buttons and menu UI
 export let mainMenu = document.querySelector('#mainMenu')
@@ -79,9 +80,9 @@ export let mana = 7
 export let arrows = 6
 
 // creating hero objects with Hero class
-export let warrior = new Warrior(warriorName, 'neutral', warriorDamage, warriorHealth, rage);
-export let mage = new Mage(mageName, 'neutral', mageDamage, mageHealth, mana);
-export let archer = new Archer(archerName, 'neutral', archerDamage, archerHealth, arrows);
+export let warrior = new Warrior('bob', 'neutral', 50, 100, 0);
+export let mage = new Mage('lili', 'neutral', 50, 100, 7);
+export let archer = new Archer('kevin', 'neutral', 50, 100, 6);
 
 // creating boss objects with Boss class
 export let lilith = new Boss('Lilith', getRandomInt(40,47), 800, 800)

@@ -27,7 +27,7 @@ export class Mage extends Hero {
 
 export class Archer extends Hero {
     constructor(name, combatMode, damage, health, maxHealth, arrows){
-        super(name, combatmode, damage, health)
+        super(name, combatMode, damage, health)
         this.maxHealth = maxHealth,
         this.arrows = arrows
     }
