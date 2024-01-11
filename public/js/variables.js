@@ -59,38 +59,3 @@ export let archerAttackModeBtn = document.querySelector('#archerAttackModeBtn')
 export let warriorDefenseModeBtn = document.querySelector('#warriorDefenseModeBtn')
 export let mageDefenseModeBtn = document.querySelector('#mageDefenseModeBtn')
 export let archerDefenseModeBtn = document.querySelector('#archerDefenseModeBtn')
-
-// // character maker variables
-// export let mageName
-// export let archerName
-// export let warriorName
-// export let warriorDamage
-// export let mageDamage
-// export let archerDamage
-// export let warriorHealth
-// export let mageHealth
-// export let archerHealth
-
-// // riddles
-// export let riddleOne = document.querySelector('#riddleOne')
-// export let riddleTwo = document.querySelector('#riddleTwo')
-// export let riddleThree = document.querySelector('#riddleThree')
-
-
-// // adding hero special stats
-// export let rage = 0
-// export let mana = 7
-// export let arrows = 6
-
-// // creating hero objects with Hero class
-// export let warrior = new Warrior(warriorName, 'neutral', warriorDamage, warriorHealth, rage);
-// export let mage = new Mage(mageName, 'neutral', mageDamage, mageHealth, mana);
-// export let archer = new Archer(archerName, 'neutral', archerDamage, archerHealth, arrows);
-
-// // creating boss objects with Boss class
-// export let lilith = new Boss('Lilith', getRandomInt(40,47), 800, 800)
-// export let chronos = new Boss('Chronos', getRandomInt(35, 40), 1000, 1000)
-// export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1150, 1150)
-
-// // array we need to start a new game
-// export let bossOfTheGame = []
