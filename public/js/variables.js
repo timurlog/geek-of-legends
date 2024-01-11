@@ -1,5 +1,4 @@
-import { Archer, Boss, Mage, Warrior } from "./class.js"
-import { getRandomInt } from "./main.js"
+import { Archer, Boss, Mage, Warrior } from "./classes.js"
 
 // menu buttons and menu UI
 export let mainMenu = document.querySelector('#mainMenu')
@@ -59,3 +58,14 @@ export let archerAttackModeBtn = document.querySelector('#archerAttackModeBtn')
 export let warriorDefenseModeBtn = document.querySelector('#warriorDefenseModeBtn')
 export let mageDefenseModeBtn = document.querySelector('#mageDefenseModeBtn')
 export let archerDefenseModeBtn = document.querySelector('#archerDefenseModeBtn')
+
+// audio asset integration
+export let mainMenuAudio = new Audio('./public/assets/music/main-menu-sound.mp3');
+export let gameplayAudio = new Audio('./public/assets/music/gameplay-sound.mp3');
+export let archerAttackAudio = new Audio('./public/assets/music/archer-attack-sound.mp3');
+export let mageAttackAudio = new Audio('./public/assets/music/mage-attack-sound.mp3');
+export let warriorAttackAudio = new Audio('./public/assets/music/warrior-attack-sound.mp3');
+export let warriorBigAttackAudio = new Audio('./public/assets/music/warrior-big-attack-sound.mp3');
+export let bossAttackAudio = new Audio('./public/assets/music/boss-attack-sound.mp3');
+export let archerReloadAudio = new Audio('./public/assets/music/archer-reload-sound.mp3');
+export let mageReloadAudio = new Audio('./public/assets/music/mage-reload-sound.mp3');

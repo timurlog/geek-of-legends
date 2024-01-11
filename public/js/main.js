@@ -1,150 +1,6 @@
-import { archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerSprite,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameOverMenu, gameplay, gameplayArcherName, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, goToMainMenuBtn1, goToMainMenuBtn2, lilithBtn, lilithSprite,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageSprite, mainMenu, mainMenuBoss, mainMenuHero, nextBtn, nextMenu, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackModeBtn, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, youWinMenu, yourTurnBtn, yourTurnMenu } from "./variables.js";
-
-import { Archer, Boss, Mage, Warrior } from './class.js'
-
-// get random number (for damage)
-export function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-// audio asset integration
-var mainMenuAudio = new Audio('./public/assets/music/main-menu-sound.mp3');
-var gameplayAudio = new Audio('./public/assets/music/gameplay-sound.mp3');
-var archerAttackAudio = new Audio('./public/assets/music/archer-attack-sound.mp3');
-var mageAttackAudio = new Audio('./public/assets/music/mage-attack-sound.mp3');
-var warriorAttackAudio = new Audio('./public/assets/music/warrior-attack-sound.mp3');
-var warriorBigAttackAudio = new Audio('./public/assets/music/warrior-big-attack-sound.mp3');
-var bossAttackAudio = new Audio('./public/assets/music/boss-attack-sound.mp3');
-var archerReloadAudio = new Audio('./public/assets/music/archer-reload-sound.mp3');
-var mageReloadAudio = new Audio('./public/assets/music/mage-reload-sound.mp3');
-
-// Boss damage VFX function
-function bossDamageVFX(className, addDelay, removeDelay) {
-    let images = document.querySelectorAll('.bossSprite');
-
-    setTimeout(() => {
-        images.forEach(image => {
-            image.classList.add(className);
-        });
-
-        setTimeout(() => {
-            images.forEach(image => {
-                image.classList.remove(className);
-            });
-        }, removeDelay);
-    }, addDelay);
-}
-
-// Warrior damage VFX function
-function warriorDamageVFX(className, addDelay, removeDelay) {
-    let imagesW = document.querySelectorAll('.warriorSprite');
-    console.log("VFX1");
-  
-    setTimeout(() => {
-        imagesW.forEach(image => {
-            image.classList.add(className);
-        });
-  
-        setTimeout(() => {
-            imagesW.forEach(image => {
-                image.classList.remove(className);
-            });
-        }, removeDelay);
-    }, addDelay);
-}
-
-// Mage damage VFX function
-function mageDamageVFX(className, addDelay, removeDelay) {
-    let imagesM = document.querySelectorAll('.mageSprite');
-    console.log("VFX2");
-
-    setTimeout(() => {
-        imagesM.forEach(image => {
-            image.classList.add(className);
-        });
-  
-        setTimeout(() => {
-            imagesM.forEach(image => {
-                image.classList.remove(className);
-            });
-        }, removeDelay);
-    }, addDelay);
-}
-
-// Archer damage VFX function
-function archerDamageVFX(className, addDelay, removeDelay) {
-    let imagesA = document.querySelectorAll('.archerSprite');
-    console.log("VFX3");
-  
-    setTimeout(() => {
-        imagesA.forEach(image => {
-            image.classList.add(className);
-        });
-  
-        setTimeout(() => {
-            imagesA.forEach(image => {
-                image.classList.remove(className);
-            });
-        }, removeDelay);
-    }, addDelay);
-}
-
-
-// Different menu and game music functions
-function playMainMenuMusic() {
-    mainMenuAudio.loop = true;
-    mainMenuAudio.play();
-}
-
-function stopMainMenuMusic() {
-    mainMenuAudio.pause();
-    mainMenuAudio.currentTime = 0;
-}
-
-function playGameplayMusic() {
-    gameplayAudio.loop = true;
-    gameplayAudio.play();
-}
-
-function stopGameplayMusic() {
-    gameplayAudio.pause();
-    gameplayAudio.currentTime = 0;
-}
-
-function playArcherAttackEffect() {
-    archerAttackAudio.loop = false;
-    archerAttackAudio.play();
-}
-
-function playArcherReloadEffect() {
-    archerReloadAudio.loop = false;
-    archerReloadAudio.play();
-}
-
-function playMageAttackEffect() {
-    mageAttackAudio.loop = false;
-    mageAttackAudio.play();
-}
-
-function playMageReloadEffect() {
-    mageReloadAudio.loop = false;
-    mageReloadAudio.play();
-}
-
-function playWarriorAttackEffect() {
-    warriorAttackAudio.loop = false;
-    warriorAttackAudio.play();
-}
-
-function playWarriorBigAttackEffect() {
-    warriorBigAttackAudio.loop = false;
-    warriorBigAttackAudio.play();
-}
-
-function playBossAttackEffect() {
-    bossAttackAudio.loop = false;
-    bossAttackAudio.play();
-}
+import { archerAttackAudio, archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerReloadAudio, archerSprite,bossAttackAudio,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameOverMenu, gameplay, gameplayArcherName, gameplayAudio, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, goToMainMenuBtn1, goToMainMenuBtn2, lilithBtn, lilithSprite,  mageAttackAudio,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageReloadAudio, mageSprite, mainMenu, mainMenuAudio, mainMenuBoss, mainMenuHero, nextBtn, nextMenu, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackAudio, warriorAttackModeBtn, warriorBigAttackAudio, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, youWinMenu, yourTurnBtn, yourTurnMenu } from "./variables.js";
+import { Archer, Boss, Mage, Warrior } from './classes.js'
+import { archerDamageVFX, bossDamageVFX, getRandomInt, mageDamageVFX, playArcherAttackEffect, playArcherReloadEffect, playBossAttackEffect, playGameplayMusic, playMageAttackEffect, playMageReloadEffect, playMainMenuMusic, playWarriorAttackEffect, playWarriorBigAttackEffect, stopGameplayMusic, stopMainMenuMusic, warriorDamageVFX } from './functions.js'
 
 // character maker variables
 export let mageName
@@ -380,14 +236,6 @@ confirmStatsBtn.addEventListener('click', () => {
     }
 })
 
-// restartGameBtn.addEventListener('click', () => {
-//     mainMenu.style.display = 'none'
-//     mainMenuBoss.style.display = 'block'
-//     mainMenuHero.style.display = 'none'
-//     gameplay.style.display = 'none'
-//     restartMenu.style.display = 'none'
-// })
-
 // combat mode buttons
 warriorAttackModeBtn.addEventListener('click', () => {
     warrior.combatMode = 'attack'
@@ -400,24 +248,6 @@ warriorAttackModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             goToRiddleMenu.style.display = 'flex'
-            let riddle = getRandomInt(1,3)
-            switch (riddle){
-                case 1:
-                    riddleOne.style.display = 'flex'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'none'
-                    break
-                case 2:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'flex'
-                    riddleThree.style.display = 'none'
-                    break
-                case 3:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'flex'
-                    break
-            }
         } else {
             if (mageSprite.style.display != 'none'){
                 mageCombatModeMenu.style.display = 'flex'
@@ -443,24 +273,6 @@ warriorAttackModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             goToRiddleMenu.style.display = 'flex'
-            let riddle = getRandomInt(1,3)
-            switch (riddle){
-                 case 1:
-                    riddleOne.style.display = 'flex'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'none'
-                    break
-                case 2:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'flex'
-                    riddleThree.style.display = 'none'
-                    break
-                case 3:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'flex'
-                    break
-            }
         } else {
             if (mageSprite.style.display != 'none'){
                 mageCombatModeMenu.style.display = 'flex'
@@ -489,24 +301,6 @@ warriorDefenseModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             goToRiddleMenu.style.display = 'flex'
-            let riddle = getRandomInt(1,3)
-            switch (riddle){
-                 case 1:
-                    riddleOne.style.display = 'flex'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'none'
-                    break
-                case 2:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'flex'
-                    riddleThree.style.display = 'none'
-                    break
-                case 3:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'flex'
-                    break
-            }
         } else {
             if (mageSprite.style.display != 'none'){
                 mageCombatModeMenu.style.display = 'flex'
@@ -530,24 +324,6 @@ warriorDefenseModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             goToRiddleMenu.style.display = 'flex'
-            let riddle = getRandomInt(1,3)
-            switch (riddle){
-                 case 1:
-                    riddleOne.style.display = 'flex'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'none'
-                    break
-                case 2:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'flex'
-                    riddleThree.style.display = 'none'
-                    break
-                case 3:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'flex'
-                    break
-            }
         } else {
             if (mageSprite.style.display != 'none'){
                 mageCombatModeMenu.style.display = 'flex'
@@ -577,24 +353,6 @@ mageAttackModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             goToRiddleMenu.style.display = 'flex'
-            let riddle = getRandomInt(1,3)
-            switch (riddle){
-                 case 1:
-                    riddleOne.style.display = 'flex'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'none'
-                    break
-                case 2:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'flex'
-                    riddleThree.style.display = 'none'
-                    break
-                case 3:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'flex'
-                    break
-            }
         } else {
             if (archerSprite.style.display != 'none'){
                 archerCombatModeMenu.style.display = 'flex'
@@ -632,24 +390,6 @@ mageDefenseModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             goToRiddleMenu.style.display = 'flex'
-            let riddle = getRandomInt(1,3)
-            switch (riddle){
-                 case 1:
-                    riddleOne.style.display = 'flex'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'none'
-                    break
-                case 2:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'flex'
-                    riddleThree.style.display = 'none'
-                    break
-                case 3:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'flex'
-                    break
-            }
         } else {
             if (archerSprite.style.display != 'none'){
                 archerCombatModeMenu.style.display = 'flex'
@@ -687,24 +427,6 @@ archerAttackModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             goToRiddleMenu.style.display = 'flex'
-            let riddle = getRandomInt(1,3)
-            switch (riddle){
-                 case 1:
-                    riddleOne.style.display = 'flex'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'none'
-                    break
-                case 2:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'flex'
-                    riddleThree.style.display = 'none'
-                    break
-                case 3:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'flex'
-                    break
-            }
         } else {
             nextMenu.style.display = 'flex'
             textBoxGameplay.innerHTML = `${archerName} dealt ${parseInt(archerDamage + (archerDamage / 4))} damage!`
@@ -729,24 +451,7 @@ archerDefenseModeBtn.addEventListener('click', () => {
         if (bossOfTheGame[0].health <= (bossOfTheGame[0].maxHealth / 100 * 20)){
             textBoxGameplay.innerHTML = "You're almost there! A good response will guide you to victory, a bad one means you lost."
             goToRiddleMenu.style.display = 'flex'
-            let riddle = getRandomInt(1,3)
-            switch (riddle){
-                 case 1:
-                    riddleOne.style.display = 'flex'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'none'
-                    break
-                case 2:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'flex'
-                    riddleThree.style.display = 'none'
-                    break
-                case 3:
-                    riddleOne.style.display = 'none'
-                    riddleTwo.style.display = 'none'
-                    riddleThree.style.display = 'flex'
-                    break
-            }
+            
         } else {
             nextMenu.style.display = 'flex'
             textBoxGameplay.innerHTML = `${archerName} dealt ${archerDamage} damage!`
@@ -929,6 +634,24 @@ goToRiddleBtn.addEventListener('click', () => {
     gameplay.style.display = 'none'
     goToRiddleMenu.style.display = 'none'
     riddle.style.display = 'block'
+    let riddles = getRandomInt(1,3)
+            switch (riddles){
+                 case 1:
+                    riddleOne.style.display = 'flex'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'none'
+                    break
+                case 2:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'flex'
+                    riddleThree.style.display = 'none'
+                    break
+                case 3:
+                    riddleOne.style.display = 'none'
+                    riddleTwo.style.display = 'none'
+                    riddleThree.style.display = 'flex'
+                    break
+            }
 })
 
 riddleOneTrueBtn.addEventListener('click', () => {
