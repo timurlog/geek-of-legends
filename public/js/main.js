@@ -1,4 +1,4 @@
-import { archerAttackAudio, archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerReloadAudio, archerSprite,bossAttackAudio,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameOverMenu, gameplay, gameplayArcherName, gameplayAudio, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, goToMainMenuBtn1, goToMainMenuBtn2, goToRiddleBtn, goToRiddleMenu, lilithBtn, lilithSprite,  mageAttackAudio,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageReloadAudio, mageSprite, mainMenu, mainMenuAudio, mainMenuBoss, mainMenuHero, nextBtn, nextMenu, riddleOne, riddleOneFalse1Btn, riddleOneFalse2Btn, riddleOneFalse3Btn, riddleOneTrueBtn, riddleThree, riddleThreeFalse1Btn, riddleThreeFalse2Btn, riddleThreeFalse3Btn, riddleThreeTrueBtn, riddleTwo, riddleTwoFalse1Btn, riddleTwoFalse2Btn, riddleTwoFalse3Btn, riddleTwoTrueBtn, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackAudio, warriorAttackModeBtn, warriorBigAttackAudio, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, youWinMenu, yourTurnBtn, yourTurnMenu } from "./variables.js";
+import { archerAttackAudio, archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerReloadAudio, archerSprite,bossAttackAudio,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameOverMenu, gameplay, gameplayArcherName, gameplayAudio, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, goToMainMenuBtn1, goToMainMenuBtn2, goToRiddleBtn, goToRiddleMenu, lilithBtn, lilithSprite,  mageAttackAudio,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageReloadAudio, mageSprite, mainMenu, mainMenuAudio, mainMenuBoss, mainMenuHero, nextBtn, nextMenu, riddle, riddleOne, riddleOneFalse1Btn, riddleOneFalse2Btn, riddleOneFalse3Btn, riddleOneTrueBtn, riddleThree, riddleThreeFalse1Btn, riddleThreeFalse2Btn, riddleThreeFalse3Btn, riddleThreeTrueBtn, riddleTwo, riddleTwoFalse1Btn, riddleTwoFalse2Btn, riddleTwoFalse3Btn, riddleTwoTrueBtn, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackAudio, warriorAttackModeBtn, warriorBigAttackAudio, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, youWinMenu, yourTurnBtn, yourTurnMenu } from "./variables.js";
 import { Archer, Boss, Mage, Warrior } from './classes.js'
 import { archerDamageVFX, bossDamageVFX, getRandomInt, mageDamageVFX, playArcherAttackEffect, playArcherReloadEffect, playBossAttackEffect, playGameplayMusic, playMageAttackEffect, playMageReloadEffect, playMainMenuMusic, playWarriorAttackEffect, playWarriorBigAttackEffect, stopGameplayMusic, stopMainMenuMusic, warriorDamageVFX } from './functions.js'
 import { bossOfTheGame, setupMenuEventListeners } from "./menu.js";
@@ -96,7 +96,6 @@ confirmStatsBtn.addEventListener('click', () => {
                     mainMenuBoss.style.display = 'none'
                     mainMenuHero.style.display = 'none'
                     gameplay.style.display = 'block'
-                    // restartMenu.style.display = 'none'
                     textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
                     gameplayBossName.innerHTML = bossOfTheGame[0].name
                     gameplayWarriorName.innerHTML = warriorName
@@ -113,7 +112,6 @@ confirmStatsBtn.addEventListener('click', () => {
                     mainMenuBoss.style.display = 'none'
                     mainMenuHero.style.display = 'none'
                     gameplay.style.display = 'block'
-                    // restartMenu.style.display = 'none'
                     textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
                     gameplayBossName.innerHTML = bossOfTheGame[0].name
                     gameplayWarriorName.innerHTML = warriorName
@@ -130,7 +128,6 @@ confirmStatsBtn.addEventListener('click', () => {
                     mainMenuBoss.style.display = 'none'
                     mainMenuHero.style.display = 'none'
                     gameplay.style.display = 'block'
-                    // restartMenu.style.display = 'none'
                     textBoxGameplay.innerHTML = `let's go guys! let's fight ${bossOfTheGame[0].name}`
                     gameplayBossName.innerHTML = bossOfTheGame[0].name
                     gameplayWarriorName.innerHTML = warriorName
