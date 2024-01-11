@@ -1,10 +1,12 @@
 import { archerAttackAudio, archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerReloadAudio, archerSprite,bossAttackAudio,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameOverMenu, gameplay, gameplayArcherName, gameplayAudio, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, goToMainMenuBtn1, goToMainMenuBtn2, goToRiddleBtn, goToRiddleMenu, lilithBtn, lilithSprite,  mageAttackAudio,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageReloadAudio, mageSprite, mainMenu, mainMenuAudio, mainMenuBoss, mainMenuHero, nextBtn, nextMenu, riddleOne, riddleOneFalse1Btn, riddleOneFalse2Btn, riddleOneFalse3Btn, riddleOneTrueBtn, riddleThree, riddleThreeFalse1Btn, riddleThreeFalse2Btn, riddleThreeFalse3Btn, riddleThreeTrueBtn, riddleTwo, riddleTwoFalse1Btn, riddleTwoFalse2Btn, riddleTwoFalse3Btn, riddleTwoTrueBtn, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackAudio, warriorAttackModeBtn, warriorBigAttackAudio, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, youWinMenu, yourTurnBtn, yourTurnMenu } from "./variables.js";
 import { Archer, Boss, Mage, Warrior } from './classes.js'
 import { archerDamageVFX, bossDamageVFX, getRandomInt, mageDamageVFX, playArcherAttackEffect, playArcherReloadEffect, playBossAttackEffect, playGameplayMusic, playMageAttackEffect, playMageReloadEffect, playMainMenuMusic, playWarriorAttackEffect, playWarriorBigAttackEffect, stopGameplayMusic, stopMainMenuMusic, warriorDamageVFX } from './functions.js'
-import { setupMenuEventListeners } from "./menu.js";
+import { bossOfTheGame, setupMenuEventListeners } from "./menu.js";
+import { setupRiddleEventListeners } from "./riddles.js";
 
 //setting up event listeners
 setupMenuEventListeners()
+setupRiddleEventListeners()
 
 // character maker variables
 export let mageName
@@ -34,9 +36,6 @@ export let archer = new Archer(archerName, 'neutral', archerDamage, archerHealth
 export let lilith = new Boss('Lilith', getRandomInt(40,47), 1100, 1100)
 export let chronos = new Boss('Chronos', getRandomInt(35, 40), 1300, 1300)
 export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1550, 1550)
-
-// array we need to start a new game
-export let bossOfTheGame = []
 
 // confirmation button menu
 confirmStatsBtn.addEventListener('click', () => {
@@ -566,64 +565,4 @@ goToRiddleBtn.addEventListener('click', () => {
                     riddleThree.style.display = 'flex'
                     break
             }
-})
-
-riddleOneTrueBtn.addEventListener('click', () => {
-    youWinMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleOneFalse1Btn.addEventListener('click', () => {
-    gameOverMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleOneFalse2Btn.addEventListener('click', () => {
-    gameOverMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleOneFalse3Btn.addEventListener('click', () => {
-    gameOverMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleTwoTrueBtn.addEventListener('click', () => {
-    youWinMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleTwoFalse1Btn.addEventListener('click', () => {
-    gameOverMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleTwoFalse2Btn.addEventListener('click', () => {
-    gameOverMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleTwoFalse3Btn.addEventListener('click', () => {
-    gameOverMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleThreeTrueBtn.addEventListener('click', () => {
-    youWinMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleThreeFalse1Btn.addEventListener('click', () => {
-    gameOverMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleThreeFalse2Btn.addEventListener('click', () => {
-    gameOverMenu.style.display = 'block'
-    riddle.style.display = 'none'
-})
-
-riddleThreeFalse3Btn.addEventListener('click', () => {
-    gameOverMenu.style.display = 'block'
-    riddle.style.display = 'none'
 })

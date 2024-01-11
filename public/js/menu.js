@@ -1,8 +1,9 @@
 import { playMainMenuMusic, stopGameplayMusic } from "./functions.js";
-import { bossOfTheGame, chronos, lilith, sauron } from "./main.js";
+import { chronos, lilith, sauron } from "./main.js";
 import { chronosBtn, gameOverMenu, gameplay, goToMainMenuBtn1, goToMainMenuBtn2, lilithBtn, mainMenu, mainMenuBoss, mainMenuHero, riddle, sauronBtn, startGameBtn, textBoxMenuHero, youWinMenu } from "./variables.js";
 
 // handling menu through event listeners
+export let bossOfTheGame = []
 export function setupMenuEventListeners() {
     startGameBtn.addEventListener('click', () => {
         mainMenu.style.display = 'none';
