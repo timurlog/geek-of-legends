@@ -1,5 +1,3 @@
-import { Archer, Boss, Mage, Warrior } from "./classes.js"
-
 // menu buttons and menu UI
 export let mainMenu = document.querySelector('#mainMenu')
 export let mainMenuBoss = document.querySelector('#mainMenuBoss')

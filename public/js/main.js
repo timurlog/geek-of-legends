@@ -1,6 +1,10 @@
 import { archerAttackAudio, archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerReloadAudio, archerSprite,bossAttackAudio,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameOverMenu, gameplay, gameplayArcherName, gameplayAudio, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, goToMainMenuBtn1, goToMainMenuBtn2, goToRiddleBtn, goToRiddleMenu, lilithBtn, lilithSprite,  mageAttackAudio,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageReloadAudio, mageSprite, mainMenu, mainMenuAudio, mainMenuBoss, mainMenuHero, nextBtn, nextMenu, riddleOne, riddleOneFalse1Btn, riddleOneFalse2Btn, riddleOneFalse3Btn, riddleOneTrueBtn, riddleThree, riddleThreeFalse1Btn, riddleThreeFalse2Btn, riddleThreeFalse3Btn, riddleThreeTrueBtn, riddleTwo, riddleTwoFalse1Btn, riddleTwoFalse2Btn, riddleTwoFalse3Btn, riddleTwoTrueBtn, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackAudio, warriorAttackModeBtn, warriorBigAttackAudio, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, youWinMenu, yourTurnBtn, yourTurnMenu } from "./variables.js";
 import { Archer, Boss, Mage, Warrior } from './classes.js'
 import { archerDamageVFX, bossDamageVFX, getRandomInt, mageDamageVFX, playArcherAttackEffect, playArcherReloadEffect, playBossAttackEffect, playGameplayMusic, playMageAttackEffect, playMageReloadEffect, playMainMenuMusic, playWarriorAttackEffect, playWarriorBigAttackEffect, stopGameplayMusic, stopMainMenuMusic, warriorDamageVFX } from './functions.js'
+import { setupMenuEventListeners } from "./menu.js";
+
+//setting up event listeners
+setupMenuEventListeners()
 
 // character maker variables
 export let mageName
@@ -33,76 +37,6 @@ export let sauron = new Boss('Sauron', getRandomInt(30, 35), 1550, 1550)
 
 // array we need to start a new game
 export let bossOfTheGame = []
-
-// handling menu through event listeners
-startGameBtn.addEventListener('click', () => {
-    mainMenu.style.display = 'none';
-    mainMenuBoss.style.display = 'block';
-    mainMenuHero.style.display = 'none';
-    gameplay.style.display = 'none';
-    riddle.style.display = 'none'
-    gameOverMenu.style.display = 'none'
-    youWinMenu.style.display = 'none'
-    playMainMenuMusic();
-});
-
-goToMainMenuBtn1.addEventListener('click', () => {
-    mainMenu.style.display = 'block';
-    mainMenuBoss.style.display = 'none';
-    mainMenuHero.style.display = 'none';
-    gameplay.style.display = 'none';
-    riddle.style.display = 'none'
-    gameOverMenu.style.display = 'none'
-    youWinMenu.style.display = 'none'
-    bossOfTheGame = []
-    stopGameplayMusic();
-    playMainMenuMusic();
-})
-
-goToMainMenuBtn2.addEventListener('click', () => {
-    mainMenu.style.display = 'block';
-    mainMenuBoss.style.display = 'none';
-    mainMenuHero.style.display = 'none';
-    gameplay.style.display = 'none';
-    riddle.style.display = 'none'
-    gameOverMenu.style.display = 'none'
-    youWinMenu.style.display = 'none'
-    bossOfTheGame = []
-    stopGameplayMusic();
-    playMainMenuMusic();
-
-})
-
-// Boss choice menu
-lilithBtn.addEventListener('click', () => {
-    mainMenu.style.display = 'none'
-    mainMenuBoss.style.display = 'none'
-    mainMenuHero.style.display = 'block'
-    gameplay.style.display = 'none'
-    riddle.style.display = 'none'
-    bossOfTheGame.push(lilith)
-    textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
-})
-
-sauronBtn.addEventListener('click', () => {
-    mainMenu.style.display = 'none'
-    mainMenuBoss.style.display = 'none'
-    mainMenuHero.style.display = 'block'
-    gameplay.style.display = 'none'
-    riddle.style.display = 'none'
-    bossOfTheGame.push(sauron)
-    textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
-})
-
-chronosBtn.addEventListener('click', () => {
-    mainMenu.style.display = 'none'
-    mainMenuBoss.style.display = 'none'
-    mainMenuHero.style.display = 'block'
-    gameplay.style.display = 'none'
-    riddle.style.display = 'none'
-    bossOfTheGame.push(chronos)
-    textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
-})
 
 // confirmation button menu
 confirmStatsBtn.addEventListener('click', () => {
