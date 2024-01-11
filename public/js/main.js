@@ -7,6 +7,7 @@ export function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+// audio asset integration
 var mainMenuAudio = new Audio('./public/assets/music/main-menu-sound.mp3');
 var gameplayAudio = new Audio('./public/assets/music/gameplay-sound.mp3');
 var archerAttackAudio = new Audio('./public/assets/music/archer-attack-sound.mp3');
@@ -17,6 +18,7 @@ var bossAttackAudio = new Audio('./public/assets/music/boss-attack-sound.mp3');
 var archerReloadAudio = new Audio('./public/assets/music/archer-reload-sound.mp3');
 var mageReloadAudio = new Audio('./public/assets/music/mage-reload-sound.mp3');
 
+// Boss damage VFX function
 function bossDamageVFX(className, addDelay, removeDelay) {
     let images = document.querySelectorAll('.bossSprite');
 
@@ -33,6 +35,7 @@ function bossDamageVFX(className, addDelay, removeDelay) {
     }, addDelay);
 }
 
+// Warrior damage VFX function
 function warriorDamageVFX(className, addDelay, removeDelay) {
     let imagesW = document.querySelectorAll('.warriorSprite');
     console.log("VFX1");
@@ -50,6 +53,7 @@ function warriorDamageVFX(className, addDelay, removeDelay) {
     }, addDelay);
 }
 
+// Mage damage VFX function
 function mageDamageVFX(className, addDelay, removeDelay) {
     let imagesM = document.querySelectorAll('.mageSprite');
     console.log("VFX2");
@@ -67,6 +71,7 @@ function mageDamageVFX(className, addDelay, removeDelay) {
     }, addDelay);
 }
 
+// Archer damage VFX function
 function archerDamageVFX(className, addDelay, removeDelay) {
     let imagesA = document.querySelectorAll('.archerSprite');
     console.log("VFX3");
@@ -84,6 +89,8 @@ function archerDamageVFX(className, addDelay, removeDelay) {
     }, addDelay);
 }
 
+
+// Different menu and game music functions
 function playMainMenuMusic() {
     mainMenuAudio.loop = true;
     mainMenuAudio.play();
@@ -153,7 +160,7 @@ export let warriorMaxHealth
 export let mageMaxHealth
 export let archerMaxHealth
 
-// riddles
+// riddles variables
 let riddle = document.querySelector('#riddle')
 let riddleOne = document.querySelector('#riddleOne')
 let riddleTwo = document.querySelector('#riddleTwo')
@@ -200,7 +207,6 @@ startGameBtn.addEventListener('click', () => {
     riddle.style.display = 'none'
     gameOverMenu.style.display = 'none'
     youWinMenu.style.display = 'none'
-    // restartMenu.style.display = 'none';
     playMainMenuMusic();
 });
 
@@ -231,13 +237,13 @@ goToMainMenuBtn2.addEventListener('click', () => {
 
 })
 
+// Boss choice menu
 lilithBtn.addEventListener('click', () => {
     mainMenu.style.display = 'none'
     mainMenuBoss.style.display = 'none'
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
     riddle.style.display = 'none'
-    // restartMenu.style.display = 'none'
     bossOfTheGame.push(lilith)
     textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
@@ -248,7 +254,6 @@ sauronBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
     riddle.style.display = 'none'
-    // restartMenu.style.display = 'none'
     bossOfTheGame.push(sauron)
     textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
@@ -259,12 +264,14 @@ chronosBtn.addEventListener('click', () => {
     mainMenuHero.style.display = 'block'
     gameplay.style.display = 'none'
     riddle.style.display = 'none'
-    // restartMenu.style.display = 'none'
     bossOfTheGame.push(chronos)
     textBoxMenuHero.innerHTML = "Give every hero a name. Heroes Should have 300 health points all together and 150 damage points all together."
 })
 
+// confirmation button menu
 confirmStatsBtn.addEventListener('click', () => {
+
+    // giving and/or resetting the character stats and character names
     mageName = mageNameInput.value;
     archerName = archerNameInput.value;
     warriorName = warriorNameInput.value;
@@ -904,11 +911,6 @@ nextBtn.addEventListener('click', () => {
             }
             break
     }
-    // end of game statement (loosing by hp)
-//     if (warriorSprite.style.display == 'none' && mageSprite.style.display == 'none' && archerSprite.style.display == 'none') {
-//     gameOverMenu.style.display = 'block'
-//     gameplay.style.display = 'none'
-// }
 })
 
 yourTurnBtn.addEventListener('click', () => {
