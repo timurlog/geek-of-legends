@@ -69,3 +69,23 @@ export let warriorBigAttackAudio = new Audio('./public/assets/music/warrior-big-
 export let bossAttackAudio = new Audio('./public/assets/music/boss-attack-sound.mp3');
 export let archerReloadAudio = new Audio('./public/assets/music/archer-reload-sound.mp3');
 export let mageReloadAudio = new Audio('./public/assets/music/mage-reload-sound.mp3');
+
+// riddles variables
+export let riddle = document.querySelector('#riddle')
+export let riddleOne = document.querySelector('#riddleOne')
+export let riddleTwo = document.querySelector('#riddleTwo')
+export let riddleThree = document.querySelector('#riddleThree')
+export let goToRiddleMenu = document.querySelector('#goToRiddleDiv')
+export let goToRiddleBtn = document.querySelector('#goToRiddleBtn')
+export let riddleOneTrueBtn = document.querySelector('#riddleOneTrue')
+export let riddleOneFalse1Btn = document.querySelector('#riddleOneFalse1')
+export let riddleOneFalse2Btn = document.querySelector('#riddleOneFalse2')
+export let riddleOneFalse3Btn = document.querySelector('#riddleOneFalse3')
+export let riddleTwoTrueBtn = document.querySelector('#riddleTwoTrue')
+export let riddleTwoFalse1Btn = document.querySelector('#riddleTwoFalse1')
+export let riddleTwoFalse2Btn = document.querySelector('#riddleTwoFalse2')
+export let riddleTwoFalse3Btn = document.querySelector('#riddleTwoFalse3')
+export let riddleThreeTrueBtn = document.querySelector('#riddleThreeTrue')
+export let riddleThreeFalse1Btn = document.querySelector('#riddleThreeFalse1')
+export let riddleThreeFalse2Btn = document.querySelector('#riddleThreeFalse2')
+export let riddleThreeFalse3Btn = document.querySelector('#riddleThreeFalse3')

@@ -1,4 +1,4 @@
-import { archerAttackAudio, archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerReloadAudio, archerSprite,bossAttackAudio,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameOverMenu, gameplay, gameplayArcherName, gameplayAudio, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, goToMainMenuBtn1, goToMainMenuBtn2, lilithBtn, lilithSprite,  mageAttackAudio,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageReloadAudio, mageSprite, mainMenu, mainMenuAudio, mainMenuBoss, mainMenuHero, nextBtn, nextMenu, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackAudio, warriorAttackModeBtn, warriorBigAttackAudio, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, youWinMenu, yourTurnBtn, yourTurnMenu } from "./variables.js";
+import { archerAttackAudio, archerAttackModeBtn, archerCombatModeMenu, archerDamagePointsInput, archerDefenseModeBtn, archerHealthBar, archerHealthPointsInput,  archerNameInput, archerReloadAudio, archerSprite,bossAttackAudio,bossHealthBar, chronosBtn, chronosSprite, confirmStatsBtn, gameOverMenu, gameplay, gameplayArcherName, gameplayAudio, gameplayBossName, gameplayGameOver, gameplayMageName, gameplayWarriorName, goToMainMenuBtn1, goToMainMenuBtn2, goToRiddleBtn, goToRiddleMenu, lilithBtn, lilithSprite,  mageAttackAudio,  mageAttackModeBtn, mageCombatModeMenu, mageDamagePointsInput, mageDefenseModeBtn, mageHealthBar, mageHealthPointsInput, mageNameInput, mageReloadAudio, mageSprite, mainMenu, mainMenuAudio, mainMenuBoss, mainMenuHero, nextBtn, nextMenu, riddleOne, riddleOneFalse1Btn, riddleOneFalse2Btn, riddleOneFalse3Btn, riddleOneTrueBtn, riddleThree, riddleThreeFalse1Btn, riddleThreeFalse2Btn, riddleThreeFalse3Btn, riddleThreeTrueBtn, riddleTwo, riddleTwoFalse1Btn, riddleTwoFalse2Btn, riddleTwoFalse3Btn, riddleTwoTrueBtn, sauronBtn, sauronSprite, startGameBtn, textBoxGameplay, textBoxMenuHero, warriorAttackAudio, warriorAttackModeBtn, warriorBigAttackAudio, warriorCombatModeMenu, warriorDamagePointsInput, warriorDefenseModeBtn, warriorHealthBar, warriorHealthPointsInput, warriorNameInput, warriorSprite, youWinMenu, yourTurnBtn, yourTurnMenu } from "./variables.js";
 import { Archer, Boss, Mage, Warrior } from './classes.js'
 import { archerDamageVFX, bossDamageVFX, getRandomInt, mageDamageVFX, playArcherAttackEffect, playArcherReloadEffect, playBossAttackEffect, playGameplayMusic, playMageAttackEffect, playMageReloadEffect, playMainMenuMusic, playWarriorAttackEffect, playWarriorBigAttackEffect, stopGameplayMusic, stopMainMenuMusic, warriorDamageVFX } from './functions.js'
 
@@ -15,26 +15,6 @@ export let archerHealth
 export let warriorMaxHealth
 export let mageMaxHealth
 export let archerMaxHealth
-
-// riddles variables
-let riddle = document.querySelector('#riddle')
-let riddleOne = document.querySelector('#riddleOne')
-let riddleTwo = document.querySelector('#riddleTwo')
-let riddleThree = document.querySelector('#riddleThree')
-let goToRiddleMenu = document.querySelector('#goToRiddleDiv')
-let goToRiddleBtn = document.querySelector('#goToRiddleBtn')
-let riddleOneTrueBtn = document.querySelector('#riddleOneTrue')
-let riddleOneFalse1Btn = document.querySelector('#riddleOneFalse1')
-let riddleOneFalse2Btn = document.querySelector('#riddleOneFalse2')
-let riddleOneFalse3Btn = document.querySelector('#riddleOneFalse3')
-let riddleTwoTrueBtn = document.querySelector('#riddleTwoTrue')
-let riddleTwoFalse1Btn = document.querySelector('#riddleTwoFalse1')
-let riddleTwoFalse2Btn = document.querySelector('#riddleTwoFalse2')
-let riddleTwoFalse3Btn = document.querySelector('#riddleTwoFalse3')
-let riddleThreeTrueBtn = document.querySelector('#riddleThreeTrue')
-let riddleThreeFalse1Btn = document.querySelector('#riddleThreeFalse1')
-let riddleThreeFalse2Btn = document.querySelector('#riddleThreeFalse2')
-let riddleThreeFalse3Btn = document.querySelector('#riddleThreeFalse3')
 
 // adding hero special stats
 let rage = 0
